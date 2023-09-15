@@ -1,0 +1,106 @@
+.block
+{
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+    min-height: 700px;
+}
+
+.container
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.bgLayer1, .bgLayer2, .bgLayer3
+{
+    position: absolute;
+}
+
+.bg
+{
+    width: 100%;
+    position: absolute;
+    bottom: -25vh;
+}
+
+.heading
+{
+    position: relative;
+    margin-bottom: 36px;
+
+    @media (max-width: 768px)
+    {
+        margin-bottom: 24px;
+    }
+}
+
+.form
+{
+    width: 100%;
+    max-width: 518px;
+    border-radius: 48px !important;
+    margin: 0px auto;
+
+    @media (max-width: 768px) {
+        border-radius: 24px !important;
+    }
+
+    
+    &Inner
+    {
+
+        @media (max-width: 768px)
+        {
+        }
+    }
+
+    &Input, &Textarea
+    {
+        border: none;
+        padding: 24px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 18px;
+        outline: none;
+    }
+
+    &Input
+    {
+        display: block;
+        border-radius: 32px;
+    }
+
+    &Textarea
+    {
+        height: 118px;
+        display: block;
+        border-radius: 32px;
+        resize: vertical;
+        max-height: 200px;
+    }
+
+    &Button
+    {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        border-radius: 46px;
+        background: #E983AA;
+        box-shadow: 0px 4px 9px 0px rgba(255, 255, 255, 0.25) inset, 0px 7px 29px 0px rgba(100, 100, 111, 0.20);
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+        border: none;
+        outline: none;
+
+        &Arrow
+        {
+            height: 16px;
+        }
+    }
+}

@@ -1,0 +1,115 @@
+.block
+{
+    position: relative;
+    background: linear-gradient(90deg, #F5D1DA 0.42%, #F9DDE4 79.53%, #F9DFE5 99.7%);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container
+{
+    position: relative;
+    height: 100%;
+    padding: 16px;
+    max-width: 1270px;
+    margin: 0 auto;
+}
+
+.bgLayer
+{
+    position: absolute;
+    display: none;
+
+    &1
+    {
+        display: block;   
+        bottom: -30vh;
+        width: 100%;
+    }
+
+    &2
+    {
+        display: block;
+        bottom: 10vh;
+        right: -4vh;
+        width: 50%;
+    }
+
+    &3
+    {
+        display: block;
+        top: -5vh;
+        width: 100%;
+    }
+
+    &4
+    {
+        display: block;
+        bottom: -20vh;
+        width: 100%;
+    }
+}
+
+.circle
+{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: flex;
+    transform: translateY(-50%);
+    align-items: center;
+    justify-content: center;
+    background: #E983AA;
+    height: 579px;
+    width: 579px;
+    border-radius: 999px;
+    text-align: center;
+    color: #FDF3F4;
+    box-shadow: -59px 79px 123px 4px rgba(0, 0, 0, 0.25), -59px 79px 123px 4px rgba(237, 126, 163, 0.15);
+    overflow: hidden;
+
+    @media (max-width: 1020px) {
+        height: 300px;
+        width: 300px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &Mask
+    {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    &Title
+    {
+        font-size: 56px;
+        margin-bottom: 16px;
+
+        @media (max-width: 1020px) {
+            font-size: 32px;
+        }
+    }
+
+    &Description
+    {
+        font-size: 18px;
+        margin-bottom: 16px;
+
+        @media (max-width: 1020px) {
+            font-size: 16px;
+        }
+    }
+
+    &Button
+    {
+        background: #E36C9C;
+        border-radius: 99px;
+        padding: 18px 24px;
+        width: fit-content;
+        margin: 0 auto;
+    }
+}

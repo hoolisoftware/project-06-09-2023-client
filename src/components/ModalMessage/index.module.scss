@@ -1,0 +1,53 @@
+.container
+{
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1001;
+    padding: 16px;
+    
+    &Active
+    {
+        display: block;
+    }
+}
+
+.bg
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%);
+}
+
+.modal
+{
+    position: relative;
+    max-width: 518px;
+    margin: 20vh auto;
+}
+
+.buttonClose
+{
+    text-align: end;
+    font-size: 2rem;
+    cursor: pointer;
+
+    &:hover
+    {
+        opacity: .9;
+    }
+}
+
+.heading
+{
+    margin-bottom: 2rem;
+}
+
+.arrow
+{
+    height: 16px;
+}

@@ -1,0 +1,116 @@
+.heading
+{
+    margin-bottom: 36px;
+}
+
+.swiper
+{
+    width: calc(100% - 64px);
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+
+    &Container
+    {
+        position: relative;
+    }
+}
+
+.card
+{
+    position: relative;
+    background: #FFF;
+    border-radius: 32px;
+    padding: 24px;
+    min-height: 270px;
+
+    @media (max-width: 350px) {
+        min-height: 400px;
+        width: 100%;
+    }
+
+    &Quote
+    {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 24px;
+
+    }
+
+    &Name
+    {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 24px;
+        font-weight: bold;
+    }
+}
+
+.sliderButton
+{
+    transform: translateY(-50%);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 38px;
+    width: 38px;
+    border-radius: 46px;
+    background: #E983AA;
+    box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.20), 0px 4px 9px 0px rgba(255, 255, 255, 0.25) inset;
+    border: none;
+    outline: none;
+    z-index: 2;
+    
+    &Next
+    {
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%) rotate(180deg);
+
+        @media (max-width: 768px) {
+            top: initial;
+            bottom: 0;
+            transform: rotate(180deg);
+        }
+    }
+
+    &Prev
+    {
+        top: 50%;
+        left: 0;
+
+        @media (max-width: 768px) {
+            top: initial;
+            bottom: 0;
+            transform: none;
+        }
+    }
+}
+
+.sliderDots
+{
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 36px;
+}
+
+.sliderDot
+{
+    height: 12px;
+    width: 12px;
+    border-radius: 46px;
+    background: #E983AA;
+    box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.20), 0px 4px 9px 0px rgba(255, 255, 255, 0.25) inset;
+    opacity: .5;
+
+    &Active
+    {
+        opacity: 1;
+    }
+}

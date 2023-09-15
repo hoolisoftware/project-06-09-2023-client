@@ -1,0 +1,17 @@
+.container
+{
+    max-width: 1270px;
+    margin: 40px auto;
+}
+
+.cards
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 32px;
+}
+
+.section
+{
+    margin-bottom: 32px;
+}

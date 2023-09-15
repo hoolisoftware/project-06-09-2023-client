@@ -1,0 +1,46 @@
+.container
+{
+    max-width: 1270px;
+    margin: 40px auto;
+}
+
+.heading
+{
+    margin-bottom: 36px;
+}
+
+.card
+{
+    &Content
+    {
+        margin: 40px 0;
+        text-align: center;
+
+        @media (max-width: 768px) {
+            margin: 16px 0;
+        }
+    }
+
+    &Title
+    {
+        color: #333372;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    &Text
+    {
+        margin-bottom: 2rem;
+    }
+}
+
+.section
+{
+    display: grid;
+    grid-template-columns: auto 428px;
+    gap: 20px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: auto ;        
+    }
+}

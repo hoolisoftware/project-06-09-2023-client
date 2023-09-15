@@ -1,0 +1,86 @@
+.container
+{
+    max-width: 1270px;
+    margin: 40px auto;
+    padding: 16px;
+}
+
+.heading
+{
+    margin-bottom: 36px;
+}
+
+.swiper
+{
+    width: calc(100% - 64px);
+    margin: 0 auto;
+
+    &Container
+    {
+        position: relative;
+    }
+}
+
+.certificate
+{
+    border-radius: 16px;
+    overflow: hidden;
+
+    & img
+    {
+        width: 100%;
+    }
+}
+
+.sliderButton
+{
+    transform: translateY(-50%);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 38px;
+    width: 38px;
+    border-radius: 46px;
+    background: #E983AA;
+    box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.20), 0px 4px 9px 0px rgba(255, 255, 255, 0.25) inset;
+    border: none;
+    outline: none;
+    z-index: 2;
+    
+    &Next
+    {
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    &Prev
+    {
+        top: 50%;
+        left: 0;
+    }
+}
+
+.sliderDots
+{
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 36px;
+}
+
+.sliderDot
+{
+    height: 12px;
+    width: 12px;
+    border-radius: 46px;
+    background: #E983AA;
+    box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.20), 0px 4px 9px 0px rgba(255, 255, 255, 0.25) inset;
+    opacity: .5;
+
+    &Active
+    {
+        opacity: 1;
+    }
+}

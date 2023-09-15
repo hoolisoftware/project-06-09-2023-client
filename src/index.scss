@@ -1,0 +1,41 @@
+@import "normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+*
+{
+  box-sizing: border-box;
+}
+
+:root
+{
+  @media (max-width: 768px)
+  {
+    font-size: 12px;
+  }
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  background: #f4ebf3;
+
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #E36C9C;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

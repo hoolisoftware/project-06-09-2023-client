@@ -1,0 +1,15 @@
+.cards
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 32px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+.section
+{
+    margin-bottom: 32px;
+}

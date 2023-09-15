@@ -1,0 +1,47 @@
+.block
+{
+    margin: 100px 0;
+}
+
+.container
+{
+    margin: 16px;
+}
+
+.circle
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 440px;
+    border-radius: 440px;
+    background: #E983AA;
+    box-shadow: -59px 79px 123px 4px rgba(0, 0, 0, 0.25), -59px 79px 123px 4px rgba(237, 126, 163, 0.15);
+    text-align: center;
+    font-size: 72px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+        max-width: 350px;
+        font-size: 48px;
+    }
+
+    &Mask
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &Text
+    {
+        position: relative;
+    }
+}

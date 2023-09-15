@@ -1,0 +1,33 @@
+.illustrations
+{
+    max-width: 1270px;
+    margin: 0px auto;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    gap: 64px;
+    margin: 16px;
+
+    &Ball
+    {
+        position: absolute;
+        background: #EE8EAD;
+        border-radius: 24px;
+    }
+
+    &Ball1
+    {
+        left: 50px;
+        bottom: 50px;
+        height: 24px;
+        width: 24px;
+    }
+
+    &Ball2
+    {
+        left: 0;
+        top: 50px;
+        height: 12px;
+        width: 12px;
+    }
+}
