@@ -22,7 +22,7 @@ export default function Modal() {
     return <div className={
         [
             css.container,
-            !modalMessage && css.containerActive
+            modalMessage && css.containerActive
         ].join(' ')
     }>
         <div className={css.bg} onClick={ () => dispatch(toggleModalMessage()) }></div>
