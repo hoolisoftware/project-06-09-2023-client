@@ -4,93 +4,68 @@ import iconClose from '../../../../assets/components/faq-block1-icon-close.png'
 
 import {useState} from 'react'
 
+import { Treatment, Price, PriceSection } from '../../../../data/treatments'
+
 import Card from '../../../../components/Card'
 
 
-export default function Item() {
+interface props
+{
+    treatment: Treatment
+}
+
+
+export default function Item(props: props) {
     const [active, setActive] = useState<boolean>(true)
 
     return <Card className={css.item}>
         <div className={css.itemInner}>
             <div className={css.itemTop}>
-                <div className={css.itemTitle}>Laser Cosmetology</div>
-                <div className={css.itemButtonClose} onClick={ () => setActive(!active)}>
+                <div className={css.itemTitle}>{props.treatment.title}</div>
+                <div className={[css.itemButtonClose, !active && css.itemButtonCloseDisabled].join(' ')} onClick={ () => setActive(!active)}>
                     <img className={css.itemIconClose} src={iconClose}/>
                 </div>
             </div>
             {
                 active &&
                 <div className={css.content}>
-                    <div className={css.contentHeading}>
-                        Laser Ablation Treatment SmartXide DOT2
-                    </div>
-                    <div className={css.contentPriceBlock}>
-                        <span>Whole Face</span>
-                        <span>€ 880</span>
-                    </div>
-                    <div className={css.contentPriceBlock}>
-                        <span>Whole Face+Neck</span>
-                        <span>€ 880</span>
-                    </div>
-                    <div className={css.contentPriceBlock}>
-                        <span>Forehead</span>
-                        <span>€ 880</span>
-                    </div>
-                    <div className={css.contentPriceBlock}>
-                        <span>Whole Face+Neck +Decollete</span>
-                        <span>€ 880</span>
-                    </div>
-                    <div className={css.contentPriceBlock}>
-                        <span>Periorbital Area</span>
-                        <span>€ 880</span>
-                    </div>
-                    <div className={css.contentPriceBlock}>
-                        <span>Cheeks</span>
-                        <span>€ 880</span>
-                    </div>
-                    <div className={css.contentPriceBlock}>
-                        <span>Perioral Area</span>
-                        <span>€ 880</span>
-                    </div>
-                    <div className={css.contentPriceBlock}>
-                        <span>Neck</span>
-                        <span>€ 880</span>
-                    </div>
-                    <div className={css.contentPriceBlock}>
-                        <span>Decollete Area</span>
-                        <span>€ 880</span>
-                    </div>
-                    <div className={css.contentPriceBlock}>
-                        <span>Hands</span>
-                        <span>€ 880</span>
-                    </div>
-                    <div className={[css.contentPriceBlock, css.contentPriceBlockLast].join(' ')}>
-                        <span>Elbows</span>
-                        <span>€ 880</span>
-                    </div>
-                    <div className={css.contentHeading}>
-                        Contour Plastics
-                    </div>
-                    <div className={css.contentPriceBlock}>
-                        <span>Whole Face</span>
-                        <span>€ 880</span>
-                    </div>
-                    <div className={css.contentPriceBlock}>
-                        <span>Whole Face+Neck</span>
-                        <span>€ 880</span>
-                    </div>
-                    <div className={css.contentPriceBlock}>
-                        <span>Forehead</span>
-                        <span>€ 880</span>
-                    </div>
-                    <div className={css.contentPriceBlock}>
-                        <span>Whole Face+Neck +Decollete</span>
-                        <span>€ 880</span>
-                    </div>
-                    <div className={[css.contentPriceBlock, css.contentPriceBlockLast].join(' ')}>
-                        <span>Periorbital Area</span>
-                        <span>€ 880</span>
-                    </div>
+                    {
+                        props.treatment.prices?.map(item => (
+                            <>
+                                { (item as PriceSection).prices &&
+                                    <>
+                                        <div className={css.contentHeading}>
+                                            {item.title}
+                                        </div>        
+                                        {
+                                            (item as PriceSection).prices?.map(
+                                                item => (
+                                                    <div className={css.contentPriceBlock}>
+                                                        <span>{item.title}</span>
+                                                        {
+                                                            item.price !== -1 && 
+                                                            <span>{item.startingFrom && 'от'} € {item.price}</span>
+                                                        }
+                                                    </div>
+                                                )
+                                            )
+                                        }
+                                    </>
+                                }
+                                {
+                                    Number.isInteger((item as Price).price) &&
+                                    <div className={css.contentPriceBlock}>
+                                        <span>{item.title}</span>
+                                        {
+                                            (item as Price).price !== -1 && 
+                                            (item as Price).price === 0 ? 'БЕСПЛАТНО' :
+                                            <span>{(item as Price).startingFrom && 'от'} € {(item as Price).price}</span>
+                                        }
+                                    </div>
+                                }
+                            </>
+                        ))
+                    }
                 </div>
             }
         </div>

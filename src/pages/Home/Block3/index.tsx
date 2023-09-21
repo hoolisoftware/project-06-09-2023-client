@@ -6,7 +6,15 @@ import bgLayer3 from '../../../assets/components/home-block3-bglayer3.png'
 import bgLayer4 from '../../../assets/components/home-block3-bglayer4.png'
 import circleMask from '../../../assets/components/home-block3-circlemask.png'
 
+import {useDispatch} from 'react-redux'
+import { toggleModalMessage } from '../../../features/modal/modalReducer'
+
+import Button from '../../../components/Button'
+
+
 export default function Block(){
+    const dispatch = useDispatch()
+
     return <div className={css.block}>
         <img className={[css.bgLayer, css.bgLayer4].join(' ')} src={bgLayer4} alt="bgLayer" />
         <img className={[css.bgLayer, css.bgLayer3].join(' ')} src={bgLayer3} alt="bgLayer" />
@@ -16,9 +24,9 @@ export default function Block(){
             <div className={css.circle}>
                 <div className={css.circleContent}>
                     <img className={css.circleMask} src={circleMask} alt="circleMask" />
-                    <div className={css.circleTitle}>We appreciate<br />your time</div>
-                    <div className={css.circleDescription}>Leave the phone,we will call you<br />back in 9 seconds</div>
-                    <div className={css.circleButton}>Call Me</div>
+                    <div className={css.circleTitle}>Мы ценим ваше время</div>
+                    <div className={css.circleDescription}>Оставьте телефон, <br />мы перезвоним вам за 9 секунд</div>
+                    <Button className={css.circleButton} onClick={ () => dispatch(toggleModalMessage()) }>ПЕРЕЗВОНИТЕ МНЕ</Button>
                 </div>
             </div>
         </div>

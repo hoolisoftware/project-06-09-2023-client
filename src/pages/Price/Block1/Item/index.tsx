@@ -2,12 +2,14 @@ import css from './index.module.scss'
 
 import iconClose from '../../../../assets/components/faq-block1-icon-close.png'
 
-import Card, {CardTitle, CardContent} from '../../../../components/Card'
+import type { Treatment, PriceSection, Price } from '../../../../data/treatments'
+
+import Card, {CardContent} from '../../../../components/Card'
 
 interface props
 {
     index: number
-    title: string
+    treatment: Treatment
     setActive: CallableFunction
     active: boolean
 }
@@ -19,8 +21,8 @@ export default function Item(props: props) {
             <div className={css.itemInner}>
                 <CardContent>
                     <div className={css.itemTop}>
-                        <div className={css.itemTitle}>{props.title}</div>
-                        <div className={css.itemButtonClose} onClick={ () => props.setActive(props.index) }>
+                        <div className={css.itemTitle}>{props.treatment.title}</div>
+                        <div className={[css.itemButtonClose, !props.active && css.itemButtonCloseDisabled].join(' ')} onClick={ () => props.setActive(props.index) }>
                             <img className={css.itemIconClose} src={iconClose}/>
                         </div>
                     </div>
@@ -28,79 +30,43 @@ export default function Item(props: props) {
                 {
                     props.active &&
                     <CardContent>
-
-                        <div className={css.content}>
-                            <CardTitle>
-                                Laser Ablation Treatment SmartXide DOT2
-                            </CardTitle>
-                            <div className={css.contentPriceBlock}>
-                                <span>Whole Face</span>
-                                <span>€ 880</span>
-                            </div>
-                            <div className={css.contentPriceBlock}>
-                                <span>Whole Face+Neck</span>
-                                <span>€ 880</span>
-                            </div>
-                            <div className={css.contentPriceBlock}>
-                                <span>Forehead</span>
-                                <span>€ 880</span>
-                            </div>
-                            <div className={css.contentPriceBlock}>
-                                <span>Whole Face+Neck +Decollete</span>
-                                <span>€ 880</span>
-                            </div>
-                            <div className={css.contentPriceBlock}>
-                                <span>Periorbital Area</span>
-                                <span>€ 880</span>
-                            </div>
-                            <div className={css.contentPriceBlock}>
-                                <span>Cheeks</span>
-                                <span>€ 880</span>
-                            </div>
-                            <div className={css.contentPriceBlock}>
-                                <span>Perioral Area</span>
-                                <span>€ 880</span>
-                            </div>
-                            <div className={css.contentPriceBlock}>
-                                <span>Neck</span>
-                                <span>€ 880</span>
-                            </div>
-                            <div className={css.contentPriceBlock}>
-                                <span>Decollete Area</span>
-                                <span>€ 880</span>
-                            </div>
-                            <div className={css.contentPriceBlock}>
-                                <span>Hands</span>
-                                <span>€ 880</span>
-                            </div>
-                            <div className={[css.contentPriceBlock, css.contentPriceBlockLast].join(' ')}>
-                                <span>Elbows</span>
-                                <span>€ 880</span>
-                            </div>
-                            <CardTitle>
-                                Contour Plastics
-                            </CardTitle>
-                            <div className={css.contentPriceBlock}>
-                                <span>Whole Face</span>
-                                <span>€ 880</span>
-                            </div>
-                            <div className={css.contentPriceBlock}>
-                                <span>Whole Face+Neck</span>
-                                <span>€ 880</span>
-                            </div>
-                            <div className={css.contentPriceBlock}>
-                                <span>Forehead</span>
-                                <span>€ 880</span>
-                            </div>
-                            <div className={css.contentPriceBlock}>
-                                <span>Whole Face+Neck +Decollete</span>
-                                <span>€ 880</span>
-                            </div>
-                            <div className={[css.contentPriceBlock, css.contentPriceBlockLast].join(' ')}>
-                                <span>Periorbital Area</span>
-                                <span>€ 880</span>
-                            </div>
-                        </div>
+                        {
+                            props.treatment.prices?.map(item => (
+                                <>
+                                    { (item as PriceSection).prices &&
+                                        <>
+                                            <div className={css.contentHeading}>
+                                                {item.title}
+                                            </div>        
+                                            {
+                                                (item as PriceSection).prices?.map(
+                                                    item => (
+                                                        <div className={css.contentPriceBlock}>
+                                                            <span>{item.title}</span>
+                                                            {
+                                                                item.price !== -1 && 
+                                                                <span>{item.startingFrom && 'от'} € {item.price}</span>
+                                                            }
+                                                        </div>
+                                                    )
+                                                )
+                                            }
+                                        </>
+                                    }
+                                    {
+                                        Number.isInteger((item as Price).price) &&
+                                        <div className={css.contentPriceBlock}>
+                                            <span>{item.title}</span>
+                                            {
+                                                (item as Price).price !== -1 && 
+                                                (item as Price).price === 0 ? 'БЕСПЛАТНО' :
+                                                <span>{(item as Price).startingFrom && 'от'} € {(item as Price).price}</span>
+                                            }
+                                        </div>
+                                    }
+                                </>
+                            ))
+                        }
                     </CardContent>
                 }
             </div>

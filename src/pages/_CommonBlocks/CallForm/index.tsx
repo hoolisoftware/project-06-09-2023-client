@@ -18,19 +18,19 @@ export default function Block(){
         <img className={css.bgLayer1} src={bgLayer1} alt="bgLayer1" />
         <div className={css.container}>
             <Heading center>
-                <div className={css.heading}>Want to feel and lookmore beautiful than ever before?</div>
+                <div className={css.heading}>Хотите выглядеть и чувствовать себя красивее как никогда раньше?</div>
             </Heading>
-            <div className={css.subheading}>Register for a free appointmentto the plastic surgery clinic – Clinicestetic!</div>
+            <div className={css.subheading}>Запишитесь на бесплатный приём в клинику пластической хирургии Clinicestetic!</div>
             <div className={css.form}>
                 <div className={css.formInner}>
                     <Input
                         className={css.formInput}
                         fullWidth
-                        placeholder='Your Phone Number*'
+                        placeholder='Ваш телефон*'
                         type='text'
                     />
                     <Button className={css.formButton} fullWidth>
-                        Call&nbsp;back&nbsp;in&nbsp;9&nbsp;seconds&nbsp;
+                        Позвонить за 9 секунд
                         <img className={css.formButtonArrow} src={arrow} alt="arrow" />
                     </Button>
                 </div>

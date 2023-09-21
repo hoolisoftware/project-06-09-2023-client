@@ -31,7 +31,7 @@ export default function Component(){
                     </div>
                     <a href='tel:0942451501' className={css.contactItem}>
                         <img src={iconPhone} alt="icon" className={css.icon} />
-                        0 942 451 501
+                        +358 942 451 501
                     </a>
                     <a href='mailto:info@clinicestetic.fi' className={css.contactItem}>
                         <img src={iconMail} alt="icon" className={css.icon} />
@@ -41,7 +41,7 @@ export default function Component(){
             </div>
         </div>
         <div className={css.section2}>
-            © 2023 Clinicestetic. All rights reserved
+            © 2017 Clinicestetic. Все права защищены 
         </div>
     </div>
 }

@@ -35,6 +35,11 @@
             height: 32px;
             min-width: 32px;
         }
+
+        &Disabled
+        {
+            transform: rotate(45deg);
+        }
     }
 
     &IconClose
@@ -48,6 +53,6 @@
 
     &Content
     {
-        padding-top: 0;
+        padding-top: 0 ;
     }
 }

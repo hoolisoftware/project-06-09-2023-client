@@ -4,10 +4,13 @@ import Illustration from '../../_CommonBlocks/Illustration'
 
 export default function Block(){
     return <Illustration
-        title={<>We will be glad to see you <br /> in our clinic!</>}
+        title={<>Будем рады видеть вас в нашей клинике!</>}
+        subTitle={<>Мы работаем 24/7 и наши двери открыты для каждого!</>}
         content={
             <>
-                The international group of clinics “Clinicestetic” takes a leading position in the field of rendering modern high-tech medical services. The main directions of our activity: aesthetic medicine (plastic surgery, cosmetology, dietology, hair transplantation), dentistry, ophthalmology, gynaecology and practology. <br /><br /> We take full responsibility for the health of our patient, that is why we give our preference to the best world technologies and methods of treatment and choose the most efficient procedures for preserving beauty and youth.                
+                «Clinicestetic» занимает лидирующие позиции в сфере оказания современных высокотехнологичных медицинских услуг. Основные направления нашей деятельности: эстетическая медицина (пластическая хирургия, косметология, диетология, пересадка волос), стоматология, офтальмология, гинекология и проктология.
+                <br /><br />
+                Мы берем на себя всю полноту ответственности за здоровье пациента, поэтому отдаем предпочтение лучшим мировым технологиям и методикам лечения, выбираем максимально эффективные процедуры сохранения красоты и молодости.
             </>
         }
         illustration={illustration}

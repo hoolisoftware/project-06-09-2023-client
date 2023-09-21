@@ -15,24 +15,24 @@ export default function Block(){
         <img className={css.bg} src={bg} alt="bg" />
         <Container className={css.container}>
             <Heading center>
-                <div className={css.heading}>You can leave us a message</div>
+                <div className={css.heading}>Вы можете оставить нам сообщение</div>
             </Heading>
             <Card className={css.form}>
                 <CardContent>
                     <div className={css.formInner}>
                         <Input
                             type='text'
-                            placeholder='Your Name*'
+                            placeholder='Ваше имя*'
                             fullWidth
                         />
                         <Input
                             type='text'
-                            placeholder='Your Phone Number*'
+                            placeholder='Ваш телефон*'
                             fullWidth
                         />
-                        <textarea className={css.formTextarea} placeholder='Message' ></textarea>
+                        <textarea className={css.formTextarea} placeholder='Сообщение' ></textarea>
                         <Button fullWidth>
-                            Leave a message&nbsp;
+                            Оставить сообщение&nbsp;
                             <img className={css.formButtonArrow} src={arrow} alt="arrow" />
                         </Button>
                     </div>

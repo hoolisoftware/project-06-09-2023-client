@@ -36,7 +36,7 @@ export default function Block() {
 
     return <Container>
         <div className={css.heading}>
-            <Heading center >Prices</Heading>
+            <Heading center >Новости</Heading>
         </div>
         <div className={css.section}>
             <div className={css.sectionBlock}>
@@ -56,15 +56,15 @@ export default function Block() {
                     <CardContent>
                         <div className={css.cardContent}>
                             <CardTitle>
-                                <div className={css.cardTitle}>Search news</div>
+                                <div className={css.cardTitle}>Поиск по новостям</div>
                             </CardTitle>
                             <Input
-                                placeholder='Enter name'
+                                placeholder='Что нужно найти?'
                                 type='text'
                                 fullWidth
                             />
                             <Button fullWidth>
-                                Make an appointment
+                                ПОИСК
                                 &nbsp;
                                 <img src={arrow} alt="arrow" />
                             </Button>

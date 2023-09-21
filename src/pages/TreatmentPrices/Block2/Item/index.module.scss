@@ -41,6 +41,11 @@
         display: flex;
         box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.20), 0px 4px 9px 0px rgba(255, 255, 255, 0.25) inset;
         cursor: pointer;
+
+        &Disabled
+        {
+            transform: rotate(45deg);
+        }
     }
 
     &IconClose

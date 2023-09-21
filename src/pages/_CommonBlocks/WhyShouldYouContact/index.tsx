@@ -1,8 +1,8 @@
 import css from './index.module.scss'
 
 import illustration1 from '../../../assets/components/home-block5-illustration1.png'
-import illustration2 from '../../../assets/components/home-block5-illustration2.png'
-import illustration3 from '../../../assets/components/home-block5-illustration3.png'
+import illustration2 from '../../../assets/components/home-block5-illustration2.jpg'
+import illustration3 from '../../../assets/components/home-block5-illustration3.jpg'
 import illustration4 from '../../../assets/components/home-block5-illustration4.png'
 
 import bgLayer1 from '../../../assets/components/home-block5-bglayer1.png'
@@ -17,28 +17,36 @@ export default function Block(){
         <img className={css.bgLayer1} src={bgLayer1} alt="bgLayer1" />
         <div className={css.container}>
             <Heading center>
-                <div className={css.heading}>Why you should contact our clinic?</div>
+                <div className={css.heading}>Почему вам стоит обратиться в нашу клинику?</div>
             </Heading>
             <div className={css.cards}>
                 <div className={css.card}>
                     <img className={css.cardImage} src={illustration1} alt='illustration1'/>
-                    <div className={css.cardHeading}>Large variety of treatments</div>
-                    <div className={css.cardContent}>Clinicestetic offers large variety of treatments. From rhinoplasty and breast augmentation up to liposuction and cosmetology.</div>
+                    <div className={css.cardHeading}>Большой выбор операций</div>
+                    <div className={css.cardContent}>
+                        Клиника Clinicestetic предлагает большой выбор операций. От ринопластики и увеличения груди до липосакции и косметологии.
+                    </div>
                 </div>
                 <div className={css.card}>
                     <img className={css.cardImage} src={illustration2} alt='illustration2'/>
-                    <div className={css.cardHeading}>Modern equipment</div>
-                    <div className={css.cardContent}>All our surgery rooms ans wards are equipped with the latest technology, the most advanced and reliable medical equipment and medicines.</div>
+                    <div className={css.cardHeading}>Современное оборудование</div>
+                    <div className={css.cardContent}>
+                        Все наши операционные и палаты оборудованы по последнему слову техники, самым передовым и надежным медицинским оборудованием и медикаментами.
+                    </div>
                 </div>
                 <div className={css.card}>
                     <img className={css.cardImage} src={illustration3} alt='illustration3'/>
-                    <div className={css.cardHeading}>Experienced specialists</div>
-                    <div className={css.cardContent}>Clinicestetic specialists have a huge practical experience for more than 15 years that you look and feel better!</div>
+                    <div className={css.cardHeading}>Опытные специалисты</div>
+                    <div className={css.cardContent}>
+                        Специалисты Clinicestetic имеют огромный практический опыт более 15 лет, чтобы вы выглядели и чувствовали себя лучше!
+                    </div>
                 </div>
                 <div className={css.card}>
                     <img className={css.cardImage} src={illustration4} alt='illustration4'/>
-                    <div className={css.cardHeading}>Affordable prices</div>
-                    <div className={css.cardContent}>We don’t try to make our prices sky-high. Our price policy is focused on everyone, to make beauty accessible to everyone!</div>
+                    <div className={css.cardHeading}>Доступные цены</div>
+                    <div className={css.cardContent}>
+                        Мы не стремимся делать наши цены заоблачными. Наша ценовая политика ориентирована на каждого, чтобы сделать красоту доступной для всех!
+                    </div>
                 </div>
             </div>
         </div>

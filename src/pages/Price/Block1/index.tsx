@@ -3,6 +3,10 @@ import css from './index.module.scss'
 import arrow from '../../../assets/components/treatmentprices-arrow.png'
 
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { toggleModalMessage } from '../../../features/modal/modalReducer'
+
+import { treatments } from '../../../data/treatments'
 
 import Heading from '../../../components/Heading'
 import Card, {CardContent, CardTitle} from '../../../components/Card'
@@ -13,16 +17,8 @@ import Item from './Item'
 
 
 export default function Block() {
-    const prices = [
-        'Laser Cosmetology',
-        'Laser Cosmetology',
-        'Laser Cosmetology',
-        'Laser Cosmetology',
-        'Laser Cosmetology',
-        'Laser Cosmetology',
-        'Laser Cosmetology',
-    ]
-
+    
+    const dispatch = useDispatch()
     const [activeItem, setActiveItem] = useState<number|null>(0)
 
     const toggleActiveItem = (index: number) => {
@@ -40,11 +36,12 @@ export default function Block() {
         <div className={css.section}>
             <div className={css.sectionBlock}>
                 {
-                    prices.map((item, index) =>
+                    treatments.map(item =>
                         <Item
-                            index={index}
-                            title={item}
-                            active={index===activeItem}
+                            index={item.id}
+                            key={item.id}
+                            treatment={item}
+                            active={item.id===activeItem}
                             setActive={toggleActiveItem}
                         />
                     )
@@ -55,11 +52,11 @@ export default function Block() {
                     <CardContent>
                         <div className={css.cardContent}>
                             <CardTitle>
-                                <div className={css.cardTitle}>Sign up for a free appointment to a specialist</div>
+                                <div className={css.cardTitle}>Записаться на консультацию со специалистом</div>
                             </CardTitle>
-                            <div className={css.cardText}>Choose a convenient time and the right specialist</div>
-                            <Button fullWidth>
-                                Make an appointment
+                            <div className={css.cardText}>Выберите удобный день и время</div>
+                            <Button fullWidth onClick={ () => dispatch(toggleModalMessage()) }>
+                                Записаться
                                 &nbsp;
                                 <img src={arrow} alt="arrow" />
                             </Button>

@@ -34,7 +34,13 @@
     display: block;
     border-radius: 32px;
     width: 100%;
+    aspect-ratio: 1 / 1;
     max-width: 470px;
+    object-fit: cover;
+
+    @media (max-width: 768px) {
+        border-radius: 16px;
+    }
 }
 
 .illustrationRight

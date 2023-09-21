@@ -32,24 +32,24 @@ export default function Modal() {
                     <AiOutlineCloseCircle/>
                 </div>
                 <div className={css.heading}>
-                    <Heading>Your can leave us a message!</Heading>
+                    <Heading>Вы можете оставить нам сообщение!</Heading>
                 </div>
                 <Input
                     type='text'
-                    placeholder='Full name*'
+                    placeholder='Ваше имя*'
                     fullWidth
                 />
                 <Input
                     type='number'
-                    placeholder='Phone number'
+                    placeholder='Ваш телефон'
                     fullWidth
                 />
-                <Button fullWidth>Leave a message&nbsp;&nbsp;<img className={css.arrow} src={arrow} alt="arrow" /></Button>
+                <Button fullWidth>Оставить сообщение&nbsp;&nbsp;<img className={css.arrow} src={arrow} alt="arrow" /></Button>
                 <br />
                 <p>
                     <AiFillCheckCircle/>
                     &nbsp;
-                    The application has been sent, we will contact you!
+                    Заявка отправлена, мы свяжемся с вами!
                 </p>
             </CardContent>
         </Card>

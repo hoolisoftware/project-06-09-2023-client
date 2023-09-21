@@ -7,8 +7,8 @@ import Card from '../../../components/Card'
 
 interface props
 {
-    title: string
-    illustration: string
+    title?: string
+    illustration?: string
 }
 
 export default function Intro(props: props) {
@@ -24,11 +24,11 @@ export default function Intro(props: props) {
                 <img className={css.sectionIllustration} src={props.illustration}/>
                 <Card className={css.sectionContent}>
                     <div className={css.sectionText}>
-                        Register for a free appointment with a specialist of our clinic by phone: (358) 942-451-501
+                        Запишитесь на бесплатный приём к специалисту нашей клиники по телефону:
                     </div>
                     <div className={css.sectionPhone}>
                         <img src={iconPhone} alt="phone icon" />
-                        (358) 942-451-501
+                        &nbsp;(358) 942-451-501
                     </div>
                 </Card>
             </div>

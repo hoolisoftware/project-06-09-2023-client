@@ -7,7 +7,7 @@ interface props extends React.HTMLAttributes<HTMLButtonElement>
 
 export default function Button(props: props)
 {
-    return <button className={
+    return <button {...props} className={
         [
             css.button,
             props.fullWidth && css.fullWidth,

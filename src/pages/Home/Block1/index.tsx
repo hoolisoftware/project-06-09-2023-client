@@ -18,9 +18,9 @@ export default function Block(){
         <div className={css.circle}>
             <img className={css.circleBg} src={circle} alt="circle" />
             <div className={css.circleContent}>
-                <div className={css.circleContentHeading}>Sign up</div>
-                <div className={css.circleContentDescription}>for free admission to the clinic<br />«Clinicestetic»</div>
-                <button className={css.button} onClick={ () => dispatch(toggleModalMessage()) }>Make an appointment</button>
+                <div className={css.circleContentHeading}>Запишитесь</div>
+                <div className={css.circleContentDescription}>на бесплатный приём в клинику<br /> пластической хирургии «Clinicestetic»</div>
+                <button className={css.button} onClick={ () => dispatch(toggleModalMessage()) }>Записаться на приём</button>
             </div>
         </div>
     </div>

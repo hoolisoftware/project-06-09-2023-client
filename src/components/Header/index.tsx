@@ -12,7 +12,6 @@ import { AiOutlineClose } from 'react-icons/ai'
 
 export default function Component(){
 
-
     const [mobileMenu, setMobileMenu] = useState<boolean>(false)
     const location = useLocation()
 
@@ -24,81 +23,81 @@ export default function Component(){
                 </Link>
                 <ul className={css.menu}>
                     <li className={location.pathname === '/about/' ? css.active : ''}>
-                        <Link to='/about/'>About our clinic</Link>&nbsp;
+                        <Link to='/about/'>О клинике</Link>&nbsp;
                         <img src={arrow} alt="" />
                         <div className={css.dropdown}>
                             <Link to='/faq/'>
                                 <div className={css.dropdownItem}>
-                                    FAQ
+                                    Вопрос-ответ
                                 </div>
                             </Link>
                             <Link to='/news/'>
                                 <div className={css.dropdownItem}>
-                                    News
+                                    Новости
                                 </div>
                             </Link>
                             <Link to='/training/'>
                                 <div className={css.dropdownItem}>
-                                    Training
+                                    Обучение
                                 </div>
                             </Link>
                             <Link to='/before-after/'>
                                 <div className={css.dropdownItem}>
-                                    Before and after
+                                    До-после
                                 </div>
                             </Link>
                         </div>
                     </li>
                     <li className={location.pathname === '/specialists/' ? css.active : ''}>
-                        <Link to='/specialists/'><Link to='/specialists/'>Specialists</Link></Link>
+                        <Link to='/specialists/'><Link to='/specialists/'>Специалисты</Link></Link>
                     </li>
                     <li className={location.pathname === '/treatments/' ? css.active : ''}>
                         <Link to='/treatments/'>
-                            Treatments&nbsp;
+                            Услуги&nbsp;
                         </Link>
                         <img src={arrow} alt="" />
                         <div className={css.dropdown}>
                             <Link to='/treatments/1/'>
                                 <div className={css.dropdownItem}>
-                                    Laser Cosmetology
+                                    Лазерная косметология
                                 </div>
                             </Link>
-                            <Link to='/treatments/1/'>
+                            <Link to='/treatments/2/'>
                                 <div className={css.dropdownItem}>
-                                    Injection Cosmetology
+                                    Инъекционная косметология
                                 </div>
                             </Link>
-                            <Link to='/treatments/1/'>
+                            <Link to='/treatments/3/'>
                                 <div className={css.dropdownItem}>
-                                    Apparatus Cosmetology
+                                    Аппаратная косметология
                                 </div>
                             </Link>
-                            <Link to='/treatments/1/'>
+                            <Link to='/treatments/4/'>
                                 <div className={css.dropdownItem}>
-                                    Facial Plastic Surgery
+                                    Пластическая хиррургия лица
                                 </div>
                             </Link>
                             <Link to='/treatments/'>
                                 <div className={css.dropdownItem}>
-                                    More...
+                                    Другое...
                                 </div>
                             </Link>
                         </div>
                     </li>
                     <li className={location.pathname === '/price/' ? css.active : ''}>
-                        <Link to='/price/'>Price</Link>
+                        <Link to='/price/'>Стоимость</Link>
                     </li>
                     <li className={location.pathname === '/contacts/' ? css.active : ''}>
-                        <Link to='/contacts/'>Contacts</Link>
+                        <Link to='/contacts/'>Контакты</Link>
                     </li>
                 </ul>
                 <div className={css.menuButton} onClick={ () => setMobileMenu(true) }>
                     <GiHamburgerMenu/>
                 </div>
-                <a href='tel:0942451501' className={css.phone}>
+                <a href='tel:+358942451501' className={css.phone}>
                     <img className={css.phoneIcon} src={phone} alt="phone icon" />
                     <span className={css.phoneText}>
-                        0 942 451 501
+                        +358 942 451 501
                     </span>
                 </a>
             </div>
@@ -112,47 +111,47 @@ export default function Component(){
                 <ul className={css.mobileMenuList}>
                     <li className={css.active}>
                         <Link to='/about/'>
-                            About our clinic
+                            О клинике
                         </Link>
                     </li>
                     <li className={css.active}>
                         <Link to='/news/'>
-                            News
+                            Новости
                         </Link>
                     </li>
                     <li className={css.active}>
                         <Link to='/faq/'>
-                            FAQ
+                            Вопрос-ответ
                         </Link>
                     </li>
                     <li className={css.active}>
                         <Link to='/about/'>
-                            Training
+                            Обучение
                         </Link>
                     </li>
                     <li className={css.active}>
                         <Link to='/before-after/'>
-                            Before and after
+                            До-после
                         </Link>
                     </li>
                     <li>
                         <Link to='/specialists/'>
-                            Specialists
+                            Специалисты
                         </Link>
                     </li>
                     <li>
                         <Link to='/treatments/'>
-                            Treatments
+                            Услуги
                         </Link>
                     </li>
                     <li>
                         <Link to='/price/'>
-                            Price
+                            Стоимость
                         </Link>
                     </li>
                     <li>
                         <Link to='/contacts/'>
-                            Contacts
+                            Контакты
                         </Link>
                     </li>
                 </ul>

@@ -41,8 +41,13 @@
 
         &Heading
         {
-            font-size: 72px;
+            font-size: 64px;
             margin-bottom: 16px;
+
+            @media (max-width: 768px) {
+                font-size: 32px;
+                margin-bottom: 12px;
+            }
         }
 
         &Description

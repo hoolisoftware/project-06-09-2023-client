@@ -8,7 +8,7 @@ import Block1 from './Block1'
 
 export default function Page()
 {
-    document.title = 'Prices'
+    document.title = 'Стоимость'
 
     return <PageLayout>
         <WrapperFirstBlock>

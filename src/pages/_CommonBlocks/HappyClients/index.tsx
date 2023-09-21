@@ -54,7 +54,7 @@ export default function Block() {
     return <Container>
         <div className={css.heading}>
             <Heading center>
-                Listen to happy patients
+                Отзывы довольных клиентов
             </Heading>
         </div>
         <div className={css.swiperContainer}>

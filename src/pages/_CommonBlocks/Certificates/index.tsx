@@ -14,6 +14,7 @@ import { Swiper as SwiperType } from 'swiper'
 import 'swiper/css';
 
 import Heading from '../../../components/Heading'
+import Container from '../../../components/Container'
 
 
 export default function Block() {
@@ -31,7 +32,7 @@ export default function Block() {
 
     const swiperRef = useRef<SwiperType>()
     const [currentIndex, setCurrentIndex] = useState<number|undefined>(0)
-    return <div className={css.container}>
+    return <Container>
         <div className={css.heading}>
             <Heading center>Certificates</Heading>
         </div>
@@ -79,5 +80,5 @@ export default function Block() {
                 )}
             </div>
         </div>
-    </div>
+    </Container>
 }
