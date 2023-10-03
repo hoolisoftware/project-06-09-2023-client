@@ -6,25 +6,24 @@ import { Link } from 'react-router-dom'
 
 import Card, {CardContent, CardTitle} from '../../../../components/Card'
 
-interface props
+interface Props
 {
-    index: number
+    id: number
     title: string
-    setActive: CallableFunction
-    active: boolean
+    excerpt: string
 }
 
-export default function Item(props: props) {
+export default function Item(props: Props) {
 
     return <div className={css.item}>
         <Card>
             <CardContent>
-                <CardTitle>Post title</CardTitle>
-                <Link to='/news/1' className={css.itemButtonLink} onClick={ () => props.setActive(props.index) }>
+                <CardTitle>{props.title}</CardTitle>
+                <Link to={`/news/${props.id}/`} className={css.itemButtonLink}>
                     <img className={css.itemIconClose} src={arrow}/>
                 </Link>
                 <div className={css.content}>
-                    Oletko katsonut peiliin ja miettinyt, että toivoisit kapeampia kasvoja? Nykymaailmassa oikeastaan ihan kaikenlainen kasvojen muokkaaminen onnistuu ilman valtavia kustannuksia ja pitkää toipumisaikaa. Se on oikeastaan sitten vain oman pohdinnan paikka, mitä haluaa tehdä, miksi ja mitä sillä saavuttaa. Kauneuskirurgia ei ole kenellekään mikään uhka tai minkäänlainen pimeä voima kuin vaan olet turvallisissa käsissä. Palvelua voi
+                    {props.excerpt}
                 </div>
             </CardContent>
         </Card> 

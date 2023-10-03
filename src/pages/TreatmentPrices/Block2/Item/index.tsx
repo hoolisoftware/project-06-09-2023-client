@@ -4,7 +4,7 @@ import iconClose from '../../../../assets/components/faq-block1-icon-close.png'
 
 import {useState} from 'react'
 
-import { Treatment, Price, PriceSection } from '../../../../data/treatments'
+import { Treatment} from '@/types'
 
 import Card from '../../../../components/Card'
 
@@ -32,34 +32,33 @@ export default function Item(props: props) {
                     {
                         props.treatment.prices?.map(item => (
                             <>
-                                { (item as PriceSection).prices &&
+                                { item.prices.length ?
                                     <>
                                         <div className={css.contentHeading}>
                                             {item.title}
                                         </div>        
                                         {
-                                            (item as PriceSection).prices?.map(
+                                            item?.prices?.map(
                                                 item => (
                                                     <div className={css.contentPriceBlock}>
                                                         <span>{item.title}</span>
                                                         {
-                                                            item.price !== -1 && 
-                                                            <span>{item.startingFrom && 'от'} € {item.price}</span>
+                                                            item.price === -1 ? '' :
+                                                            item.price === 0 ? 'БЕСПЛАТНО' :
+                                                            <span>{item.starting_from && 'от'} € {item.price}</span>
                                                         }
                                                     </div>
                                                 )
                                             )
                                         }
                                     </>
-                                }
-                                {
-                                    Number.isInteger((item as Price).price) &&
+                                :
                                     <div className={css.contentPriceBlock}>
                                         <span>{item.title}</span>
                                         {
-                                            (item as Price).price !== -1 && 
-                                            (item as Price).price === 0 ? 'БЕСПЛАТНО' :
-                                            <span>{(item as Price).startingFrom && 'от'} € {(item as Price).price}</span>
+                                            item.price === -1 ? '' :
+                                            item.price === 0 ? 'БЕСПЛАТНО' :
+                                            <span>{item.starting_from && 'от'} € {item.price}</span>
                                         }
                                     </div>
                                 }

@@ -2,11 +2,11 @@ import css from './index.module.scss'
 
 import arrow from '../../../assets/components/treatmentprices-arrow.png'
 
+import axios from 'axios'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { useQuery } from 'react-query'
 import { toggleModalMessage } from '../../../features/modal/modalReducer'
-
-import { treatments } from '../../../data/treatments'
 
 import Heading from '../../../components/Heading'
 import Card, {CardContent, CardTitle} from '../../../components/Card'
@@ -18,6 +18,13 @@ import Item from './Item'
 
 export default function Block() {
     
+    const {data} = useQuery({
+        queryFn: async () => {
+            const {data} = await axios.get('http://localhost:8000/api/services/services/')
+            return data
+        }
+    })
+
     const dispatch = useDispatch()
     const [activeItem, setActiveItem] = useState<number|null>(0)
 
@@ -36,7 +43,7 @@ export default function Block() {
         <div className={css.section}>
             <div className={css.sectionBlock}>
                 {
-                    treatments.map(item =>
+                    Array.isArray(data) && data.map(item =>
                         <Item
                             index={item.id}
                             key={item.id}

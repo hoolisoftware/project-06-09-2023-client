@@ -1,16 +1,34 @@
 import css from './index.module.scss'
 
-import logo from '../../assets/logo.svg'
-import phone from '../../assets/icons/phone.svg'
-import arrow from '../../assets/icons/arrow-down.svg'
-
+import axios from 'axios'
 import {useState} from 'react'
+import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux/es/hooks/useSelector'
+import { useQuery } from 'react-query'
 import { Link, useLocation } from "react-router-dom";  
-
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { AiOutlineClose } from 'react-icons/ai'
 
+import { RootState } from '@/app/store'
+import arrow from '../../assets/icons/arrow-down.svg'
+import logo from '../../assets/logo.svg'
+import phone from '../../assets/icons/phone.svg'
+import { setTreatments } from '@/features/data/dataReducer'
+
+
 export default function Component(){
+    const dispatch = useDispatch()
+    const config = useSelector((state: RootState) => state.data.config)
+    const {data} = useQuery('services', {
+        queryFn: async () => {
+            const {data} = await axios.get('http://localhost:8000/api/services/services/')
+            dispatch(setTreatments(data))
+            return data
+        },
+        onError: (error) => {
+            window.alert(error)
+        }
+    })
 
     const [mobileMenu, setMobileMenu] = useState<boolean>(false)
     const location = useLocation()
@@ -41,6 +59,11 @@ export default function Component(){
                                     Обучение
                                 </div>
                             </Link>
+                            <Link to='/price/'>
+                                <div className={css.dropdownItem}>
+                                    Прайс-лист
+                                </div>
+                            </Link>
                             <Link to='/before-after/'>
                                 <div className={css.dropdownItem}>
                                     До-после
@@ -57,26 +80,15 @@ export default function Component(){
                         </Link>
                         <img src={arrow} alt="" />
                         <div className={css.dropdown}>
-                            <Link to='/treatments/1/'>
-                                <div className={css.dropdownItem}>
-                                    Лазерная косметология
-                                </div>
-                            </Link>
-                            <Link to='/treatments/2/'>
-                                <div className={css.dropdownItem}>
-                                    Инъекционная косметология
-                                </div>
-                            </Link>
-                            <Link to='/treatments/3/'>
-                                <div className={css.dropdownItem}>
-                                    Аппаратная косметология
-                                </div>
-                            </Link>
-                            <Link to='/treatments/4/'>
-                                <div className={css.dropdownItem}>
-                                    Пластическая хиррургия лица
-                                </div>
-                            </Link>
+                            {
+                                Array.isArray(data) && data.map(item=>
+                                    <Link to={`/treatments/${item.id}/`}>
+                                        <div className={css.dropdownItem}>
+                                            {item.title}
+                                        </div>
+                                    </Link>
+                                )
+                            }
                             <Link to='/treatments/'>
                                 <div className={css.dropdownItem}>
                                     Другое...
@@ -94,10 +106,10 @@ export default function Component(){
                 <div className={css.menuButton} onClick={ () => setMobileMenu(true) }>
                     <GiHamburgerMenu/>
                 </div>
-                <a href='tel:+358942451501' className={css.phone}>
+                <a href={`tel:${config?.phone_raw}`} className={css.phone}>
                     <img className={css.phoneIcon} src={phone} alt="phone icon" />
                     <span className={css.phoneText}>
-                        +358 942 451 501
+                        {config?.phone}
                     </span>
                 </a>
             </div>

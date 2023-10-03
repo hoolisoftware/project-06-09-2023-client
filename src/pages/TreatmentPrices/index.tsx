@@ -1,9 +1,11 @@
 import PageLayout from '../../components/PageLayout'
 import WrapperFirstBlock from '../../components/WrapperFirstBlock'
 
+import axios from 'axios'
 import {useParams} from "react-router-dom"
+import { useQuery } from 'react-query'
 
-import getTreatment from '../../data/treatments'
+import type { Treatment } from '@/types'
 
 import Intro from '../_CommonBlocks/Intro'
 import HappyClients from '../_CommonBlocks/HappyClients'
@@ -18,19 +20,24 @@ import Block6 from './Block6'
 
 export default function Page() {
     const {treatmentId} = useParams()
-    const treatment = getTreatment(Number(treatmentId))
+    const {data} = useQuery<Treatment>({
+        queryFn: async () => {
+            const {data} = await axios.get(`http://localhost:8000/api/services/services/${treatmentId}/`) 
+            return data
+        }
+    })
 
-    document.title = 'Treatment Prices'
-
-    return <PageLayout>
+    return <PageLayout
+        title={data?.title}
+    >
         <WrapperFirstBlock>
             <Intro
-                title={treatment?.title}
-                illustration={treatment?.image}
+                title={data?.title}
+                illustration={data?.image}
             />
         </WrapperFirstBlock>
-        { treatment &&
-            <Block2 treatment={treatment}/>
+        { data &&
+            <Block2 treatment={data}/>
         }
         {
             Number(treatmentId) === 1 &&

@@ -10,7 +10,9 @@ export default function Page()
 {
     document.title = 'FAQ'
 
-    return <PageLayout>
+    return <PageLayout
+        title='FAQ'
+    >
         <WrapperFirstBlock>
             <Block1/>
         </WrapperFirstBlock>

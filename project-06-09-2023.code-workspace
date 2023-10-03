@@ -7,6 +7,12 @@
 			"path": "./src"
 		},
 		{
+			"path": "./src/types/"
+		},
+		{
+			"path": "./src/features/"
+		},
+		{
 			"path": "./src/components/"
 		},
 		{

@@ -66,7 +66,7 @@
         margin-bottom: 18px;
         outline: none;
     }
-
+    
     &Input
     {
         display: block;
@@ -80,6 +80,11 @@
         border-radius: 32px;
         resize: vertical;
         max-height: 200px;
+
+        &:disabled
+        {
+            opacity: .5;
+        }
     }
 
     &Button

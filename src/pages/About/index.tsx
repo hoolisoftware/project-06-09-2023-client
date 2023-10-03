@@ -13,9 +13,9 @@ import Block1 from './Block1'
 
 export default function Page()
 {
-    document.title = 'About us'
-
-    return <PageLayout>
+    return <PageLayout
+        title='About us'
+    >
         <WrapperFirstBlock>
             <Block1/>
         </WrapperFirstBlock>

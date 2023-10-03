@@ -8,9 +8,9 @@ import ContactForm from '../_CommonBlocks/ContactForm'
 
 export default function Page()
 {
-    document.title = 'Specialists'
-
-    return <PageLayout>
+    return <PageLayout
+        title='Специалисты'
+    >
         <WrapperFirstBlock>
             <OurTeam/>
         </WrapperFirstBlock>

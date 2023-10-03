@@ -2,21 +2,16 @@ import PageLayout from '../../components/PageLayout'
 
 import WrapperFirstBlock from '../../components/WrapperFirstBlock'
 
-import CallForm from '../_CommonBlocks/CallForm'
-import ContactForm from '../_CommonBlocks/ContactForm'
-
-import Block1 from './Block1'
+import Block from './Block'
 
 
 export default function Page()
 {
     return <PageLayout
-        title='Contact us'
+        title='Записаться на приём'
     >
         <WrapperFirstBlock>
-            <Block1/>
+            <Block/>
         </WrapperFirstBlock>
-        <CallForm/>
-        <ContactForm/>
     </PageLayout>
 }

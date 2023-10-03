@@ -1,40 +1,30 @@
 import css from './index.module.scss'
+import 'swiper/css';
 
-import arrow from '../../../assets/components/home-block6-arrow.png'
-import certificate1 from '../../../assets/components/certificates1.jpg'
-import certificate2 from '../../../assets/components/certificates2.jpg'
-import certificate3 from '../../../assets/components/certificates3.jpg'
-import certificate4 from '../../../assets/components/certificates4.jpg'
-
+import axios from 'axios'
 import { useRef, useState } from 'react'
-
+import { useQuery } from 'react-query';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper'
 
-import 'swiper/css';
-
+import arrow from '../../../assets/components/home-block6-arrow.png'
 import Heading from '../../../components/Heading'
 import Container from '../../../components/Container'
 
 
 export default function Block() {
-
-    const certificates = [
-        certificate1,
-        certificate2,
-        certificate3,
-        certificate4,    
-        certificate1,
-        certificate2,
-        certificate3,
-        certificate4,
-    ]
+    const {data} = useQuery('certificates', {
+        queryFn: async () => {
+            const {data} = await axios.get('http://localhost:8000/api/clinic/certificates/')
+            return data
+        }
+    })
 
     const swiperRef = useRef<SwiperType>()
     const [currentIndex, setCurrentIndex] = useState<number|undefined>(0)
     return <Container>
         <div className={css.heading}>
-            <Heading center>Certificates</Heading>
+            <Heading center>Наши сертификаты</Heading>
         </div>
         <div className={css.swiperContainer}>
             <Swiper
@@ -59,10 +49,10 @@ export default function Block() {
                 }}
             >
                 {
-                    certificates.map((certificate, index) =>
+                    Array.isArray(data) && data.map(item =>
                         <SwiperSlide>
                             <div className={css.certificate}>
-                                <img src={certificate} alt={`certificate${index}`} />
+                                <img src={item.image} alt={item.name} />
                             </div>
                         </SwiperSlide>
                     )
@@ -75,8 +65,8 @@ export default function Block() {
                 <img src={arrow} alt="arrow" />
             </button>
             <div className={css.sliderDots}>
-                {certificates.map((slide, index)=>
-                    <div className={[css.sliderDot, `${css.sliderDot}${slide[0]}`, index==currentIndex && css.sliderDotActive].join(' ')}></div>
+                {Array.isArray(data) && data.map((_, index)=>
+                    <div className={[css.sliderDot, index==currentIndex && css.sliderDotActive].join(' ')}></div>
                 )}
             </div>
         </div>

@@ -1,41 +1,51 @@
+import axios from 'axios'
+import { useSelector } from 'react-redux/es/hooks/useSelector'
+import { useQuery } from 'react-query'
+
+import { RootState } from '@/app/store'
 import css from './index.module.scss'
-
 import logo from '../../assets/logo.svg'
-
-import iconFacebook from '../../assets/components/footer-icon-facebook.png'
-import iconYoutube from '../../assets/components/footer-icon-youtube.png'
 import iconLocation from '../../assets/components/footer-icon-location.png'
 import iconPhone from '../../assets/components/footer-icon-phone.png'
 import iconMail from '../../assets/components/footer-icon-mail.png'
 
 
 export default function Component(){
+    const config = useSelector((state: RootState) => state.data.config)
+    const {data} = useQuery('media', {
+        queryFn: async () => {
+            const {data} = await axios.get('http://localhost:8000/api/clinic/media/')
+            return data
+        }
+    })
+
     return <div className={css.footer}>
         <div className={css.footerContainer}>
             <div className={css.section1}>
                 <div className={css.section1SectionLogo}>
                     <img className={css.logo} src={logo} alt="" />
                     <div className={css.section1Media}>
-                        <a href="https://facebook.com">
-                            <img src={iconFacebook} alt="icon" className={css.icon} />
-                        </a>
-                        <a href="https://youtube.com">
-                            <img src={iconYoutube} alt="icon" className={css.icon} />
-                        </a>
+                        {
+                            Array.isArray(data) && data.map(item =>
+                                <a href={item.link}>
+                                    <img src={item.icon} alt={item.name} className={css.icon} />
+                                </a>
+                            )
+                        }
                     </div>
                 </div>
                 <div className={css.section1SectionContacts}>
                     <div className={css.contactItem}>
                         <img src={iconLocation} alt="icon" className={css.icon} />
-                        Aleksanterinkatu 15b 2 krs
+                        {config?.address}
                     </div>
-                    <a href='tel:0942451501' className={css.contactItem}>
+                    <a href={`tel:${config?.phone_raw}`} className={css.contactItem}>
                         <img src={iconPhone} alt="icon" className={css.icon} />
-                        +358 942 451 501
+                        {config?.phone}
                     </a>
-                    <a href='mailto:info@clinicestetic.fi' className={css.contactItem}>
+                    <a href={`mailto:${config?.email}`} className={css.contactItem}>
                         <img src={iconMail} alt="icon" className={css.icon} />
-                        info@clinicestetic.fi
+                        {config?.email}
                     </a>
                 </div>
             </div>

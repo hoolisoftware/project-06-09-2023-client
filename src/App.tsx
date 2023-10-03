@@ -1,8 +1,12 @@
+import axios from 'axios'
 import {
   createBrowserRouter,
   RouterProvider,
 } from 'react-router-dom'
+import { useQuery } from 'react-query'
+import { useDispatch } from 'react-redux'
 
+import { setConfig } from '@/features/data/dataReducer'
 import Home from './pages/Home'
 import About from './pages/About'
 import Contacts from './pages/Contacts'
@@ -15,6 +19,7 @@ import TreatmentPrices from './pages/TreatmentPrices'
 import BeforeAfter from './pages/BeforeAfter'
 import News from './pages/News'
 import NewsDetail from './pages/NewsDetail'
+import Book from './pages/Book'
 
 
 const router = createBrowserRouter([
@@ -64,17 +69,33 @@ const router = createBrowserRouter([
     element: <BeforeAfter/>
   },
   {
+    path: '/training/',
+    element: <Training/>
+  },
+  {
     path: '/news/',
     element: <News/>
   },
   {
-    path: '/news/:id',
+    path: '/news/:id/',
     element: <NewsDetail/>
+  },
+  {
+    path: '/book/',
+    element: <Book/>
   }
 ])
 
 
 function App() {
+  const dispatch = useDispatch()
+  useQuery('config', {
+    queryFn: async () => {
+      const {data} = await axios.get('http://localhost:8000/api/clinic/config/')
+      dispatch(setConfig(data))
+      return data
+    }
+  })
 
   return (
     <RouterProvider router={router}/>

@@ -2,7 +2,7 @@ import css from './index.module.scss'
 
 import arrow from '../../../assets/components/treatmentprices-arrow.png'
 
-import { useState } from 'react'
+import { useQuery } from 'react-query'
 
 import Heading from '../../../components/Heading'
 import Card, {CardContent, CardTitle} from '../../../components/Card'
@@ -11,28 +11,23 @@ import Input from '../../../components/Input'
 import Button from '../../../components/Button'
 
 import Item from './Item'
+import axios from 'axios'
 
+
+interface Post{
+    id: number
+    title: string
+    excerpt: string
+    categories: string[]
+}
 
 export default function Block() {
-    const prices = [
-        'Laser Cosmetology',
-        'Laser Cosmetology',
-        'Laser Cosmetology',
-        'Laser Cosmetology',
-        'Laser Cosmetology',
-        'Laser Cosmetology',
-        'Laser Cosmetology',
-    ]
-
-    const [activeItem, setActiveItem] = useState<number|null>(0)
-
-    const toggleActiveItem = (index: number) => {
-        if (index===activeItem) {
-            setActiveItem(null)
-        } else {
-            setActiveItem(index)
+    const {data} = useQuery<Post[]>('news', {
+        queryFn: async () => {
+            const {data} = await axios.get('http://127.0.0.1:8000/api/blog/posts/')
+            return data
         }
-    } 
+    })
 
     return <Container>
         <div className={css.heading}>
@@ -41,12 +36,12 @@ export default function Block() {
         <div className={css.section}>
             <div className={css.sectionBlock}>
                 {
-                    prices.map((item, index) =>
+                    Array.isArray(data) && data?.map((item) =>
                         <Item
-                            index={index}
-                            title={item}
-                            active={index===activeItem}
-                            setActive={toggleActiveItem}
+                            id={item.id}
+                            key={item.id}
+                            title={item.title}
+                            excerpt={item.excerpt}
                         />
                     )
                 }

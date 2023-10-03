@@ -1,13 +1,13 @@
 import css from './index.module.scss'
 
-import buttonArrow from '../../../assets/components/button-arrow.svg'
-
-import { treatments } from '../../../data/treatments'
-
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import Heading from '../../../components/Heading'
-import Container from '../../../components/Container'
+import { RootState } from '@/app/store'
+import buttonArrow from '@/assets/components/button-arrow.svg'
+import Heading from '@/components/Heading'
+import Container from '@/components/Container'
+
 
 interface props
 {
@@ -16,6 +16,7 @@ interface props
 
 
 export default function Block(props: props) {
+    const data = useSelector((state: RootState) => state.data.treatments)
 
     return <Container>
         <div className={css.heading}>
@@ -26,19 +27,19 @@ export default function Block(props: props) {
             </div>
             <div className={css.treatments}>
                 {
-                    treatments.map(item=>
+                    Array.isArray(data) && data.map(item=>
                         <div className={css.treatment}>
                             <div className={css.treatmentImageContainer}>
                                 <img className={css.treatmentImage} src={item.image} alt="treatmentImage" />
-                                <Link to={item.link ? item.link : `/treatments/${item.id}/`} className={css.treatmentLink}>
+                                <Link to={`/treatments/${item.id}/`} className={css.treatmentLink}>
                                     <img src={buttonArrow} alt="arrow" />
                                 </Link>
                             </div>
                             <div className={css.treatmentContent}>
                                 <div className={css.treatmentName}>{item.title}</div>
                                 {
-                                    props.showPoints && item.points?.map(point =>
-                                        <div className={css.treatmentPoint}>{point}</div>
+                                    props.showPoints && item.prices?.slice(0, 10)?.map(price =>
+                                        <div className={css.treatmentPoint}>{price.title}</div>
                                     )
                                 }
                             </div>

@@ -2,7 +2,10 @@ import css from './index.module.scss'
 
 import arrow from '../../assets/components/news-arrow.png'
 
+import axios from 'axios'
 import {useSelector, useDispatch} from 'react-redux'
+import { useMutation } from 'react-query'
+import FormData from "form-data";
 
 import { AiOutlineCloseCircle, AiFillCheckCircle } from 'react-icons/ai'
 
@@ -16,6 +19,11 @@ import Button from '../Button'
 
 
 export default function Modal() {
+    const mutation = useMutation({
+        mutationFn: async (newFeedbackForm: FormData) => {
+            return axios.post('http://localhost:8000/api/booking/form-feedback/', newFeedbackForm)
+        }
+    })
     const modalMessage = useSelector((state: RootState) => state.modal.modalMessage)
     const dispatch = useDispatch()
 
@@ -27,31 +35,42 @@ export default function Modal() {
     }>
         <div className={css.bg} onClick={ () => dispatch(toggleModalMessage()) }></div>
         <Card className={css.modal}>
-            <CardContent>
-                <div className={css.buttonClose} onClick={() => dispatch(toggleModalMessage())}>
-                    <AiOutlineCloseCircle/>
-                </div>
-                <div className={css.heading}>
-                    <Heading>Вы можете оставить нам сообщение!</Heading>
-                </div>
-                <Input
-                    type='text'
-                    placeholder='Ваше имя*'
-                    fullWidth
-                />
-                <Input
-                    type='number'
-                    placeholder='Ваш телефон'
-                    fullWidth
-                />
-                <Button fullWidth>Оставить сообщение&nbsp;&nbsp;<img className={css.arrow} src={arrow} alt="arrow" /></Button>
-                <br />
-                <p>
-                    <AiFillCheckCircle/>
-                    &nbsp;
-                    Заявка отправлена, мы свяжемся с вами!
-                </p>
-            </CardContent>
+            <form onSubmit={ e => {e.preventDefault(); mutation.mutate(new FormData(e.currentTarget))} }>
+                <CardContent>
+                    <div className={css.buttonClose} onClick={() => dispatch(toggleModalMessage())}>
+                        <AiOutlineCloseCircle/>
+                    </div>
+                    <div className={css.heading}>
+                        <Heading>Получите консультацию по интересующему вас вопросу!</Heading>
+                    </div>
+                    <Input
+                        type='text'
+                        placeholder='Ваше имя*'
+                        name='full_name'
+                        fullWidth
+                        disabled={mutation.isSuccess}
+                        required
+                    />
+                    <Input
+                        type='text'
+                        placeholder='Ваш телефон'
+                        name='phone_number'
+                        fullWidth
+                        disabled={mutation.isSuccess}
+                        required
+                    />
+                    <Button disabled={mutation.isSuccess} fullWidth>Оставить сообщение&nbsp;&nbsp;<img className={css.arrow} src={arrow} alt="arrow" /></Button>
+                    <br />
+                    {
+                        mutation.isSuccess &&
+                        <p>
+                            <AiFillCheckCircle/>
+                            &nbsp;
+                            Заявка отправлена, мы свяжемся с вами!
+                        </p>
+                    }
+                </CardContent>
+            </form>
         </Card>
     </div>
 }

@@ -5,7 +5,7 @@ import arrow from '../../../assets/components/treatmentprices-arrow.png'
 import { useDispatch } from 'react-redux'
 import { toggleModalMessage } from '../../../features/modal/modalReducer'
 
-import type { Treatment } from '../../../data/treatments'
+import type { Treatment } from '@/types'
 
 import Heading from '../../../components/Heading'
 import Card, {CardContent} from '../../../components/Card'

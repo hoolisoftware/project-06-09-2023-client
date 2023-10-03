@@ -8,9 +8,9 @@ import Block1 from './Block1'
 
 export default function Page()
 {
-    document.title = 'Стоимость'
-
-    return <PageLayout>
+    return <PageLayout
+        title='Прайс лист'
+    >
         <WrapperFirstBlock>
             <Block1/>
         </WrapperFirstBlock>

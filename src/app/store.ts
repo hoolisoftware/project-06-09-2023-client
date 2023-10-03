@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 
 import modalReducer from '../features/modal/modalReducer'
+import dataReducer from '../features/data/dataReducer'
 
 export const store = configureStore({
   reducer: {
     modal: modalReducer,
+    data: dataReducer
   },
 })
 

@@ -12,9 +12,9 @@ import illustration from '../../assets/components/treatmentdetail-introillustrat
 
 export default function Page()
 {
-    document.title = 'Training'
-
-    return <PageLayout>
+    return <PageLayout
+        title='Обучение'
+    >
         <WrapperFirstBlock>
             <Intro
                 title={'Training'}
