@@ -15,7 +15,7 @@ import Input from '../../../components/Input'
 export default function Block(){
     const mutation = useMutation({
         mutationFn: async (newCallForm: FormData) => {
-            return axios.post('http://localhost:8000/api/booking/form-phone/', newCallForm)
+            return axios.post('https://preview.hoolisoftware.xyz/api/booking/form-phone/', newCallForm)
         },
         onSuccess: () => {
             alert('Мы вам скоро перезвоним!')

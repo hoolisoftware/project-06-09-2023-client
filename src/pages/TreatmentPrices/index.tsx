@@ -22,7 +22,7 @@ export default function Page() {
     const {treatmentId} = useParams()
     const {data} = useQuery<Treatment>({
         queryFn: async () => {
-            const {data} = await axios.get(`http://localhost:8000/api/services/services/${treatmentId}/`) 
+            const {data} = await axios.get(`https://preview.hoolisoftware.xyz/api/services/services/${treatmentId}/`) 
             return data
         }
     })

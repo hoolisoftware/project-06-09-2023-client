@@ -13,7 +13,7 @@ import Card from '../../../components/Card'
 export default function Block() {
     const {data} = useQuery('specialists', {
         queryFn: async () => {
-            const {data} = await axios.get('http://localhost:8000/api/clinic/specialists/')
+            const {data} = await axios.get('https://preview.hoolisoftware.xyz/api/clinic/specialists/')
             return data
         }
     })

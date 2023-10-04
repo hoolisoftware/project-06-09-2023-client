@@ -15,7 +15,7 @@ import Container from '../../../components/Container'
 export default function Block() {
     const {data} = useQuery('certificates', {
         queryFn: async () => {
-            const {data} = await axios.get('http://localhost:8000/api/clinic/certificates/')
+            const {data} = await axios.get('https://preview.hoolisoftware.xyz/api/clinic/certificates/')
             return data
         }
     })

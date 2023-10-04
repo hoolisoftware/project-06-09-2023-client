@@ -20,7 +20,7 @@ export default function Block() {
     
     const {data} = useQuery({
         queryFn: async () => {
-            const {data} = await axios.get('http://localhost:8000/api/services/services/')
+            const {data} = await axios.get('https://preview.hoolisoftware.xyz/api/services/services/')
             return data
         }
     })

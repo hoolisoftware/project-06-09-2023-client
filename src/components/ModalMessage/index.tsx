@@ -21,7 +21,7 @@ import Button from '../Button'
 export default function Modal() {
     const mutation = useMutation({
         mutationFn: async (newFeedbackForm: FormData) => {
-            return axios.post('http://localhost:8000/api/booking/form-feedback/', newFeedbackForm)
+            return axios.post('https://preview.hoolisoftware.xyz/api/booking/form-feedback/', newFeedbackForm)
         }
     })
     const modalMessage = useSelector((state: RootState) => state.modal.modalMessage)

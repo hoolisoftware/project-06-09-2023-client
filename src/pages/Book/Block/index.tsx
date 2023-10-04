@@ -17,7 +17,7 @@ export default function Block() {
 	const queryClient = useQueryClient();
 	const mutation = useMutation({
         mutationFn: async (newBooking: FormData) => {
-            return await axios.post('http://localhost:8000/api/booking/booking/', newBooking)
+            return await axios.post('https://preview.hoolisoftware.xyz/api/booking/booking/', newBooking)
         }
     })
 	const [step, setStep] = useState<Step>("date");
@@ -27,7 +27,7 @@ export default function Block() {
 	const { data } = useQuery("booking-sessions", {
 		queryFn: async () => {
 			const { data } = await axios.get(
-				"http://localhost:8000/api/booking/booking-sessions/"
+				"https://preview.hoolisoftware.xyz/api/booking/booking-sessions/"
 			);
 			return data;
 		},
@@ -53,7 +53,7 @@ export default function Block() {
 							const data = await queryClient.fetchQuery("booking", {
 								queryFn: async () => {
 									const { data } = await axios.get(
-										`http://localhost:8000/api/booking/booking?date=${date}`
+										`https://preview.hoolisoftware.xyz/api/booking/booking?date=${date}`
 									);
 									return data;
 								},

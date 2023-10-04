@@ -91,7 +91,7 @@ function App() {
   const dispatch = useDispatch()
   useQuery('config', {
     queryFn: async () => {
-      const {data} = await axios.get('http://localhost:8000/api/clinic/config/')
+      const {data} = await axios.get('https://preview.hoolisoftware.xyz/api/clinic/config/')
       dispatch(setConfig(data))
       return data
     }

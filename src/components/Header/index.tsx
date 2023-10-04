@@ -21,7 +21,7 @@ export default function Component(){
     const config = useSelector((state: RootState) => state.data.config)
     const {data} = useQuery('services', {
         queryFn: async () => {
-            const {data} = await axios.get('http://localhost:8000/api/services/services/')
+            const {data} = await axios.get('https://preview.hoolisoftware.xyz/api/services/services/')
             dispatch(setTreatments(data))
             return data
         },

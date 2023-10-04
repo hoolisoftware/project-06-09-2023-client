@@ -14,7 +14,7 @@ export default function Component(){
     const config = useSelector((state: RootState) => state.data.config)
     const {data} = useQuery('media', {
         queryFn: async () => {
-            const {data} = await axios.get('http://localhost:8000/api/clinic/media/')
+            const {data} = await axios.get('https://preview.hoolisoftware.xyz/api/clinic/media/')
             return data
         }
     })
