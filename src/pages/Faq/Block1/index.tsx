@@ -1,5 +1,6 @@
 import css from './index.module.scss'
 
+import { API_URL } from '@/config'
 import axios from 'axios'
 import { useState } from 'react'
 import { useQuery } from 'react-query'
@@ -20,7 +21,7 @@ interface FAQ
 export default function Block() {
     const {data, status} = useQuery('faq', {
         queryFn: async () => {
-            const {data} = await axios.get('http://127.0.0.1:8000/api/faq/faq/')
+            const {data} = await axios.get(`${API_URL}faq/faq/`)
             return data
         }
     })

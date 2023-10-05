@@ -2,6 +2,8 @@ import css from './index.module.scss'
 
 import arrow from '../../../assets/components/treatmentprices-arrow.png'
 
+import { API_URL } from '@/config'
+import axios from 'axios'
 import { useQuery } from 'react-query'
 
 import Heading from '../../../components/Heading'
@@ -11,7 +13,6 @@ import Input from '../../../components/Input'
 import Button from '../../../components/Button'
 
 import Item from './Item'
-import axios from 'axios'
 
 
 interface Post{
@@ -24,7 +25,7 @@ interface Post{
 export default function Block() {
     const {data} = useQuery<Post[]>('news', {
         queryFn: async () => {
-            const {data} = await axios.get('http://127.0.0.1:8000/api/blog/posts/')
+            const {data} = await axios.get(`${API_URL}blog/posts/`)
             return data
         }
     })

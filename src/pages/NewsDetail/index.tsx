@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import Markdown from 'react-markdown'
 
+import { API_URL } from '@/config'
 import type { Post } from '@/types'
 import iconFacebook from '../../assets/components/newsdetail-iconfacebook.png'
 import iconYoutube from '../../assets/components/newsdetail-iconyoutube.png'
@@ -19,7 +20,7 @@ export default function Page() {
     const {id} = useParams()
     const {data} = useQuery<Post>('post_detail', {
         queryFn: async () => {
-            const {data} = await axios.get(`http://127.0.0.1:8000/api/blog/posts/${id}/`)
+            const {data} = await axios.get(`${API_URL}blog/posts/${id}/`)
             return data
         }
     })
