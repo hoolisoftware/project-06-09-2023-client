@@ -76,8 +76,8 @@ export default function Block() {
                 }}
             >
                 {
-                    slides.map(slide =>
-                        <SwiperSlide>
+                    slides.map((slide, index) =>
+                        <SwiperSlide key={index}>
                             <div className={css.card}>
                                 <div className={css.cardText}>
                                     {slide[2]}
@@ -97,7 +97,7 @@ export default function Block() {
             </button>
             <div className={css.sliderDots}>
                 {slides.map((slide, index)=>
-                    <div className={[css.sliderDot, `${css.sliderDot}${slide[0]}`, index==currentIndex && css.sliderDotActive].join(' ')}></div>
+                    <div key={index} className={[css.sliderDot, `${css.sliderDot}${slide[0]}`, index==currentIndex && css.sliderDotActive].join(' ')}></div>
                 )}
             </div>
         </div>

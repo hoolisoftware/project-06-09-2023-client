@@ -28,7 +28,7 @@ export default function Block(props: props) {
             <div className={css.treatments}>
                 {
                     Array.isArray(data) && data.map(item=>
-                        <div className={css.treatment}>
+                        <div className={css.treatment} key={item.id}>
                             <div className={css.treatmentImageContainer}>
                                 <img className={css.treatmentImage} src={item.image} alt="treatmentImage" />
                                 <Link to={`/treatments/${item.id}/`} className={css.treatmentLink}>
@@ -38,8 +38,8 @@ export default function Block(props: props) {
                             <div className={css.treatmentContent}>
                                 <div className={css.treatmentName}>{item.title}</div>
                                 {
-                                    props.showPoints && item.prices?.slice(0, 10)?.map(price =>
-                                        <div className={css.treatmentPoint}>{price.title}</div>
+                                    props.showPoints && item.prices?.slice(0, 10)?.map((price, index) =>
+                                        <div className={css.treatmentPoint} key={index}>{price.title}</div>
                                     )
                                 }
                             </div>

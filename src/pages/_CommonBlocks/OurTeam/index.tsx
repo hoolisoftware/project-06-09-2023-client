@@ -29,7 +29,7 @@ export default function Block() {
                 <div className={css.cards}>
                     {
                         Array.isArray(data) && data.map(item =>
-                            <Card className={css.card}>
+                            <Card className={css.card} key={item.id}>
                                 <div className={css.cardInner}>
                                     <img className={css.cardImage} src={item.photo}/>
                                     <div className={css.cardName}>{item.full_name}</div>

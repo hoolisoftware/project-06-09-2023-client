@@ -8,7 +8,7 @@ interface props extends React.HTMLAttributes<HTMLButtonElement>
 
 export default function Button(props: props)
 {
-    return <button {...props} disabled={props.disabled} className={
+    return <button disabled={props.disabled} className={
         [
             css.button,
             props.fullWidth && css.fullWidth,

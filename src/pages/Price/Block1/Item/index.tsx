@@ -31,8 +31,8 @@ export default function Item(props: props) {
                     props.active &&
                     <CardContent>
                         {
-                            props.treatment.prices?.map(item => (
-                                <>
+                            props.treatment.prices?.map((item, index) => (
+                                <div key={index}>
                                     { item.prices.length ?
                                         <>
                                             <div className={css.contentHeading}>
@@ -40,8 +40,8 @@ export default function Item(props: props) {
                                             </div>        
                                             {
                                                 item.prices?.map(
-                                                    item => (
-                                                        <div className={css.contentPriceBlock}>
+                                                    (item, index) => (
+                                                        <div key={index} className={css.contentPriceBlock}>
                                                             <span>{item.title}</span>
                                                             {
                                                                 item.price === -1 ? '' :
@@ -63,7 +63,7 @@ export default function Item(props: props) {
                                             }
                                         </div>
                                     }
-                                </>
+                                </div>
                             ))
                         }
                     </CardContent>

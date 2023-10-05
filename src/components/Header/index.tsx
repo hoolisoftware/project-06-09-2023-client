@@ -73,7 +73,7 @@ export default function Component(){
                         </div>
                     </li>
                     <li className={location.pathname === '/specialists/' ? css.active : ''}>
-                        <Link to='/specialists/'><Link to='/specialists/'>Специалисты</Link></Link>
+                        <Link to='/specialists/'>Специалисты</Link>
                     </li>
                     <li className={location.pathname === '/treatments/' ? css.active : ''}>
                         <Link to='/treatments/'>
@@ -83,7 +83,7 @@ export default function Component(){
                         <div className={css.dropdown}>
                             {
                                 Array.isArray(data) && data.map(item=>
-                                    <Link to={`/treatments/${item.id}/`}>
+                                    <Link to={`/treatments/${item.id}/`} key={item.id}>
                                         <div className={css.dropdownItem}>
                                             {item.title}
                                         </div>

@@ -1,5 +1,5 @@
 #!/bin/bash
 
-export CLINIC_API_URL=https://preview.hoolisoftware.xyz/api/
+export CLINIC_API_URL=/api/
 
 yarn preview

@@ -51,7 +51,7 @@ export default function Block() {
             >
                 {
                     Array.isArray(data) && data.map(item =>
-                        <SwiperSlide>
+                        <SwiperSlide key={item.name}>
                             <div className={css.certificate}>
                                 <img src={item.image} alt={item.name} />
                             </div>
@@ -67,7 +67,7 @@ export default function Block() {
             </button>
             <div className={css.sliderDots}>
                 {Array.isArray(data) && data.map((_, index)=>
-                    <div className={[css.sliderDot, index==currentIndex && css.sliderDotActive].join(' ')}></div>
+                    <div key={index} className={[css.sliderDot, index==currentIndex && css.sliderDotActive].join(' ')}></div>
                 )}
             </div>
         </div>

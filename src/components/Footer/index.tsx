@@ -27,8 +27,8 @@ export default function Component(){
                     <img className={css.logo} src={logo} alt="" />
                     <div className={css.section1Media}>
                         {
-                            Array.isArray(data) && data.map(item =>
-                                <a href={item.link}>
+                            Array.isArray(data) && data.map((item, index) =>
+                                <a href={item.link} key={index}>
                                     <img src={item.icon} alt={item.name} className={css.icon} />
                                 </a>
                             )
