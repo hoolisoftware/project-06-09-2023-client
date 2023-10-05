@@ -1,8 +1,9 @@
 import css from './index.module.scss'
 
+import { Link } from 'react-router-dom'
+
 import arrow from '../../../assets/components/treatmentprices-arrow.png'
 
-import { useDispatch } from 'react-redux'
 import { toggleModalMessage } from '../../../features/modal/modalReducer'
 
 import type { Treatment } from '@/types'
@@ -22,7 +23,6 @@ interface props
 
 
 export default function Block(props: props) {
-    const dispatch = useDispatch()
 
     return <Container>
         <div className={css.heading}>
@@ -38,11 +38,13 @@ export default function Block(props: props) {
                         <div className={css.cardContent}>
                             <div className={css.cardTitle}>Записаться на консультацию со специалистом</div>
                             <div className={css.cardText}>Выберите удобный день и время</div>
-                            <Button fullWidth onClick={ () => dispatch(toggleModalMessage()) }>
-                                Записаться
-                                &nbsp;
-                                <img src={arrow} alt="arrow" />
-                            </Button>
+                            <Link to='/book/' className={css.button}>
+                                <Button fullWidth>
+                                    Записаться
+                                    &nbsp;
+                                    <img src={arrow} alt="arrow" />
+                                </Button>
+                            </Link>
                         </div>
                     </CardContent>
                 </Card>

@@ -5,9 +5,8 @@ import arrow from '../../../assets/components/treatmentprices-arrow.png'
 import { API_URL } from '@/config'
 import axios from 'axios'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
 import { useQuery } from 'react-query'
-import { toggleModalMessage } from '../../../features/modal/modalReducer'
+import { Link } from 'react-router-dom'
 
 import Heading from '../../../components/Heading'
 import Card, {CardContent, CardTitle} from '../../../components/Card'
@@ -26,7 +25,6 @@ export default function Block() {
         }
     })
 
-    const dispatch = useDispatch()
     const [activeItem, setActiveItem] = useState<number|null>(0)
 
     const toggleActiveItem = (index: number) => {
@@ -63,11 +61,13 @@ export default function Block() {
                                 <div className={css.cardTitle}>Записаться на консультацию со специалистом</div>
                             </CardTitle>
                             <div className={css.cardText}>Выберите удобный день и время</div>
-                            <Button fullWidth onClick={ () => dispatch(toggleModalMessage()) }>
-                                Записаться
-                                &nbsp;
-                                <img src={arrow} alt="arrow" />
-                            </Button>
+                            <Link to='/book/' className={css.button}>
+                                <Button fullWidth>
+                                    Записаться
+                                    &nbsp;
+                                    <img src={arrow} alt="arrow" />
+                                </Button>
+                            </Link>
                         </div>
                     </CardContent>
                 </Card>

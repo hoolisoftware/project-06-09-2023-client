@@ -83,6 +83,10 @@
 
 .button
 {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    text-decoration: none;
     background: #E36C9C;
     border: none;
     outline: none;

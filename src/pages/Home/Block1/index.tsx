@@ -1,7 +1,6 @@
 import css from './index.module.scss'
 
-import {useDispatch} from 'react-redux'
-import { toggleModalMessage } from '../../../features/modal/modalReducer'
+import { Link } from 'react-router-dom'
 
 import circle from '../../../assets/components/home-block1-circle.svg'
 import bgLayer1 from '../../../assets/components/home-block1-bglayer1.png'
@@ -9,7 +8,6 @@ import bgLayer2 from '../../../assets/components/home-block1-bglayer2.png'
 import bgLayer3 from '../../../assets/components/home-block1-bglayer3.png'
 
 export default function Block(){
-    const dispatch = useDispatch()
 
     return <div className={css.container}>
         <img className={css.bgLayer1} src={bgLayer1} alt="bgLayer1" />
@@ -20,7 +18,7 @@ export default function Block(){
             <div className={css.circleContent}>
                 <div className={css.circleContentHeading}>Запишитесь</div>
                 <div className={css.circleContentDescription}>на бесплатный приём в клинику<br /> пластической хирургии «Clinicestetic»</div>
-                <button className={css.button} onClick={ () => dispatch(toggleModalMessage()) }>Записаться на приём</button>
+                <Link to='/book/' className={css.button}>Записаться на приём</Link>
             </div>
         </div>
     </div>

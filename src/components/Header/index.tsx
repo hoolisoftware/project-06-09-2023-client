@@ -12,7 +12,7 @@ import { AiOutlineClose } from 'react-icons/ai'
 
 import { RootState } from '@/app/store'
 import arrow from '../../assets/icons/arrow-down.svg'
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.png'
 import phone from '../../assets/icons/phone.svg'
 import { setTreatments } from '@/features/data/dataReducer'
 
