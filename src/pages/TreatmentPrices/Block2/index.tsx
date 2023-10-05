@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom'
 
 import arrow from '../../../assets/components/treatmentprices-arrow.png'
 
-import { toggleModalMessage } from '../../../features/modal/modalReducer'
-
 import type { Treatment } from '@/types'
 
 import Heading from '../../../components/Heading'
