@@ -1,3 +1,4 @@
+import { API_URL } from '@/config'
 import axios from 'axios'
 import { useSelector } from 'react-redux/es/hooks/useSelector'
 import { useQuery } from 'react-query'
@@ -14,7 +15,7 @@ export default function Component(){
     const config = useSelector((state: RootState) => state.data.config)
     const {data} = useQuery('media', {
         queryFn: async () => {
-            const {data} = await axios.get('https://preview.hoolisoftware.xyz/api/clinic/media/')
+            const {data} = await axios.get(`${API_URL}clinic/media/`)
             return data
         }
     })

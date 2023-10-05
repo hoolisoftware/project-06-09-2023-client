@@ -1,6 +1,7 @@
 import css from './index.module.scss'
 import 'swiper/css';
 
+import { API_URL } from '@/config';
 import axios from 'axios'
 import { useRef, useState } from 'react'
 import { useQuery } from 'react-query';
@@ -15,7 +16,7 @@ import Container from '../../../components/Container'
 export default function Block() {
     const {data} = useQuery('certificates', {
         queryFn: async () => {
-            const {data} = await axios.get('https://preview.hoolisoftware.xyz/api/clinic/certificates/')
+            const {data} = await axios.get(`${API_URL}clinic/certificates/`)
             return data
         }
     })

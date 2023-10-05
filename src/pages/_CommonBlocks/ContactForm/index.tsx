@@ -1,5 +1,6 @@
 import css from './index.module.scss'
 
+import { API_URL } from '@/config'
 import axios from 'axios'
 import { useMutation } from 'react-query'
 import { AiFillCheckCircle } from 'react-icons/ai'
@@ -16,7 +17,7 @@ import Button from '../../../components/Button'
 export default function Block(){
     const mutation = useMutation({
         mutationFn: async (newFeedbackForm: FormData) => {
-            return axios.post('https://preview.hoolisoftware.xyz/api/booking/form-feedback/', newFeedbackForm)
+            return axios.post(`${API_URL}booking/form-feedback/`, newFeedbackForm)
         }
     })
 

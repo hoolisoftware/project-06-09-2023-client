@@ -1,3 +1,4 @@
+import { API_URL } from '@/config'
 import axios from 'axios'
 import {
   createBrowserRouter,
@@ -91,7 +92,7 @@ function App() {
   const dispatch = useDispatch()
   useQuery('config', {
     queryFn: async () => {
-      const {data} = await axios.get('https://preview.hoolisoftware.xyz/api/clinic/config/')
+      const {data} = await axios.get(`${API_URL}clinic/config/`)
       dispatch(setConfig(data))
       return data
     }

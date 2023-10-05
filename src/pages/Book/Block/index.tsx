@@ -1,4 +1,6 @@
 import css from "./index.module.scss";
+
+import { API_URL } from "@/config";
 import axios from "axios";
 import { useState } from "react";
 import { useQuery, useQueryClient, useMutation } from "react-query";
@@ -17,7 +19,7 @@ export default function Block() {
 	const queryClient = useQueryClient();
 	const mutation = useMutation({
         mutationFn: async (newBooking: FormData) => {
-            return await axios.post('https://preview.hoolisoftware.xyz/api/booking/booking/', newBooking)
+            return await axios.post(`${API_URL}booking/booking/`, newBooking)
         }
     })
 	const [step, setStep] = useState<Step>("date");
@@ -27,7 +29,7 @@ export default function Block() {
 	const { data } = useQuery("booking-sessions", {
 		queryFn: async () => {
 			const { data } = await axios.get(
-				"https://preview.hoolisoftware.xyz/api/booking/booking-sessions/"
+				`${API_URL}booking/booking-sessions/`
 			);
 			return data;
 		},
@@ -53,7 +55,7 @@ export default function Block() {
 							const data = await queryClient.fetchQuery("booking", {
 								queryFn: async () => {
 									const { data } = await axios.get(
-										`https://preview.hoolisoftware.xyz/api/booking/booking?date=${date}`
+										`${API_URL}booking/booking?date=${date}`
 									);
 									return data;
 								},
@@ -137,8 +139,8 @@ export default function Block() {
 									sx={{ mb: 3 }}
 									name="phone_number"
 								/>
-								<input name='date' value={date} type="text" />
-								<input name='session' value={session} type="text" />
+								<input hidden name='date' value={date} type="text" />
+								<input hidden name='session' value={session} type="text" />
 
 								<Button type='submit' fullWidth variant="contained" sx={{ boxShadow: null }}>
 									Записаться

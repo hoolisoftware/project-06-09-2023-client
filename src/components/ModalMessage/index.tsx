@@ -2,6 +2,7 @@ import css from './index.module.scss'
 
 import arrow from '../../assets/components/news-arrow.png'
 
+import { API_URL } from '@/config'
 import axios from 'axios'
 import {useSelector, useDispatch} from 'react-redux'
 import { useMutation } from 'react-query'
@@ -21,7 +22,7 @@ import Button from '../Button'
 export default function Modal() {
     const mutation = useMutation({
         mutationFn: async (newFeedbackForm: FormData) => {
-            return axios.post('https://preview.hoolisoftware.xyz/api/booking/form-feedback/', newFeedbackForm)
+            return axios.post(`${API_URL}booking/form-feedback/`, newFeedbackForm)
         }
     })
     const modalMessage = useSelector((state: RootState) => state.modal.modalMessage)

@@ -1,5 +1,6 @@
 import css from './index.module.scss'
 
+import { API_URL } from '@/config'
 import axios from 'axios'
 import { useQuery } from 'react-query'
 import Markdown from 'react-markdown'
@@ -13,7 +14,7 @@ import Card from '../../../components/Card'
 export default function Block() {
     const {data} = useQuery('specialists', {
         queryFn: async () => {
-            const {data} = await axios.get('https://preview.hoolisoftware.xyz/api/clinic/specialists/')
+            const {data} = await axios.get(`${API_URL}clinic/specialists/`)
             return data
         }
     })

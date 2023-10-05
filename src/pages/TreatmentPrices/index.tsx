@@ -1,6 +1,7 @@
 import PageLayout from '../../components/PageLayout'
 import WrapperFirstBlock from '../../components/WrapperFirstBlock'
 
+import { API_URL } from '@/config'
 import axios from 'axios'
 import {useParams} from "react-router-dom"
 import { useQuery } from 'react-query'
@@ -22,7 +23,7 @@ export default function Page() {
     const {treatmentId} = useParams()
     const {data} = useQuery<Treatment>({
         queryFn: async () => {
-            const {data} = await axios.get(`https://preview.hoolisoftware.xyz/api/services/services/${treatmentId}/`) 
+            const {data} = await axios.get(`${API_URL}services/services/${treatmentId}/`) 
             return data
         }
     })

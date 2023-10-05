@@ -2,6 +2,7 @@ import css from './index.module.scss'
 
 import arrow from '../../../assets/components/treatmentprices-arrow.png'
 
+import { API_URL } from '@/config'
 import axios from 'axios'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
@@ -20,7 +21,7 @@ export default function Block() {
     
     const {data} = useQuery({
         queryFn: async () => {
-            const {data} = await axios.get('https://preview.hoolisoftware.xyz/api/services/services/')
+            const {data} = await axios.get(`${API_URL}services/services/`)
             return data
         }
     })
