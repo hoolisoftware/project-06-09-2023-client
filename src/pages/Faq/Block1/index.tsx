@@ -43,7 +43,7 @@ export default function Block() {
         <div className={css.items}>
             {
                 status === 'success' &&
-                data.map((item: FAQ) =>
+                Array.isArray(data) && data.map((item: FAQ) =>
                     <Item
                         index={item.id}
                         active={item.id === activeQuestion}    
