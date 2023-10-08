@@ -32,6 +32,7 @@ export default function Page() {
         title={data?.title}
     >
         <WrapperFirstBlock>
+            {treatmentId}
             <Intro
                 title={data?.title}
                 illustration={data?.image}

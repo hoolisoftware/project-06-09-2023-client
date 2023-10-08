@@ -83,11 +83,11 @@ export default function Component(){
                         <div className={css.dropdown}>
                             {
                                 Array.isArray(data) && data.map(item=>
-                                    <Link to={`/treatments/${item.id}/`} key={item.id}>
+                                    <a href={`/treatments/${item.id}/`} key={item.id}>
                                         <div className={css.dropdownItem}>
                                             {item.title}
                                         </div>
-                                    </Link>
+                                    </a>
                                 )
                             }
                             <Link to='/training/'>
