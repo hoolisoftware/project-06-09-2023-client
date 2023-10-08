@@ -1,67 +1,50 @@
+import axios from 'axios'
+import { useQuery } from 'react-query'
+
 import css from './index.module.scss'
 
-import illustration1 from '../../../assets/components/beforeafter-illustration1.jpg'
-import illustration2 from '../../../assets/components/beforeafter-illustration2.jpg'
-import illustration3 from '../../../assets/components/beforeafter-illustration3.jpg'
+import { API_URL } from '@/config'
 
 import Heading from '../../../components/Heading'
 
+
+interface BeforeAfterUnit {
+    id: number
+    image: string
+    name: string
+}
+
+
 export default function Block() {
+    const {data} = useQuery('before-after-sections', {
+        queryFn: async () => {
+            const {data} = await axios.get(`${API_URL}clinic/before-after-sections/`)
+            console.log(data)
+            return data
+        }
+    })
+
     return <div className={css.block}>
         <div className={css.container}>
             <div className={css.heading}>
                 <Heading center>Before and after</Heading>
             </div>
-            <div className={css.section}>
-                <div className={css.sectionInner}>
-                    <div className={css.sectionHeading}>Laser Cosmetology</div>
-                    <div className={css.sectionIllustrations}>
-                        <img className={css.sectionIllustration} src={illustration1} alt="illustration" />
-                        <img className={css.sectionIllustration} src={illustration2} alt="illustration" />
-                        <img className={css.sectionIllustration} src={illustration3} alt="illustration" />
+            {
+                Array.isArray(data) && data.map(item =>
+                    <div className={css.section}>
+                        <div className={css.sectionInner}>
+                            <div className={css.sectionHeading}>{item.title}</div>
+                            <div className={css.sectionIllustrations}>
+                                {
+                                    item.units.map((unit: BeforeAfterUnit) =>
+                                        <img className={css.sectionIllustration} src={unit.image} alt={unit.name} />
+                                    )
+                                }
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div className={css.section}>
-                <div className={css.sectionInner}>
-                    <div className={css.sectionHeading}>Laser Cosmetology</div>
-                    <div className={css.sectionIllustrations}>
-                        <img className={css.sectionIllustration} src={illustration1} alt="illustration" />
-                        <img className={css.sectionIllustration} src={illustration2} alt="illustration" />
-                        <img className={css.sectionIllustration} src={illustration3} alt="illustration" />
-                    </div>
-                </div>
-            </div>
-            <div className={css.section}>
-                <div className={css.sectionInner}>
-                    <div className={css.sectionHeading}>Laser Cosmetology</div>
-                    <div className={css.sectionIllustrations}>
-                        <img className={css.sectionIllustration} src={illustration1} alt="illustration" />
-                        <img className={css.sectionIllustration} src={illustration2} alt="illustration" />
-                        <img className={css.sectionIllustration} src={illustration3} alt="illustration" />
-                    </div>
-                </div>
-            </div>
-            <div className={css.section}>
-                <div className={css.sectionInner}>
-                    <div className={css.sectionHeading}>Laser Cosmetology</div>
-                    <div className={css.sectionIllustrations}>
-                        <img className={css.sectionIllustration} src={illustration1} alt="illustration" />
-                        <img className={css.sectionIllustration} src={illustration2} alt="illustration" />
-                        <img className={css.sectionIllustration} src={illustration3} alt="illustration" />
-                    </div>
-                </div>
-            </div>
-            <div className={css.section}>
-                <div className={css.sectionInner}>
-                    <div className={css.sectionHeading}>Laser Cosmetology</div>
-                    <div className={css.sectionIllustrations}>
-                        <img className={css.sectionIllustration} src={illustration1} alt="illustration" />
-                        <img className={css.sectionIllustration} src={illustration2} alt="illustration" />
-                        <img className={css.sectionIllustration} src={illustration3} alt="illustration" />
-                    </div>
-                </div>
-            </div>
+                )
+            }
         </div>
     </div>
 }

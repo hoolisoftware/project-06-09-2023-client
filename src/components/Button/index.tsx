@@ -4,11 +4,12 @@ interface props extends React.HTMLAttributes<HTMLButtonElement>
 {
     fullWidth?: boolean
     disabled?: boolean
+    type?: 'button' | 'submit' | 'reset'
 }
 
 export default function Button(props: props)
 {
-    return <button disabled={props.disabled} className={
+    return <button type={props.type} disabled={props.disabled} className={
         [
             css.button,
             props.fullWidth && css.fullWidth,

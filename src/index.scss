@@ -39,3 +39,42 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+a
+{
+  text-decoration: none;
+}
+
+.MuiPickersDay-root.Mui-selected:not(.Mui-disabled)
+{
+  background: #E983AA !important;
+  border-radius: 100px;
+  color: #fff !important;
+  overflow: hidden;
+  border: none !important;
+}
+
+.MuiButton-sizeMedium
+{
+  padding: 10px 20px !important;
+}
+
+.MuiButtonBase-root:not(.MuiPickersDay-root)
+{
+  border-radius: 100px;
+  overflow: hidden;
+  font-weight: bold;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.MuiButtonBase-root:not(.MuiPickersDay-root):not(.Mui-disabled)
+{
+  background: #E983AA !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.MuiPickersCalendarHeader-switchViewButton
+{
+  display: none !important;
+}

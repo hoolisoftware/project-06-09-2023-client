@@ -8,6 +8,9 @@ import buttonArrow from '@/assets/components/button-arrow.svg'
 import Heading from '@/components/Heading'
 import Container from '@/components/Container'
 
+import TrainingImage from '@/assets/components/treatments-treatment7.png'
+import BookImage from '@/assets/components/treatments-treatment8.png'
+
 
 interface props
 {
@@ -46,6 +49,28 @@ export default function Block(props: props) {
                         </div>
                     )
                 }
+                <div className={css.treatment}>
+                    <div className={css.treatmentImageContainer}>
+                        <img className={css.treatmentImage} src={TrainingImage} alt="treatmentImage" />
+                        <Link to={'/training/'} className={css.treatmentLink}>
+                            <img src={buttonArrow} alt="arrow" />
+                        </Link>
+                    </div>
+                    <div className={css.treatmentContent}>
+                        <div className={css.treatmentName}>Обучение</div>
+                    </div>
+                </div>
+                <div className={css.treatment}>
+                    <div className={css.treatmentImageContainer}>
+                        <img className={css.treatmentImage} src={BookImage} alt="treatmentImage" />
+                        <Link to={'/book/'} className={css.treatmentLink}>
+                            <img src={buttonArrow} alt="arrow" />
+                        </Link>
+                    </div>
+                    <div className={css.treatmentContent}>
+                        <div className={css.treatmentName}>Консультация со специалистом</div>
+                    </div>
+                </div>
             </div>
         </div>
     </Container> 

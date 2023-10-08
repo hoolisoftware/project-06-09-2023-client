@@ -4,7 +4,7 @@ import { API_URL } from "@/config";
 import axios from "axios";
 import { useState } from "react";
 import { useQuery, useQueryClient, useMutation } from "react-query";
-import { Card, CardContent, Button, TextField } from "@mui/material";
+import { Button } from "@mui/material";
 import dayjs from "dayjs";
 import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
 import type { Booking } from "@/types";
@@ -12,6 +12,9 @@ import { Link as RouterLink } from "react-router-dom";
 
 import Heading from "@/components/Heading";
 import Container from "@/components/Container";
+import Input from "@/components/Input";
+import MyButton from "@/components/Button";
+import Card, { CardContent, CardTitle } from "@/components/Card";
 
 type Step = 'date' | 'time' | 'contact' | 'success';
 
@@ -79,8 +82,12 @@ export default function Block() {
 					>
 						{"<"} Назад
 					</Button>
-					<Card variant="outlined" sx={{ width: "100%" }}>
+					<Card>
 						<CardContent>
+							<center>
+								<CardTitle>Выберите время записи</CardTitle>
+							</center>
+							<br />
 							{Array.isArray(data) &&
 								data.map((item) => (
 									<Button
@@ -113,7 +120,7 @@ export default function Block() {
 					>
 						{"<"} Назад
 					</Button>
-					<Card variant="outlined" sx={{ width: "100%" }}>
+					<Card>
 						<CardContent>
 							<form
 								onSubmit={ e => {
@@ -125,26 +132,13 @@ export default function Block() {
 								<div className={css.containerHeading}>
 									Введите ваши контактные данные
 								</div>
-								<TextField
-									label="ИФО"
-									fullWidth
-									size="small"
-									sx={{ mb: 3 }}
-									name="full_name"
-								/>
-								<TextField
-									label="Номер телефона"
-									fullWidth
-									size="small"
-									sx={{ mb: 3 }}
-									name="phone_number"
-								/>
+								<Input name='full_name' placeholder="ИФО" fullWidth type='string'/>
+								<Input name='phone_number' placeholder="Номер телефона" fullWidth type='string'/>
 								<input hidden name='date' value={date} type="text" />
 								<input hidden name='session' value={session} type="text" />
-
-								<Button type='submit' fullWidth variant="contained" sx={{ boxShadow: null }}>
+								<MyButton type='submit' fullWidth>
 									Записаться
-								</Button>
+								</MyButton>
 							</form>
 						</CardContent>
 					</Card>
@@ -152,7 +146,7 @@ export default function Block() {
 			)}
 			{step === "success" && (
 				<div className={css.cardContainer}>
-					<Card variant="outlined" sx={{ width: "100%" }}>
+					<Card>
 						<CardContent>
 							<p>Благодарим за предоставленую информацию. Скоро вам поступит звонок для подтверждения записи!</p>
 							<Button component={RouterLink} to='/'>

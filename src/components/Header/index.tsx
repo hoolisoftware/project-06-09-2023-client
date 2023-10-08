@@ -90,6 +90,16 @@ export default function Component(){
                                     </Link>
                                 )
                             }
+                            <Link to='/training/'>
+                                <div className={css.dropdownItem}>
+                                    Обучение
+                                </div>
+                            </Link>
+                            <Link to='/book/'>
+                                <div className={css.dropdownItem}>
+                                    Консультация со специалистом
+                                </div>
+                            </Link>
                             <Link to='/treatments/'>
                                 <div className={css.dropdownItem}>
                                     Другое...
