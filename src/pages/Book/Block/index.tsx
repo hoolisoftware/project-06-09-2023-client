@@ -47,7 +47,7 @@ export default function Block() {
 				<div className={css.datepickerContainer}>
 					<p className={css.containerHeading}>Выберите дату записи:</p>
 					<StaticDatePicker
-						onChang`e={async (e) => {
+						onChange={async (e) => {
 							const date = `${e?.year()}-${
 								(e?.month() as number) + 1
 							}-${e?.date()}`;
