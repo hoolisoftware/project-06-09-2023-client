@@ -37,7 +37,7 @@ export default function Block() {
 
     return <Container>
         <div className={css.heading}>
-            <Heading center >Prices</Heading>
+            <Heading center >Прайс-лист</Heading>
         </div>
         <div className={css.section}>
             <div className={css.sectionBlock}>

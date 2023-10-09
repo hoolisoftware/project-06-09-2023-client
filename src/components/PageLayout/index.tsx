@@ -10,7 +10,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement>
 }
 
 export default function PageLayout(props: Props) {
-    document.title = `${props.title ? `${props.title} | ` : ''}Plastic Clinic`
+    document.title = `${props.title ? `${props.title} | ` : ''}Clinic Estetic`
 
     return <div className={css.layout}>
         <div>

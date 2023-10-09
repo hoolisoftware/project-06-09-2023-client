@@ -14,7 +14,6 @@ import HappyClients from '../_CommonBlocks/HappyClients'
 export default function Page()
 {
     return <PageLayout
-        title='Home page'
     >
         <Block1/>
         <Block2/>

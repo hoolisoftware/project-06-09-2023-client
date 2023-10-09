@@ -24,7 +24,7 @@ export default function Component(){
         <div className={css.footerContainer}>
             <div className={css.section1}>
                 <div className={css.section1SectionLogo}>
-                    <img className={css.logo} src={logo} alt="" />
+                    <img className={css.logo} src={logo} />
                     <div className={css.section1Media}>
                         {
                             Array.isArray(data) && data.map((item, index) =>
@@ -52,7 +52,7 @@ export default function Component(){
             </div>
         </div>
         <div className={css.section2}>
-            © 2017 Clinicestetic. Все права защищены 
+            © 2023 Clinicestetic. Все права защищены 
         </div>
     </div>
 }

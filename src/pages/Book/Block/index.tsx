@@ -47,7 +47,7 @@ export default function Block() {
 				<div className={css.datepickerContainer}>
 					<p className={css.containerHeading}>Выберите дату записи:</p>
 					<StaticDatePicker
-						onChange={async (e) => {
+						onChang`e={async (e) => {
 							const date = `${e?.year()}-${
 								(e?.month() as number) + 1
 							}-${e?.date()}`;
@@ -132,7 +132,7 @@ export default function Block() {
 								<div className={css.containerHeading}>
 									Введите ваши контактные данные
 								</div>
-								<Input name='full_name' placeholder="ИФО" fullWidth type='string'/>
+								<Input name='full_name' placeholder="ФИО" fullWidth type='string'/>
 								<Input name='phone_number' placeholder="Номер телефона" fullWidth type='string'/>
 								<input hidden name='date' value={date} type="text" />
 								<input hidden name='session' value={session} type="text" />

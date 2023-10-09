@@ -78,3 +78,13 @@ a
 {
   display: none !important;
 }
+
+.MuiPickersToolbar-root
+{
+  display: none !important;
+}
+
+.MuiDialogActions-root .MuiButtonBase-root:first-child
+{
+  display: none;
+}
