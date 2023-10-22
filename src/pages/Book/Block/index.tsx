@@ -15,6 +15,7 @@ import Container from "@/components/Container";
 import Input from "@/components/Input";
 import MyButton from "@/components/Button";
 import Card, { CardContent, CardTitle } from "@/components/Card";
+import {useTranslation} from "react-i18next";
 
 type Step = 'date' | 'time' | 'contact' | 'success';
 
@@ -38,14 +39,19 @@ export default function Block() {
 		},
 	});
 
+	const {t, i18n} = useTranslation();
+	const changeLanguage = (language) => {
+		i18n.changeLanguage(language);
+	};
+
 	return (
 		<Container>
 			<div className={css.heading}>
-				<Heading center>Запись на приём</Heading>
+				<Heading center>{t("ConsultationWithSpecialist_block1_title")}</Heading>
 			</div>
 			{step === "date" && (
 				<div className={css.datepickerContainer}>
-					<p className={css.containerHeading}>Выберите дату записи:</p>
+					<p className={css.containerHeading}>{t("ConsultationWithSpecialist_block1_subTitle")}</p>
 					<StaticDatePicker
 						onChange={async (e) => {
 							const date = `${e?.year()}-${
@@ -85,7 +91,7 @@ export default function Block() {
 					<Card>
 						<CardContent>
 							<center>
-								<CardTitle>Выберите время записи</CardTitle>
+								<CardTitle>{t("ConsultationWithSpecialist_block2_subTitle")}</CardTitle>
 							</center>
 							<br />
 							{Array.isArray(data) &&
@@ -130,14 +136,14 @@ export default function Block() {
 								} }
 							>
 								<div className={css.containerHeading}>
-									Введите ваши контактные данные
+									<CardTitle>{t("book_block1_cardTitle")}</CardTitle>
 								</div>
 								<Input name='full_name' placeholder="ФИО" fullWidth type='string'/>
 								<Input name='phone_number' placeholder="Номер телефона" fullWidth type='string'/>
 								<input hidden name='date' value={date} type="text" />
 								<input hidden name='session' value={session} type="text" />
 								<MyButton type='submit' fullWidth>
-									Записаться
+									<CardTitle>{t("book_block2_booking")}</CardTitle>
 								</MyButton>
 							</form>
 						</CardContent>
@@ -148,9 +154,9 @@ export default function Block() {
 				<div className={css.cardContainer}>
 					<Card>
 						<CardContent>
-							<p>Благодарим за предоставленую информацию. Скоро вам поступит звонок для подтверждения записи!</p>
+							<p><CardTitle>{t("book_block3_cardTitle1")}</CardTitle></p>
 							<Button component={RouterLink} to='/'>
-								вернуться на главную
+								<CardTitle>{t("book_block4_cardTitle2")}</CardTitle>
 							</Button>
 						</CardContent>
 					</Card>

@@ -9,6 +9,7 @@ import logo from '../../assets/logo.svg'
 import iconLocation from '../../assets/components/footer-icon-location.png'
 import iconPhone from '../../assets/components/footer-icon-phone.png'
 import iconMail from '../../assets/components/footer-icon-mail.png'
+import {useTranslation} from "react-i18next";
 
 
 export default function Component(){
@@ -19,6 +20,10 @@ export default function Component(){
             return data
         }
     })
+    const {t, i18n} = useTranslation();
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
 
     return <div className={css.footer}>
         <div className={css.footerContainer}>
@@ -52,7 +57,7 @@ export default function Component(){
             </div>
         </div>
         <div className={css.section2}>
-            © 2023 Clinicestetic. Все права защищены 
+            {t("Footer_rights")}
         </div>
     </div>
 }

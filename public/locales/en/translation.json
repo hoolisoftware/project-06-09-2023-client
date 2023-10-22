@@ -1,0 +1,144 @@
+{
+  "Header_AboutClinik": "About the Clinic",
+  "Header_AboutClinik_question": "Q&A",
+  "Header_AboutClinik_news": "News",
+  "Header_AboutClinik_learning": "Training",
+  "Header_AboutClinik_price": "Price List",
+  "Header_AboutClinik_after": "Before and After",
+  "Header_professionals": "Professionals",
+  "Header_services": "Services",
+  "Header_services_learning": "Training",
+  "Header_services_consultation": "Consultation with Specialist",
+  "Header_services_another": "Other...",
+  "Header_price": "Pricing",
+  "Header_Contacts": "Contacts",
+
+  "Home_block1_title": "Schedule an Appointment",
+  "Home_block1_subTitle1": "for a free consultation at Clinicestetic,",
+  "Home_block1_subTitle2": "a plastic surgery clinic",
+  "Home_block1_button": "Schedule an Appointment",
+
+  "home_block2_title": "Services",
+  "home_block2_servicesList1": "Training",
+  "home_block2_servicesList2": "Consultation with Specialist",
+
+  "home_block3_title": "We Value Your Time",
+  "Home_block3_subTitle1": "Leave your phone number,",
+  "Home_block3_subTitle2": "and we'll call you back in 9 seconds",
+  "Home_block3_button": "CALL ME BACK",
+
+  "Home_block4_title": "We Welcome You to Our Clinic!",
+  "Home_block4_subTitle": "We are open 24/7 and our doors are always open for everyone!",
+  "Home_block4_text1": "Clinicestetic holds a leading position in the field of modern, high-tech medical services. Our main areas of expertise include aesthetic medicine (plastic surgery, cosmetology, dietetics, hair transplantation), dentistry, ophthalmology, gynecology, and proctology.",
+  "Home_block4_text2": "We take full responsibility for the patient's health, choosing the best global technologies and treatment methods, and offering the most effective beauty and youth preservation procedures.",
+
+  "Home_block5_title": "Why Choose Our Clinic?",
+  "Home_block5_card1_subtitle": "Wide Range of Procedures",
+  "Home_block5_card1_text": "Clinic Estetic offers a wide range of procedures, from rhinoplasty and breast augmentation to liposuction and cosmetology.",
+  "Home_block5_card2_subtitle": "State-of-the-Art Equipment",
+  "Home_block5_card2_text": "All our operating rooms and wards are equipped with the latest technology, the most advanced and reliable medical equipment, and medications.",
+  "Home_block5_card3_subtitle": "Experienced Specialists",
+  "Home_block5_card3_text": "Clinicestetic specialists have over 15 years of practical experience to help you look and feel your best!",
+  "Home_block5_card4_subtitle": "Affordable Prices",
+  "Home_block5_card4_text": "We don't aim to make our prices exorbitant. Our pricing policy is designed to make beauty accessible to everyone!",
+
+  "Home_block6_card1_title": "Satisfied Customer Reviews",
+  "Home_block6_card1_text": "I had lip fillers, and it was not my first time; I had them done for 5-6 years. In your clinic, I got the lips I had long imagined and wanted! Everything went smoothly, without any rush, which was also nice. If I could give stars, I'd give it five!",
+  "Home_block6_card2_text": "Perfect result after Fractora. Facial redness disappeared within two weeks, and there were no traces of enlarged capillaries.",
+  "Home_block6_card3_text": "Very pleased with the pleasant service at the clinic! Satisfied with the procedure results!",
+  "Home_block6_card4_text": "I had lip fillers, and it was not my first time; I had them done for 5-6 years. In your clinic, I got the lips I had long imagined and wanted! Everything went smoothly, without any rush, which was also nice. If I could give stars, I'd give it five!",
+  "Home_block6_card5_text": "Perfect result after Fractora. Facial redness disappeared within two weeks, and there were no traces of enlarged capillaries.",
+  "Home_block6_card6_text": "Very pleased with the pleasant service at the clinic! Satisfied with the procedure results!",
+
+  "Home_block7_title": "Want to Look and Feel More Beautiful Than Ever?",
+  "Home_block7_subTitle": "Schedule a free consultation at Clinic Estetic, a plastic surgery clinic!",
+  "Home_block7_placeholder": "Your Phone*",
+  "Home_block7_button": "Call in 9 seconds",
+
+  "Home_block8_title": "You Can Leave Us a Message",
+  "Home_block8_placeholder1": "Your Name*",
+  "Home_block8_placeholder2": "Your Phone*",
+  "Home_block8_placeholder3": "Message",
+  "Home_block8_alert": "Your request has been sent, we will contact you!",
+  "Home_block8_button": "Leave a Message",
+
+  "Footer_rights": "© 2023 Clinicestetic. All rights reserved",
+
+  "Question_pageTitle": "Q&A",
+
+  "News_pageTitle": "News",
+  "News_searchTitle": "Search News",
+  "News_searchPlaceholder": "What do you need to find?",
+  "News_searchButton": "SEARCH",
+
+  "Training_block1_pageTitle1": "Training",
+  "Training_block1_pageTitle2": "Training",
+  "Training_block1_pageSubTitle": "Schedule a free consultation with a specialist at our clinic by phone:",
+  "Training_block2_title1": "What You Need to Know",
+  "Training_block2_text1": "We are pleased to inform you that Clinic Estetic and Injektiokoulutuskeskus are official distributors of the Genyal brand (Switzerland).",
+  "Training_block2_text2": "Genyal sets the highest standard of quality.",
+  "Training_block2_text3": "Genyal is an innovative line of products for contour correction and skin biorevitalization based on hyaluronic acid.",
+  "Training_block2_text4": "The Genyal line appeared on the market in 2009 as a result of collaboration between an Italian-Swiss team of chemical engineers, pharmacologists, and specialists in aesthetic medicine. The result was the Genyal line, meeting high-quality standards and delivering excellent, predictable, and long-lasting results after cosmetic procedures.",
+  "Training_block2_text5": "Innovative technologies and modern European medical manufacturing used for Genyal fillers ensure the highest quality of the products. Technical and sanitary control is performed at all production stages, from raw material preparation to final product packaging. All production steps adhere to the highest quality standards.",
+  "Training_block2_text6": "All Genyal products undergo extensive purification and homogenization.",
+
+  "Training_block3_title": "Skin Deep Rejuvenation FRACTORA",
+  "Training_block3_text1": "– indications",
+  "Training_block3_text2": "– pathophysiological justification of ingredient composition",
+  "Training_block3_text3": "– therapeutic schemes",
+  "Training_block3_text4": "Features of non-reticular products of the Genyal line (Lift). Differentiation of indications for the application of each of them. Optimization of therapeutic schemes. Combined use with other techniques. Structural filler Genyal Polyvalent (Switzerland) of the 4th generation based on stabilized hyaluronic acid. Preparation characteristics, achievable correction effects, indications, and contraindications for the procedures. Procedure performance techniques.",
+
+  "Training_block4_text1": "Filler-volumizer Genyal Volume (Switzerland), volumetric remodeling, concepts, approach, and basic augmentation techniques. Procedure performance techniques.",
+  "Training_block4_text2": "The Swiss technique of microbolus correction in the cheek area",
+  "Training_block4_text3": "The classical technique of lip contour and volume correction",
+  "Training_block4_text4": "The French technique of vertical injections",
+  "Training_block4_text5": "Anatomical considerations",
+  "Training_block4_text6": "Corner of the mouth lifting techniques, Author's techniques: '3 points', 3D, An optimistic look – techniques for working with the nose area, The cheekbone area: needle or cannula?, Nasolacrimal groove correction (choice of products, needle insertion, cannula techniques), Lower third of the face: anatomical features, hazardous areas, correction schemes, Harmonizing the face oval. Compensation for 'flaws': myth or reality?, Techniques for working with the chin area (importance of proportions), Lower jaw angle (techniques with a cannula or needle, indications, anatomical markers), Possible complications and their correction.",
+
+  "Training_block5_title": "For Our Cosmetologist Clients",
+  "Training_block5_text1": "We are pleased to inform you, dear cosmetologists, that you can purchase Genyal fillers for your work at Clinic Estetic/Injektiokoulutuskeskus.",
+  "Training_block5_text2": "The main benefits of Genyal products: Quality.",
+  "Training_block5_text3": "Safety (no allergic reactions).",
+  "Training_block5_text4": "Comfort (minimal pain during the procedure).",
+  "Training_block5_text5": "Stable results (effect lasts up to 18 months).",
+  "Training_block5_text6": "Naturalness of the achieved effect (not exaggerated, 'intelligent' self-distribution system).",
+
+  "Training_block6_title": "Training Conditions:",
+  "Training_block6_text1": "Course for specialists with a medical background.",
+  "Training_block6_text2": "Bring your own comfortable footwear, diploma, gown, and anesthesia.",
+  "Training_block6_text3": "Be sure to bring your own model.",
+  "Training_block6_text4": "After completing the course, participants receive commercial training certificates.",
+  "Training_block6_text5": "Courses are conducted by Sofia Kazakov, winner of the 2011 Stockholm Inject Academy Awards.",
+
+  "Training_block7_title": "Practical Component:",
+  "Training_block7_text1": "Testing of the presented technologies on models.",
+
+  "Training_block8_title": "Consultation with a Specialist",
+  "Training_block8_text1": "Clinic Estetic offers a free consultation with our specialists.",
+
+  "PriceList_block1_mainTitle": "Price List",
+  "PriceList_block1_title": "Schedule a Consultation with a Specialist",
+  "PriceList_block1_subTitle": "Choose a convenient date and time",
+  "PriceList_block1_button": "Schedule",
+
+  "BeforeAndAfter_block1_title": "Before and After",
+
+  "professionals_block1_title": "Professionals",
+  "professionals_title1": "Our Specialists",
+  "professionals_block2_title": "Our Certificates",
+
+  "ConsultationWithSpecialist_block1_title": "Appointment Booking",
+  "ConsultationWithSpecialist_block1_subTitle": "Select an appointment date:",
+  "ConsultationWithSpecialist_block2_subTitle": "Select an appointment time:",
+  "ConsultationWithSpecialist_block1_month": "September",
+
+  "Contacts_block1_title": "Find Us",
+
+  "consultation": "Get a consultation on the topic of your interest!",
+
+  "book_block1_cardTitle": "Enter your contact information",
+  "book_block2_booking": "Book an Appointment",
+  "book_block3_cardTitle1": "Thank you for providing the information. You will receive a call shortly to confirm your appointment!",
+  "book_block4_cardTitle2": "Return to the homepage"
+
+}

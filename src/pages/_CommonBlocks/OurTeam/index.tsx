@@ -10,6 +10,7 @@ import bgLayer from '../../../assets/components/ourteam-bglayer1.png'
 import Heading from '../../../components/Heading'
 import Container from '../../../components/Container'
 import Card from '../../../components/Card'
+import {useTranslation} from "react-i18next";
 
 export default function Block() {
     const {data} = useQuery('specialists', {
@@ -19,12 +20,17 @@ export default function Block() {
         }
     })
 
+    const {t, i18n} = useTranslation();
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
+
     return (
         <div className={css.block}>
             <img className={css.bgLayer} src={bgLayer} alt="" />
             <Container>
                 <div className={css.heading}>
-                    <Heading center>Наши специалисты</Heading>
+                    <Heading center>{t("professionals_title1")}</Heading>
                 </div>
                 <div className={css.cards}>
                     {

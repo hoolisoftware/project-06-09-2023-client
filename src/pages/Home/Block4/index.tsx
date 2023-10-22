@@ -1,16 +1,21 @@
 import illustration from '../../../assets/components/home-block4-illustration.png'
 
 import Illustration from '../../_CommonBlocks/Illustration'
+import {useTranslation} from "react-i18next";
 
 export default function Block(){
+    const {t, i18n} = useTranslation();
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
     return <Illustration
-        title={<>Будем рады видеть вас в нашей клинике!</>}
-        subTitle={<>Мы работаем 24/7 и наши двери открыты для каждого!</>}
+        title={<>{t("Home_block4_title")}</>}
+        subTitle={<>{t("Home_block4_subTitle")}</>}
         content={
             <>
-                «Clinicestetic» занимает лидирующие позиции в сфере оказания современных высокотехнологичных медицинских услуг. Основные направления нашей деятельности: эстетическая медицина (пластическая хирургия, косметология, диетология, пересадка волос), стоматология, офтальмология, гинекология и проктология.
+                {t("Home_block4_text1")}
                 <br /><br />
-                Мы берем на себя всю полноту ответственности за здоровье пациента, поэтому отдаем предпочтение лучшим мировым технологиям и методикам лечения, выбираем максимально эффективные процедуры сохранения красоты и молодости.
+                {t("Home_block4_text2")}
             </>
         }
         illustration={illustration}

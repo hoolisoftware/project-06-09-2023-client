@@ -9,43 +9,48 @@ import bgLayer1 from '../../../assets/components/home-block5-bglayer1.png'
 import bgLayer2 from '../../../assets/components/home-block5-bglayer2.png'
 
 import Heading from '../../../components/Heading'
+import {useTranslation} from "react-i18next";
 
 
 export default function Block(){
+    const {t, i18n} = useTranslation();
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
     return <div className={css.block}>
         <img className={css.bgLayer2} src={bgLayer2} alt="bgLayer2" />
         <img className={css.bgLayer1} src={bgLayer1} alt="bgLayer1" />
         <div className={css.container}>
             <Heading center>
-                <div className={css.heading}>Почему вам стоит обратиться в нашу клинику?</div>
+                <div className={css.heading}>{t("Home_block5_title")}</div>
             </Heading>
             <div className={css.cards}>
                 <div className={css.card}>
                     <img className={css.cardImage} src={illustration1} alt='illustration1'/>
-                    <div className={css.cardHeading}>Большой выбор операций</div>
+                    <div className={css.cardHeading}>{t("Home_block5_card1_subtitle")}</div>
                     <div className={css.cardContent}>
-                        Клиника Clinicestetic предлагает большой выбор операций. От ринопластики и увеличения груди до липосакции и косметологии.
+                        {t("Home_block5_card1_text")}
                     </div>
                 </div>
                 <div className={css.card}>
                     <img className={css.cardImage} src={illustration2} alt='illustration2'/>
-                    <div className={css.cardHeading}>Современное оборудование</div>
+                    <div className={css.cardHeading}>{t("Home_block5_card2_subtitle")}</div>
                     <div className={css.cardContent}>
-                        Все наши операционные и палаты оборудованы по последнему слову техники, самым передовым и надежным медицинским оборудованием и медикаментами.
+                        {t("Home_block5_card2_text")}
                     </div>
                 </div>
                 <div className={css.card}>
                     <img className={css.cardImage} src={illustration3} alt='illustration3'/>
-                    <div className={css.cardHeading}>Опытные специалисты</div>
+                    <div className={css.cardHeading}>{t("Home_block5_card3_subtitle")}</div>
                     <div className={css.cardContent}>
-                        Специалисты Clinicestetic имеют огромный практический опыт более 15 лет, чтобы вы выглядели и чувствовали себя лучше!
+                        {t("Home_block5_card3_text")}
                     </div>
                 </div>
                 <div className={css.card}>
                     <img className={css.cardImage} src={illustration4} alt='illustration4'/>
-                    <div className={css.cardHeading}>Доступные цены</div>
+                    <div className={css.cardHeading}>{t("Home_block5_card4_subtitle")}</div>
                     <div className={css.cardContent}>
-                        Мы не стремимся делать наши цены заоблачными. Наша ценовая политика ориентирована на каждого, чтобы сделать красоту доступной для всех!
+                        {t("Home_block5_card4_text")}
                     </div>
                 </div>
             </div>

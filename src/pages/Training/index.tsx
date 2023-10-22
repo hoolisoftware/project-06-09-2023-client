@@ -13,7 +13,7 @@ import illustration from '../../assets/components/treatmentdetail-introillustrat
 export default function Page()
 {
     return <PageLayout
-        title='Обучение'
+        title='Learning'
     >
         <WrapperFirstBlock>
             <Intro

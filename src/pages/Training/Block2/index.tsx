@@ -2,43 +2,48 @@ import Illustration from '../../_CommonBlocks/Illustration'
 
 import illustration1 from '../../../assets/components/treatmentdetail-block2-illustration1.png'
 import illustration2 from '../../../assets/components/treatmentdetail-block2-illustration2.png'
+import {useTranslation} from "react-i18next";
 
 export default function Block() {
+    const {t, i18n} = useTranslation();
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
     return <>
         <Illustration
             title={
-                <>What you need to know</>
+                <>{t("Training_block2_title1")} </>
             }
             content={
                 <>
-                    We are pleased to inform you that the “Clinic Estetic” and Injektiokoulutuskeskus are official distributors of the brand Genyal (Switzerland)
+                    {t("Training_block2_text1")}
                     <br /><br />
-                    Genyal — the highest standard of quality.
+                    {t("Training_block2_text2")}
                     <br /><br />
-                    Genyal — an innovative line of products for contour correction and biorevitalization of the skin based on hyaluronic acid.
+                    {t("Training_block2_text3")}
                     <br /><br />
-                    The Genyal line appeared on the market in 2009 as a result of co-work of the Italian-Swiss team of chemical engineers, pharmacologists and specialists in aesthetic medicine. As a result of the joint work appeared a Genyal line, which meets high quality standards, allows to obtain an excellent, predictable and long-lasting result after cosmetic procedures.
+                    {t("Training_block2_text4")}
                     <br /><br />
-                    The innovation technologies, as well as the modern European medical manufacture used for production of the Genyal fillers, ensures th highest quality of the preparations. Technical and sanitary control is carried out at all stages of production. From the preparing of raw material to the packaging of final products. All manufacturing steps meet th highest quality standards.
+                    {t("Training_block2_text5")}
                     <br /><br />
-                    All of Genyal products show a very high degree of purification and homogenization.
+                    {t("Training_block2_text6")}
                 </>
             }
             illustration={illustration1}
         />
         <Illustration
             title={
-                <>Skin Deep Rejuvenation FRACTORA</>
+                <>{t("Training_block3_title")}</>
             }
             content={
                 <>
-                    – indications
+                    {t("Training_block3_text1")}
                     <br /><br />
-                    – pathophysiological substantiation of ingredient composition
+                    {t("Training_block3_text2")}
                     <br /><br />
-                    – therapeutic schemes
+                    {t("Training_block3_text3")}
                     <br /><br />
-                    Features of non-reticular products of the Genyal line (Lift). Differentiation of indications for the application f each of them. Optimisation of therapeutic schemes.Combined use with other techniques Structural filler Genyal Polyvalent (Switzerland) of the 4th generation based on the stabilized hyaluronic acid. Preparations characteristics, achievable effects of the correction, indications and contraindications to the procedures. Procedures performance techniques.
+                    {t("Training_block3_text4")}
                 </>
             }
             illustration={illustration2}

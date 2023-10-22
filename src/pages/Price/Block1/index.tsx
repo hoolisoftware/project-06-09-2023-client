@@ -14,9 +14,14 @@ import Container from '../../../components/Container'
 import Button from '../../../components/Button'
 
 import Item from './Item'
+import {useTranslation} from "react-i18next";
 
 
 export default function Block() {
+    const {t, i18n} = useTranslation();
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
     
     const {data} = useQuery({
         queryFn: async () => {
@@ -37,7 +42,7 @@ export default function Block() {
 
     return <Container>
         <div className={css.heading}>
-            <Heading center >Прайс-лист</Heading>
+            <Heading center >{t("PriceList_block1_mainTitle")}</Heading>
         </div>
         <div className={css.section}>
             <div className={css.sectionBlock}>
@@ -58,12 +63,12 @@ export default function Block() {
                     <CardContent>
                         <div className={css.cardContent}>
                             <CardTitle>
-                                <div className={css.cardTitle}>Записаться на консультацию со специалистом</div>
+                                <div className={css.cardTitle}>{t("PriceList_block1_title")}</div>
                             </CardTitle>
-                            <div className={css.cardText}>Выберите удобный день и время</div>
+                            <div className={css.cardText}>{t("PriceList_block1_subTitle")}</div>
                             <Link to='/book/' className={css.button}>
                                 <Button fullWidth>
-                                    Записаться
+                                    {t("PriceList_block1_button")}
                                     &nbsp;
                                     <img src={arrow} alt="arrow" />
                                 </Button>

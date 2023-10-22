@@ -12,6 +12,7 @@ import Card, {CardContent} from '../../../components/Card'
 import Container from '../../../components/Container'
 import Input from '../../../components/Input'
 import Button from '../../../components/Button'
+import {useTranslation} from "react-i18next";
 
 
 export default function Block(){
@@ -21,11 +22,16 @@ export default function Block(){
         }
     })
 
+    const {t, i18n} = useTranslation();
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
+
     return <div className={css.block}>
         <img className={css.bg} src={bg} alt="bg" />
         <Container className={css.container}>
             <Heading center>
-                <div className={css.heading}>Вы можете оставить нам сообщение</div>
+                <div className={css.heading}>{t("Home_block8_title")}</div>
             </Heading>
             <Card className={css.form}>
                 <CardContent>
@@ -33,7 +39,7 @@ export default function Block(){
                         <div className={css.formInner}>
                             <Input
                                 type='text'
-                                placeholder='Ваше имя*'
+                                placeholder={t("Home_block8_placeholder1")}
                                 name='full_name'
                                 fullWidth
                                 disabled={mutation.isSuccess}
@@ -41,15 +47,15 @@ export default function Block(){
                             />
                             <Input
                                 type='text'
-                                placeholder='Ваш телефон*'
+                                placeholder={t("Home_block8_placeholder2")}
                                 name='phone_number'
                                 fullWidth
                                 disabled={mutation.isSuccess}
                                 required
                             />
-                            <textarea className={css.formTextarea} name='message' placeholder='Сообщение' disabled={mutation.isSuccess} required></textarea>
+                            <textarea className={css.formTextarea} name='message' placeholder={t("Home_block8_placeholder3")} disabled={mutation.isSuccess} required></textarea>
                             <Button fullWidth>
-                                Оставить сообщение&nbsp;
+                                {t("Home_block8_button")}&nbsp;
                                 <img className={css.formButtonArrow} src={arrow} alt="arrow" />
                             </Button>
                             {
@@ -57,7 +63,7 @@ export default function Block(){
                                 <p>
                                     <AiFillCheckCircle/>
                                     &nbsp;
-                                    Заявка отправлена, мы свяжемся с вами!
+                                    {t("Home_block8_alert")}
                                 </p>
                             }
                         </div>

@@ -1,32 +1,29 @@
 import css from './index.module.scss'
 
 import Card, {CardContent, CardTitle} from '../../../components/Card'
+import {useTranslation} from "react-i18next";
 
 export default function Block() {
+    const {t, i18n} = useTranslation();
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
+
     return <div className={css.container}>
         <div className={css.section}>
             <Card>
                 <CardContent>
-                    Filler-volumizer Genyal Volumae (Switzerland), volumetric remodelling, concepts, approach and basic techniques of augmentation. Procedures performance techniques.
+                    {t("Training_block4_text1")}
                     <br /><br />
-                    The Swiss technique of the microbolus correction of the cheek area
+                    {t("Training_block4_text2")}
                     <br /><br />
-                    The classical technique of the lips contour and volume correction
+                    {t("Training_block4_text2")}
                     <br /><br />
-                    The French technique of the vertical injections
+                    {t("Training_block4_text4")}
                     <br /><br />
-                    Anatomical “traps”
+                    {t("Training_block4_text5")}
                     <br /><br />
-                    The techniques of lifting the corners of the mouth
-                    Author’s techniqures: “3 points”, 3D
-                    Optimistic look – techniques for work with the nose area
-                    The cheek bone area: needle or cannula?
-                    Correction of a nasolacrimal groove (choice of preparations, needle insertion, cannula techniques)
-                    Lower third of the face: anatomical features, dangerous zones, correctiona schemes
-                    Harmonization of the face oval. Compensation for “flews”: myth or reality?
-                    Techniques of working with the chin area (the importance of proportions)
-                    The angle of the lower jaw (techniques with a cannula or needle, indications, anatomical marks)
-                    Possible complications and their correction
+                    {t("Training_block4_text6")}
                 </CardContent>
             </Card>
         </div>
@@ -34,32 +31,32 @@ export default function Block() {
             <div className={css.cards}>
                 <Card>
                     <CardContent>
-                        <CardTitle>For our clients-cosmetologists</CardTitle>
-                        We are pleased to inform you, dear cosmetologists, that you can purchase Genyal fillers for your work in Clinic Estetic / Injektiokoulutuskeskus.
+                        <CardTitle>{t("Training_block5_title")}</CardTitle>
+                        {t("Training_block5_text1")}
                         <br /><br />
-                        The main benefits of Genyal products:Quality.
+                        {t("Training_block5_text2")}
                         <br /><br />
-                        Safety (does not cause an allergic reaction).
+                        {t("Training_block5_text3")}
                         <br /><br />
-                        Comfort (minimum of pain during the procedure).
+                        {t("Training_block5_text4")}
                         <br /><br />
-                        Stable result (the effect persists up to 18 months).
+                        {t("Training_block5_text5")}
                         <br /><br />
-                        The naturalness of the effect achieved (not outlined, the “intellectual” self-distribution system).
+                        {t("Training_block5_text6")}
                     </CardContent>
                 </Card>
                 <Card>
                     <CardContent>
-                        <CardTitle>Conditions of training:</CardTitle>
-                        Course for specialists with medical education.
+                        <CardTitle>{t("Training_block6_title")}</CardTitle>
+                        {t("Training_block6_text1")}
                         <br /><br />
-                        Bring yourself replaceable footwear, the diploma, a dressing gown and anesthetic.
+                        {t("Training_block6_text2")}
                         <br /><br />
-                        Be sure to come with your model
+                        {t("Training_block6_text3")}
                         <br /><br />
-                        After the course commercial certificates of completion of training are given
+                        {t("Training_block6_text4")}
                         <br /><br />
-                        Courses are conducted by the winner of the 2011 Tukholma Inject Academyn Awards Sofia Kazakov
+                        {t("Training_block6_text5")}
                     </CardContent>
                 </Card>
             </div>
@@ -68,14 +65,14 @@ export default function Block() {
             <div className={css.cards}>
                 <Card>
                     <CardContent>
-                        <CardTitle>Practical part:</CardTitle>
-                        Testing of the given technologies on the models.
+                        <CardTitle>{t("Training_block7_title")}</CardTitle>
+                        {t("Training_block7_text1")}
                     </CardContent>
                 </Card>
                 <Card>
                     <CardContent>
-                        <CardTitle>Consultation with a specialist</CardTitle>
-                        Clinic Estetic offers a free consultation with our specialists.
+                        <CardTitle>{t("Training_block8_title")}</CardTitle>
+                        {t("Training_block8_text1")}
                     </CardContent>
                 </Card>
             </div>

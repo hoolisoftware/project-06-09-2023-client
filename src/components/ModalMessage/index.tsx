@@ -17,6 +17,7 @@ import Heading from '../Heading'
 import Card, {CardContent} from '../Card'
 import Input from '../Input'
 import Button from '../Button'
+import {useTranslation} from "react-i18next";
 
 
 export default function Modal() {
@@ -27,6 +28,11 @@ export default function Modal() {
     })
     const modalMessage = useSelector((state: RootState) => state.modal.modalMessage)
     const dispatch = useDispatch()
+
+    const {t, i18n} = useTranslation();
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
 
     return <div className={
         [
@@ -42,11 +48,10 @@ export default function Modal() {
                         <AiOutlineCloseCircle/>
                     </div>
                     <div className={css.heading}>
-                        <Heading>Получите консультацию по интересующему вас вопросу!</Heading>
+                        <Heading>{t("consultation")}</Heading>
                     </div>
                     <Input
                         type='text'
-                        placeholder='Ваше имя*'
                         name='full_name'
                         fullWidth
                         disabled={mutation.isSuccess}
@@ -54,20 +59,20 @@ export default function Modal() {
                     />
                     <Input
                         type='text'
-                        placeholder='Ваш телефон'
+                        placeholder={t("Home_block8_placeholder2")}
                         name='phone_number'
                         fullWidth
                         disabled={mutation.isSuccess}
                         required
                     />
-                    <Button disabled={mutation.isSuccess} fullWidth>Оставить сообщение&nbsp;&nbsp;<img className={css.arrow} src={arrow} alt="arrow" /></Button>
+                    <Button disabled={mutation.isSuccess} fullWidth>{t("Home_block8_button")}&nbsp;&nbsp;<img className={css.arrow} src={arrow} alt="arrow" /></Button>
                     <br />
                     {
                         mutation.isSuccess &&
                         <p>
                             <AiFillCheckCircle/>
                             &nbsp;
-                            Заявка отправлена, мы свяжемся с вами!
+                            {t("Training_block1_pageSubTitle")}
                         </p>
                     }
                 </CardContent>

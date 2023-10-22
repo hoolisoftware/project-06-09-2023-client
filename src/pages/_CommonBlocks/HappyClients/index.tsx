@@ -12,10 +12,14 @@ import 'swiper/css';
 
 import Container from '../../../components/Container'
 import Heading from '../../../components/Heading'
+import {useTranslation} from "react-i18next";
 
 
 export default function Block() {
-
+    const {t, i18n} = useTranslation();
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
     const slides = [
         [
             1,
@@ -54,7 +58,7 @@ export default function Block() {
     return <Container>
         <div className={css.heading}>
             <Heading center>
-                Отзывы довольных клиентов
+                {t("Home_block6_card1_title")}
             </Heading>
         </div>
         <div className={css.swiperContainer}>

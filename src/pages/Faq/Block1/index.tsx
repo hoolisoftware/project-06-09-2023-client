@@ -8,7 +8,9 @@ import Markdown from 'react-markdown'
 
 import Heading from '../../../components/Heading'
 
-import Item from './Item' 
+import Item from './Item'
+import {useTranslation} from "react-i18next";
+
 
 
 interface FAQ
@@ -35,10 +37,15 @@ export default function Block() {
             setActiveQuestion(index)
         }
     }
+
+    const {t, i18n} = useTranslation();
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
     
     return <div className={css.container}>
         <div className={css.heading}>
-            <Heading center>ВОПРОС-ОТВЕТ</Heading>
+            <Heading center>{t("Question_pageTitle")}</Heading>
         </div>
         <div className={css.items}>
             {

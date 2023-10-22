@@ -13,6 +13,7 @@ import Input from '../../../components/Input'
 import Button from '../../../components/Button'
 
 import Item from './Item'
+import {useTranslation} from "react-i18next";
 
 
 interface Post{
@@ -30,9 +31,14 @@ export default function Block() {
         }
     })
 
+    const {t, i18n} = useTranslation();
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
+
     return <Container>
         <div className={css.heading}>
-            <Heading center >Новости</Heading>
+            <Heading center >{t("News_pageTitle")}</Heading>
         </div>
         <div className={css.section}>
             <div className={css.sectionBlock}>
@@ -52,15 +58,15 @@ export default function Block() {
                     <CardContent>
                         <div className={css.cardContent}>
                             <CardTitle>
-                                <div className={css.cardTitle}>Поиск по новостям</div>
+                                <div className={css.cardTitle}>{t("News_searchTitle")}</div>
                             </CardTitle>
                             <Input
-                                placeholder='Что нужно найти?'
+                                placeholder={t("News_searchPlaceholder")}
                                 type='text'
                                 fullWidth
                             />
                             <Button fullWidth>
-                                ПОИСК
+                                {t("News+searchButton")}
                                 &nbsp;
                                 <img src={arrow} alt="arrow" />
                             </Button>

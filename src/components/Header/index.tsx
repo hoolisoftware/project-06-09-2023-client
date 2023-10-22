@@ -15,6 +15,7 @@ import arrow from '../../assets/icons/arrow-down.svg'
 import logo from '../../assets/logo.png'
 import phone from '../../assets/icons/phone.svg'
 import { setTreatments } from '@/features/data/dataReducer'
+import {useTranslation} from "react-i18next";
 
 
 export default function Component(){
@@ -34,6 +35,11 @@ export default function Component(){
     const [mobileMenu, setMobileMenu] = useState<boolean>(false)
     const location = useLocation()
 
+    const {t, i18n} = useTranslation();
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
+
     return <>
         <header className={css.header}>
             <div className={css.headerInner}>
@@ -42,42 +48,42 @@ export default function Component(){
                 </Link>
                 <ul className={css.menu}>
                     <li className={location.pathname === '/about/' ? css.active : ''}>
-                        <Link to='/about/'>О клинике</Link>&nbsp;
+                        <Link to='/about/'>{t("Header_AboutClinik")}</Link>&nbsp;
                         <img src={arrow} alt="" />
                         <div className={css.dropdown}>
                             <Link to='/faq/'>
                                 <div className={css.dropdownItem}>
-                                    Вопрос-ответ
+                                    {t("Header_AboutClinik_question")}
                                 </div>
                             </Link>
                             <Link to='/news/'>
                                 <div className={css.dropdownItem}>
-                                    Новости
+                                    {t("Header_AboutClinik_news")}
                                 </div>
                             </Link>
                             <Link to='/training/'>
                                 <div className={css.dropdownItem}>
-                                    Обучение
+                                    {t("Header_AboutClinik_learning")}
                                 </div>
                             </Link>
                             <Link to='/price/'>
                                 <div className={css.dropdownItem}>
-                                    Прайс-лист
+                                    {t("Header_AboutClinik_price")}
                                 </div>
                             </Link>
                             <Link to='/before-after/'>
                                 <div className={css.dropdownItem}>
-                                    До-после
+                                    {t("Header_AboutClinik_after")}
                                 </div>
                             </Link>
                         </div>
                     </li>
                     <li className={location.pathname === '/specialists/' ? css.active : ''}>
-                        <Link to='/specialists/'>Специалисты</Link>
+                        <Link to='/specialists/'>{t("Header_professionals")}</Link>
                     </li>
                     <li className={location.pathname === '/treatments/' ? css.active : ''}>
                         <Link to='/treatments/'>
-                            Услуги&nbsp;
+                            {t("Header_services")}&nbsp;
                         </Link>
                         <img src={arrow} alt="" />
                         <div className={css.dropdown}>
@@ -92,26 +98,26 @@ export default function Component(){
                             }
                             <Link to='/training/'>
                                 <div className={css.dropdownItem}>
-                                    Обучение
+                                    {t("Header_services_learning")}
                                 </div>
                             </Link>
                             <Link to='/book/'>
                                 <div className={css.dropdownItem}>
-                                    Консультация со специалистом
+                                    {t("Header_services_consultation")}
                                 </div>
                             </Link>
                             <Link to='/treatments/'>
                                 <div className={css.dropdownItem}>
-                                    Другое...
+                                    {t("Header_services_another")}
                                 </div>
                             </Link>
                         </div>
                     </li>
                     <li className={location.pathname === '/price/' ? css.active : ''}>
-                        <Link to='/price/'>Стоимость</Link>
+                        <Link to='/price/'>{t("Header_price")}</Link>
                     </li>
                     <li className={location.pathname === '/contacts/' ? css.active : ''}>
-                        <Link to='/contacts/'>Контакты</Link>
+                        <Link to='/contacts/'>{t("Header_Contacts")}</Link>
                     </li>
                 </ul>
                 <div className={css.menuButton} onClick={ () => setMobileMenu(true) }>
@@ -134,47 +140,47 @@ export default function Component(){
                 <ul className={css.mobileMenuList}>
                     <li className={css.active}>
                         <Link to='/about/'>
-                            О клинике
+                            {t("Header_AboutClinik")}
                         </Link>
                     </li>
                     <li className={css.active}>
                         <Link to='/news/'>
-                            Новости
+                            {t("Header_AboutClinik_news")}
                         </Link>
                     </li>
                     <li className={css.active}>
                         <Link to='/faq/'>
-                            Вопрос-ответ
+                            {t("Header_AboutClinik_question")}
                         </Link>
                     </li>
                     <li className={css.active}>
                         <Link to='/about/'>
-                            Обучение
+                            {t("Header_services_learning")}
                         </Link>
                     </li>
                     <li className={css.active}>
                         <Link to='/before-after/'>
-                            До-после
+                            {t("Header_AboutClinik_after")}
                         </Link>
                     </li>
                     <li>
                         <Link to='/specialists/'>
-                            Специалисты
+                            {t("Header_professionals")}
                         </Link>
                     </li>
                     <li>
                         <Link to='/treatments/'>
-                            Услуги
+                            {t("Header_services")}
                         </Link>
                     </li>
                     <li>
                         <Link to='/price/'>
-                            Стоимость
+                            {t("Header_price")}
                         </Link>
                     </li>
                     <li>
                         <Link to='/contacts/'>
-                            Контакты
+                            {t("Header_Contacts")}
                         </Link>
                     </li>
                 </ul>

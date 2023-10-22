@@ -11,6 +11,7 @@ import { Swiper as SwiperType } from 'swiper'
 import arrow from '../../../assets/components/home-block6-arrow.png'
 import Heading from '../../../components/Heading'
 import Container from '../../../components/Container'
+import {useTranslation} from "react-i18next";
 
 
 export default function Block() {
@@ -23,9 +24,14 @@ export default function Block() {
 
     const swiperRef = useRef<SwiperType>()
     const [currentIndex, setCurrentIndex] = useState<number|undefined>(0)
+
+    const {t, i18n} = useTranslation();
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
     return <Container>
         <div className={css.heading}>
-            <Heading center>Наши сертификаты</Heading>
+            <Heading center>{t("professionals_block2_title")}</Heading>
         </div>
         <div className={css.swiperContainer}>
             <Swiper

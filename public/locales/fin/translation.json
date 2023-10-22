@@ -1,0 +1,130 @@
+{
+  "Header_AboutClinik": "Tietoja Klinikasta",
+  "Header_AboutClinik_question": "Usein kysytyt kysymykset",
+  "Header_AboutClinik_news": "Uutiset",
+  "Header_AboutClinik_learning": "Koulutus",
+  "Header_AboutClinik_price": "Hinnasto",
+  "Header_AboutClinik_after": "Ennen ja jälkeen",
+  "Header_professionals": "Ammattilaiset",
+  "Header_services": "Palvelut",
+  "Header_services_learning": "Koulutus",
+  "Header_services_consultation": "Konsultaatio asiantuntijan kanssa",
+  "Header_services_another": "Muu...",
+  "Header_price": "Hinta",
+  "Header_Contacts": "Yhteystiedot",
+
+  "Home_block1_title": "Varaa aika",
+  "Home_block1_subTitle1": "Ilmaiseen klinikalle,",
+  "Home_block1_subTitle2": "plastiikkakirurgian Clinicestetic",
+  "Home_block1_button": "Varaa aika",
+
+  "home_block2_title": "Palvelut",
+  "home_block2_servicesList1": "Koulutus",
+  "home_block2_servicesList2": "Konsultaatio asiantuntijan kanssa",
+
+  "home_block3_title": "Arvostamme aikaasi",
+  "Home_block3_subTitle1": "Jätä puhelinnumero,",
+  "Home_block3_subTitle2": "soitamme sinulle 9 sekunnin sisällä",
+  "Home_block3_button": "SOITA MINULLE",
+
+  "Home_block4_title": "Olemme iloisia nähdessämme sinut klinikallamme!",
+  "Home_block4_subTitle": "Työskentelemme 24/7 ja ovet ovat avoinna jokaiselle!",
+  "Home_block4_text1": "Clinicestetic on johtava modernien ja korkeateknologisten lääketieteellisten palvelujen tarjoaja. Toimintamme pääalueet ovat esteettinen lääketiede (plastiikkakirurgia, kosmetologia, ravitsemusterapia, hiustensiirto), hammaslääketiede, silmälääketiede, gynekologia ja proktologia.",
+  "Home_block4_text2": "Otamme täyden vastuun potilaan terveydestä ja siksi suosimme maailman parhaita hoitoteknologioita ja -menetelmiä, valitsemme tehokkaimmat kauneuden ja nuoruuden säilyttämisen menetelmät.",
+
+  "Home_block5_title": "Miksi sinun tulisi valita klinikkaamme?",
+  "Home_block5_card1_subtitle": "Laaja valikoima toimenpiteitä",
+  "Home_block5_card1_text": "Clinicestetic-klinikka tarjoaa laajan valikoiman toimenpiteitä, rhinoplastiasta ja rintojen suurennuksesta liposuktiot ja kosmetiikkaan.",
+  "Home_block5_card2_subtitle": "Modernit laitteet",
+  "Home_block5_card2_text": "Kaikki leikkaussalimme ja huoneemme ovat varustettu viimeisimmällä lääketieteellisellä laitteistolla ja lääkkeillä.",
+  "Home_block5_card3_subtitle": "Kokeneet asiantuntijat",
+  "Home_block5_card3_text": "Clinicesteticin asiantuntijoilla on yli 15 vuoden käytännön kokemus, jotta näyttäisitte ja tuntisitte itsenne paremmin!",
+  "Home_block5_card4_subtitle": "Kilpailukykyiset hinnat",
+  "Home_block5_card4_text": "Emme pyri tekemään hinnoistamme taivaita hipovia. Hinnoittelumme on suunniteltu kaikkien saataville tehdäksemme kauneudesta saavutettavan kaikille!",
+
+  "Home_block6_card1_title": "Tyytyväisten asiakkaiden arvostelut",
+  "Home_block6_card1_text": "Tein huulet ja se ei ollut ensimmäinen kerta, olin heidän kanssaan 5-6 vuotta. Klinikallanne minulla oli juuri sellaiset huulet kuin olin kuvitellut ja halunnut jo pitkään! Kaikki meni rauhallisesti ja kiireettömästi, mikä oli myös mukavaa. Jos voisin antaa tähtiä, antaisin viisi!",
+  "Home_block6_card2_text": "Täydellinen tulos Fractorian jälkeen. Kasvojen punoitus katosi kahdessa viikossa, eikä laajentuneista kapillaareista jäänyt jälkiä.",
+  "Home_block6_card3_text": "Olen erittäin tyytyväinen klinikallanne saamaani ystävälliseen palveluun! Olen tyytyväinen hoitojen tuloksiin!",
+  "Home_block6_card4_text": "Tein huulet ja se ei ollut ensimmäinen kerta, olin heidän kanssaan 5-6 vuotta. Klinikallanne minulla oli juuri sellaiset huulet kuin olin kuvitellut ja halunnut jo pitkään! Kaikki meni rauhallisesti ja kiireettömästi, mikä oli myös mukavaa. Jos voisin antaa tähtiä, antaisin viisi!",
+  "Home_block6_card5_text": "Täydellinen tulos Fractorian jälkeen. Kasvojen punoitus katosi kahdessa viikossa, eikä laajentuneista kapillaareista jäänyt jälkiä.",
+  "Home_block6_card6_text": "Olen erittäin tyytyväinen klinikallanne saamaani ystävälliseen palveluun! Olen tyytyväinen hoitojen tuloksiin!",
+
+  "Home_block7_title": "Haluatko näyttää ja tuntea itsesi kauniimmaksi kuin koskaan?",
+  "Home_block7_subTitle": "Varaa aika maksuttomaan konsultaatioon Clinicesteticin kauneusklinikalle!",
+  "Home_block7_placeholder": "Puhelinnumerosi*",
+  "Home_block7_button": "Soita 9 sekunnin sisällä",
+
+  "Home_block8_title": "Voit jättää meille viestin",
+  "Home_block8_placeholder1": "Nimesi*",
+  "Home_block8_placeholder2": "Puhelinnumerosi*",
+  "Home_block8_placeholder3": "Viestisi",
+  "Home_block8_alert": "Pyyntösi on lähetetty, otamme sinuun yhteyttä!",
+  "Home_block8_button": "Jätä viesti",
+
+  "Footer_rights": "© 2023 Clinicestetic. Kaikki oikeudet pidätetään",
+
+  "Question_pageTitle": "UKK",
+
+  "News_pageTitle": "Uutiset",
+  "News_searchTitle": "Hae uutisia",
+  "News_searchPlaceholder": "Mitä etsit?",
+  "News_searchButton": "HAE",
+
+  "Training_block1_pageTitle1": "Koulutus",
+  "Training_block1_pageTitle2": "Koulutus",
+  "Training_block1_pageSubTitle": "Varaa aika ilmaiseen konsultaatioon klinikkamme asiantuntijan kanssa puhelimitse:",
+  "Training_block2_title1": "Mitä sinun tulee tietää",
+  "Training_block2_text1": "Olemme iloisia voidessamme ilmoittaa, että Clinic Estetic ja Injektiokoulutuskeskus ovat Genyal (Sveitsi) -brändin virallisia jakelijoita.",
+  "Training_block2_text2": "Genyal - korkein laatustandardi.",
+  "Training_block2_text3": "Genyal on innovatiivinen tuotesarja kasvojen muotoiluun ja ihon biorevitalisaatioon hyaluronihapon perusteella.",
+  "Training_block2_text4": "Genyal-tuotesarja tuli markkinoille vuonna 2009 italialaisten ja sveitsiläisten kemistien, farmakologien ja kauneuskirurgien yhteistyön tuloksena. Yhteistyön tuloksena syntyi Genyal-tuotesarja, joka vastaa korkeimpia laatustandardeja ja mahdollistaa erinomaiset, ennustettavat ja pitkäaikaiset tulokset kauneuskäsittelyjen jälkeen.",
+  "Training_block2_text5": "Genyal-tuotteiden valmistuksessa käytetään innovatiivista teknologiaa ja moderneja eurooppalaisia lääketieteellisiä laitteita, mikä takaa tuotteiden huippulaadun. Tekninen ja hygieniakontrolli suoritetaan kaikissa tuotannon vaiheissa, raaka-aineiden valmistuksesta,",
+
+  "Training_block5_title": "Kosmetologeille",
+  "Training_block5_text1": "Olemme iloisia voidessamme ilmoittaa teille, arvoisat kosmetologit, että voitte hankkia Genyal-täyteaineita työhönne Clinic Estetic / Injektiokoulutuskeskuksessa.",
+  "Training_block5_text2": "Genyal-tuotteiden keskeiset edut: Laatu.",
+  "Training_block5_text3": "Turvallisuus (ei aiheuta allergisia reaktioita).",
+  "Training_block5_text4": "Mukavuus (minimaalinen kipu toimenpiteen aikana).",
+  "Training_block5_text5": "Vakaa tulos (vaikutus säilyy jopa 18 kuukautta).",
+  "Training_block5_text6": "Saavutetun vaikutuksen luonnollisuus (ei erottuva, 'älykäs' itselevitysjärjestelmä).",
+
+  "Training_block6_title": "Koulutuksen ehdot:",
+  "Training_block6_text1": "Kurssi on tarkoitettu henkilöille, joilla on lääketieteellinen koulutus.",
+  "Training_block6_text2": "Ole hyvä ja tuo mukanasi vaihtokengät, todistus, puku ja puudute.",
+  "Training_block6_text3": "Tule varmasti mallin kanssa",
+  "Training_block6_text4": "Koulutuksen päätyttyä myönnetään kaupallinen koulutustodistus.",
+  "Training_block6_text5": "Kursseja pitää 2011 Tukholma Inject Academy -palkinnon voittaja Sofia Kazakova",
+
+  "Training_block7_title": "Käytännön osuus:",
+  "Training_block7_text1": "Uusien tekniikoiden testaus malleilla.",
+
+  "Training_block8_title": "Konsultaatio asiantuntijan kanssa",
+  "Training_block8_text1": "Clinic Estetic tarjoaa ilmaisen konsultaation asiantuntijoidemme kanssa.",
+
+  "PriceList_block1_mainTitle": "Hinnasto",
+  "PriceList_block1_title": "Varaa aika konsultaatioon asiantuntijan kanssa",
+  "PriceList_block1_subTitle": "Valitse sopiva päivä ja aika",
+  "PriceList_block1_button": "Varaa",
+
+  "BeforeAndAfter_block1_title": "Ennen ja jälkeen",
+
+  "professionals_block1_title": "Asiantuntijat",
+  "professionals_title1": "Asiantuntijamme",
+  "professionals_block2_title": "Sertifikaatit",
+
+  "ConsultationWithSpecialist_block1_title": "Varaa aika",
+  "ConsultationWithSpecialist_block1_subTitle": "Valitse varaamasi päivä:",
+  "ConsultationWithSpecialist_block2_subTitle": "Valitse varaamasi aika:",
+  "ConsultationWithSpecialist_block1_month": "Syyskuu",
+
+  "Contacts_block1_title": "Löydä meidät",
+
+  "consultation": "Hanki konsultaatio kiinnostavasta aiheesta!",
+
+  "book_block1_cardTitle": "Syötä yhteystietosi",
+  "book_block2_booking": "Varaa aika",
+  "book_block3_cardTitle1": "Kiitos tiedon antamisesta. Saat pian puhelun vahvistaaksesi varauksesi!",
+  "book_block4_cardTitle2": "Palaa etusivulle"
+
+}

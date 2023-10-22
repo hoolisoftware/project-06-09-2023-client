@@ -4,6 +4,7 @@ import iconPhone from '../../../assets/components/intro-iconphone.png'
 import maskCircle from '../../../assets/components/intro-maskcircle.png'
 
 import Card from '../../../components/Card'
+import {useTranslation} from "react-i18next";
 
 interface props
 {
@@ -12,6 +13,11 @@ interface props
 }
 
 export default function Intro(props: props) {
+
+    const {t, i18n} = useTranslation();
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
     return <div className={css.block}>
         <div className={css.container}>
             <div className={css.circle}>
@@ -24,7 +30,7 @@ export default function Intro(props: props) {
                 <img className={css.sectionIllustration} src={props.illustration}/>
                 <Card className={css.sectionContent}>
                     <div className={css.sectionText}>
-                        Запишитесь на бесплатный приём к специалисту нашей клиники по телефону:
+                        {t("Training_block1_pageSubTitle")}
                     </div>
                     <div className={css.sectionPhone}>
                         <img src={iconPhone} alt="phone icon" />

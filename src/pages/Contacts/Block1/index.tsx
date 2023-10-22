@@ -1,12 +1,17 @@
 import css from './index.module.scss'
 
 import Heading from '../../../components/Heading'
+import {useTranslation} from "react-i18next";
 
 
 export default function Block() {
+    const {t, i18n} = useTranslation();
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
     return <div className={css.container}>
         <div className={css.heading}>
-            <Heading center>Find Us</Heading>
+            <Heading center>{t("Contacts_block1_title")}</Heading>
         </div>
         <iframe
             className={css.map}

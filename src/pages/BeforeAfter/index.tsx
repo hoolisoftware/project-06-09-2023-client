@@ -5,12 +5,17 @@ import CallForm from '../_CommonBlocks/CallForm'
 import ContactForm from '../_CommonBlocks/ContactForm'
 
 import Block1 from './Block1'
+import {useTranslation} from "react-i18next";
 
 
 export default function Page()
 {
+    const {t, i18n} = useTranslation();
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
     return <PageLayout
-        title='Before and After'
+        title={t("BeforeAndAfter_block1_title")}
     >
         <WrapperFirstBlock>
             <Block1/>

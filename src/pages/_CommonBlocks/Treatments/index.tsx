@@ -10,6 +10,7 @@ import Container from '@/components/Container'
 
 import TrainingImage from '@/assets/components/treatments-treatment7.png'
 import BookImage from '@/assets/components/treatments-treatment8.png'
+import {useTranslation} from "react-i18next";
 
 
 interface props
@@ -20,12 +21,16 @@ interface props
 
 export default function Block(props: props) {
     const data = useSelector((state: RootState) => state.data.treatments)
+    const {t, i18n} = useTranslation();
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
 
     return <Container>
         <div className={css.heading}>
             <div className={css.heading}>
                 <Heading center>
-                    Услуги
+                    {t("home_block2_title")}
                 </Heading>
             </div>
             <div className={css.treatments}>
@@ -57,7 +62,7 @@ export default function Block(props: props) {
                         </Link>
                     </div>
                     <div className={css.treatmentContent}>
-                        <div className={css.treatmentName}>Обучение</div>
+                        <div className={css.treatmentName}>{t("home_block2_servicesList1")}</div>
                     </div>
                 </div>
                 <div className={css.treatment}>
@@ -68,7 +73,7 @@ export default function Block(props: props) {
                         </Link>
                     </div>
                     <div className={css.treatmentContent}>
-                        <div className={css.treatmentName}>Консультация со специалистом</div>
+                        <div className={css.treatmentName}>{t("home_block2_servicesList2")}</div>
                     </div>
                 </div>
             </div>
