@@ -119,6 +119,27 @@ export default function Component(){
                     <li className={location.pathname === '/contacts/' ? css.active : ''}>
                         <Link to='/contacts/'>{t("Header_Contacts")}</Link>
                     </li>
+                    <li className={location.pathname === '/about/' ? css.active : ''}>
+                        <Link>{t("Header_language")}</Link>&nbsp;
+                        <img src={arrow} alt="" />
+                        <div className={css.dropdown}>
+                            <Link>
+                                <div className={css.dropdownItem} onClick={() => changeLanguage("en")}>
+                                    English
+                                </div>
+                            </Link>
+                            <Link>
+                                <div className={css.dropdownItem} onClick={() => changeLanguage("ru")}>
+                                    Русский
+                                </div>
+                            </Link>
+                            <Link>
+                                <div className={css.dropdownItem} onClick={() => changeLanguage("fin")}>
+                                    Suomalainen
+                                </div>
+                            </Link>
+                        </div>
+                    </li>
                 </ul>
                 <div className={css.menuButton} onClick={ () => setMobileMenu(true) }>
                     <GiHamburgerMenu/>

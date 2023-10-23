@@ -1,6 +1,6 @@
 {
   "Header_AboutClinik": "About the Clinic",
-  "Header_AboutClinik_question": "Q&A",
+  "Header_AboutClinik_question": "question-answer",
   "Header_AboutClinik_news": "News",
   "Header_AboutClinik_learning": "Training",
   "Header_AboutClinik_price": "Price List",
@@ -12,6 +12,7 @@
   "Header_services_another": "Other...",
   "Header_price": "Pricing",
   "Header_Contacts": "Contacts",
+  "Header_language": "Change language",
 
   "Home_block1_title": "Schedule an Appointment",
   "Home_block1_subTitle1": "for a free consultation at Clinicestetic,",
