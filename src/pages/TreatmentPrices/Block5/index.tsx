@@ -1,8 +1,10 @@
 import illustration from '../../../assets/components/treatmentprices-block5-illustration.jpg'
 
 import Illustration from '../../_CommonBlocks/Illustration'
+import {useTranslation} from "react-i18next";
 
 export default function Block() {
+    const {t} = useTranslation();
     return <Illustration
         title={<>Fractional Skin Rejuvenation</>}
         content={

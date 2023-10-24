@@ -144,7 +144,7 @@ export default function Component(){
                             </Link>
                             <Link to='#'>
                                 <div className={css.dropdownItem} onClick={() => changeLanguage("fin")}>
-                                    Suomalainen
+                                    Suomi
                                 </div>
                             </Link>
                         </div>

@@ -12,6 +12,7 @@ import Container from '../../../components/Container'
 import Button from '../../../components/Button'
 
 import Item from './Item'
+import {useTranslation} from "react-i18next";
 
 
 interface props
@@ -22,9 +23,10 @@ interface props
 
 export default function Block(props: props) {
 
+    const {t} = useTranslation();
     return <Container>
         <div className={css.heading}>
-            <Heading center >Стоимость</Heading>
+            <Heading center >{t("heading_price")}</Heading>
         </div>
         <div className={css.section}>
             <div className={css.sectionBlock}>
@@ -34,11 +36,11 @@ export default function Block(props: props) {
                 <Card>
                     <CardContent>
                         <div className={css.cardContent}>
-                            <div className={css.cardTitle}>Записаться на консультацию со специалистом</div>
-                            <div className={css.cardText}>Выберите удобный день и время</div>
+                            <div className={css.cardTitle}>{t("PriceList_block1_title")}</div>
+                            <div className={css.cardText}>{t("PriceList_block1_subTitle")}</div>
                             <Link to='/book/' className={css.button}>
                                 <Button fullWidth>
-                                    Записаться
+                                    {t("PriceList_block1_button")}
                                     &nbsp;
                                     <img src={arrow} alt="arrow" />
                                 </Button>

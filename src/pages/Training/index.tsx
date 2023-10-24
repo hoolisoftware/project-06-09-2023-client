@@ -9,11 +9,13 @@ import CallForm from '../_CommonBlocks/CallForm'
 import ContactForm from '../_CommonBlocks/ContactForm'
 
 import illustration from '../../assets/components/treatmentdetail-introillustration.jpg'
+import {useTranslation} from "react-i18next";
 
 export default function Page()
 {
+    const {t} = useTranslation();
     return <PageLayout
-        title='Learning'
+        title={t("learning")}
     >
         <WrapperFirstBlock>
             <Intro

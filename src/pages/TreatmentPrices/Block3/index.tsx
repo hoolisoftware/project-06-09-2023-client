@@ -1,19 +1,21 @@
 import illustration from '../../../assets/components/treatmentprices-block3-illustration.jpg'
 
 import Illustration from '../../_CommonBlocks/Illustration'
+import {useTranslation} from "react-i18next";
 
 export default function Block() {
+    const {t} = useTranslation();
     return <Illustration
-        title={<>What you need to know</>}
+        title={<>{t("TreatmentPrice_block3_what_NeedKnow")}</>}
         content={
             <>
-                DOT TherapyTM technology is… the latest innovation in the field of skin rejuvenation!SmartXide DOT – a real alternative to the surgical facelift!
+                c
                 <br /><br />
-                DOT technology is performed with SmartXide DOT CO2 laser system, featuring the unique DOT Scanner with the Infinite Delivery options for ablative skin rejuvenation with rapid healing.
+                {t("TreatmentPrice_block3_text1")}
                 <br /><br />
-                DOT technology is ideal for solving such skin problems as pigmentation, atonic skin texture, wrinkles and acne scars.
+                {t("TreatmentPrice_block3_text2")}
                 <br /><br />
-                This is a possibility of choice This is a possibility of control. This is DOT!
+                {t("TreatmentPrice_block3_text3")}
             </>
         }
         illustration={illustration}

@@ -2,69 +2,71 @@ import css from './index.module.scss'
 
 import Card, {CardContent, CardTitle} from '../../../components/Card'
 import Container from '../../../components/Container'
+import {useTranslation} from "react-i18next";
 
 export default function Block() {
+    const {t} = useTranslation();
     return <Container>
         <div className={css.section}>
             <div className={css.cards}>
                 <Card>
                     <CardContent>
-                        <CardTitle>Fractional Laser CO2 System</CardTitle>
-                        Laser type: Fractional laser CO2 with system of fractional photothermolysis Hi-Scan DOT.
+                        <CardTitle>{t("TreatmentPrice_block4_title1")}</CardTitle>
+                        {t("TreatmentPrice_block4_text1")}
                         <br /><br />
-                        Position in SmartLaserLine: Above SmartXide.
+                        {t("TreatmentPrice_block4_text2")}
                         <br /><br />
-                        Main indications:
+                        {t("TreatmentPrice_block4_text3")}
                         <br /><br />
-                        Correction of age-related skin changes for patients who exclude the possibility of plastic surgery.
+                        {t("TreatmentPrice_block4_text4")}
                         <br /><br />
-                        Removing of wrinkles in the eye area (“crow’s feet”)
+                        {t("TreatmentPrice_block4_text5")}
                         <br /><br />
-                        Fractional rejuvenation of face, neck, decollete area and hands skin.
+                        {t("TreatmentPrice_block4_text6")}
                         <br /><br />
-                        Facial, neck, decollete area skin lift.
+                        {t("TreatmentPrice_block4_text7")}
                         <br /><br />
-                        Laser skin rejuvenation (improvement of skin condition).
+                        {t("TreatmentPrice_block4_text8")}
                         <br /><br />
-                        Removal of acne scars.
+                        {t("TreatmentPrice_block4_text9")}
                         <br /><br />
-                        Treatment of surgical scars.
+                        {t("TreatmentPrice_block4_text10")}
                         <br /><br />
-                        Correction of skin stretch marks.
+                        {t("TreatmentPrice_block4_text11")}
                         <br /><br />
-                        Treatment of pigmentation.
+                        {t("TreatmentPrice_block4_text12")}
                         <br /><br />
-                        Treatment of melasma.
+                        {t("TreatmentPrice_block4_text13")}
                     </CardContent>
                 </Card>
                 <Card>
                     <CardContent>
-                        <CardTitle>Special Features of SmartXide DOT:</CardTitle>
-                        The SmartXide DOT system – multifunctional complex based on a CO2 laser with a wavelength of 10600 nm.
+                        <CardTitle>{t("TreatmentPrice_block4_1_title1")}</CardTitle>
+                        {t("TreatmentPrice_block4_1_text1")}
                         <br /><br />
-                        Benefits:
+                        {t("TreatmentPrice_block4_1_text2")}
                         <br /><br />
-                        Excellent, long-lasting rejuvenation results
+                        {t("TreatmentPrice_block4_1_text3")}
                         <br /><br />
-                        Lack of seasonal restrictions
+                        {t("TreatmentPrice_block4_1_text4")}
                         <br /><br />
-                        Visual effect of skin (face, neck, decollete area) lift.
+                        {t("TreatmentPrice_block4_1_text5")}
                         <br /><br />
-                        Practically painless procedure
+                        {t("TreatmentPrice_block4_1_text6")}
                         <br /><br />
-                        High level of procedures safety
+                        {t("TreatmentPrice_block4_1_text7")}
                         <br /><br />
-                        Adjustable rehabilitation period
+                        {t("TreatmentPrice_block4_1_text8")}
                         <br /><br />
-                        The regime of fractional laser rejuvenation, the regime of laser resurfacing of face and scars and laser dermabrasion
+                        {t("TreatmentPrice_block4_1_text9")}
                         <br /><br />
-                        No consumables
+                        {t("TreatmentPrice_block4_1_text10")}
                         <br /><br />
-                        High effectiveness of rejuvenation
+                        {t("TreatmentPrice_block4_1_text11")}
                         <br /><br />
-                        Preservation of barrier functions of the skin protects against infection
+                        {t("TreatmentPrice_block4_1_text12")}
                         <br /><br />
-                        Short rehabilitation period
+                        {t("TreatmentPrice_block4_1_text13")}
                     </CardContent>
                 </Card>
             </div>
