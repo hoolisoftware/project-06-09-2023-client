@@ -2,7 +2,7 @@ import css from './index.module.scss'
 
 import { API_URL } from '@/config'
 import axios from 'axios'
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux/es/hooks/useSelector'
 import { useQuery } from 'react-query'
@@ -38,7 +38,16 @@ export default function Component(){
     const {t, i18n} = useTranslation();
     const changeLanguage = (language) => {
         i18n.changeLanguage(language);
+        localStorage.setItem("selectedLanguage", language); // Сохраняем выбранный язык в localStorage
     };
+
+    // Загрузка сохраненного языка при монтировании компонента
+    useEffect(() => {
+        const savedLanguage = localStorage.getItem("selectedLanguage");
+        if (savedLanguage) {
+            i18n.changeLanguage(savedLanguage);
+        }
+    }, []);
 
     return <>
         <header className={css.header}>
