@@ -13,6 +13,12 @@
 			"path": "./src/types/"
 		},
 		{
+			"path": "./src/utils/"
+		},
+		{
+			"path": "./src/hooks/"
+		},
+		{
 			"path": "./src/features/"
 		},
 		{
@@ -22,5 +28,7 @@
 			"path": "./src/pages"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"nuxt.isNuxtApp": false
+	}
 }

@@ -1,3 +1,4 @@
+import {useTranslation} from "react-i18next";
 import css from './index.module.scss'
 
 import arrow from '../../../assets/components/treatmentprices-arrow.png'
@@ -13,7 +14,6 @@ import Input from '../../../components/Input'
 import Button from '../../../components/Button'
 
 import Item from './Item'
-import {useTranslation} from "react-i18next";
 
 
 interface Post{
@@ -32,9 +32,6 @@ export default function Block() {
     })
 
     const {t, i18n} = useTranslation();
-    const changeLanguage = (language) => {
-        i18n.changeLanguage(language);
-    };
 
     return <Container>
         <div className={css.heading}>

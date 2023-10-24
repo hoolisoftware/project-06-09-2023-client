@@ -1,15 +1,13 @@
-import css from './index.module.scss'
-
-import { API_URL } from '@/config'
-import axios from 'axios'
 import { useState } from 'react'
-import { useQuery } from 'react-query'
+import {useTranslation} from "react-i18next";
 import Markdown from 'react-markdown'
 
-import Heading from '../../../components/Heading'
+import css from './index.module.scss'
 
+import Heading from '@/components/Heading'
+import { useFaq } from "@/hooks/use-query/faq";
 import Item from './Item'
-import {useTranslation} from "react-i18next";
+import getTranslatedField from '@/utils/getTranslatedField'
 
 
 
@@ -21,12 +19,7 @@ interface FAQ
 }
 
 export default function Block() {
-    const {data, status} = useQuery('faq', {
-        queryFn: async () => {
-            const {data} = await axios.get(`${API_URL}faq/faq/`)
-            return data
-        }
-    })
+    const {data, isLoading, isError} = useFaq()
 
     const [activeQuestion, setActiveQuestion] = useState<number|null>(0)
 
@@ -39,9 +32,6 @@ export default function Block() {
     }
 
     const {t, i18n} = useTranslation();
-    const changeLanguage = (language) => {
-        i18n.changeLanguage(language);
-    };
     
     return <div className={css.container}>
         <div className={css.heading}>
@@ -49,27 +39,26 @@ export default function Block() {
         </div>
         <div className={css.items}>
             {
-                status === 'success' &&
                 Array.isArray(data) && data.map((item: FAQ) =>
                     <Item
                         index={item.id}
                         active={item.id === activeQuestion}    
-                        title={item['question']}
+                        title={ getTranslatedField(item, 'question', i18n.language) }
                         setActiveQuestion={toggleActiveQuestion}
                         content={
-                            <Markdown children={item.answer}/>
+                            <Markdown children={ getTranslatedField(item, 'answer', i18n.language) }/>
                         }
                     />
                 )
             }
             {
-                status === 'loading' &&
+                isLoading &&
                 <Heading center>
                     <h6>Загрузка...</h6>
                 </Heading>
             }
             {
-                status === 'error' &&
+                isError &&
                 <Heading center>
                     <h6>Ошибка загрузки, пожалуйста попробуйте ещё раз...</h6>
                 </Heading>

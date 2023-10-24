@@ -1,29 +1,20 @@
-import css from './index.module.scss'
-
-import { API_URL } from '@/config'
-import axios from 'axios'
-import { useQuery } from 'react-query'
+import {useTranslation} from "react-i18next";
 import Markdown from 'react-markdown'
 
-import bgLayer from '../../../assets/components/ourteam-bglayer1.png'
+import css from './index.module.scss'
+import bgLayer from '@/assets/components/ourteam-bglayer1.png'
 
-import Heading from '../../../components/Heading'
-import Container from '../../../components/Container'
-import Card from '../../../components/Card'
-import {useTranslation} from "react-i18next";
+import { useSpecialists } from '@/hooks/use-query/specialists'
+import getTranslatedField from '@/utils/getTranslatedField'
+import Heading from '@/components/Heading'
+import Container from '@/components/Container'
+import Card from '@/components/Card'
+
 
 export default function Block() {
-    const {data} = useQuery('specialists', {
-        queryFn: async () => {
-            const {data} = await axios.get(`${API_URL}clinic/specialists/`)
-            return data
-        }
-    })
+    const {data} = useSpecialists()
 
     const {t, i18n} = useTranslation();
-    const changeLanguage = (language) => {
-        i18n.changeLanguage(language);
-    };
 
     return (
         <div className={css.block}>
@@ -38,16 +29,16 @@ export default function Block() {
                             <Card className={css.card} key={item.id}>
                                 <div className={css.cardInner}>
                                     <img className={css.cardImage} src={item.photo}/>
-                                    <div className={css.cardName}>{item.full_name}</div>
+                                    <div className={css.cardName}>{getTranslatedField(item, 'full_name', i18n.language)}</div>
                                     <div className={css.cardPosition}>
-                                        {item.position}
+                                        { getTranslatedField(item, 'position', i18n.language) }
                                     </div>
                                 </div>
                                 <div className={css.cardHr}></div>
                                 <div className={css.cardInner}>
                                     <div className={css.cardContent}>
                                         <Markdown>
-                                            {item.about}
+                                            { getTranslatedField(item, 'about', i18n.language) }
                                         </Markdown>
                                     </div>
                                 </div>

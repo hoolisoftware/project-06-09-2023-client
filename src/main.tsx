@@ -21,7 +21,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
         <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ru">
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={'Loading...'}>
                 <App />
             </Suspense>
         </LocalizationProvider>

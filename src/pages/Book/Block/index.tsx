@@ -39,10 +39,7 @@ export default function Block() {
 		},
 	});
 
-	const {t, i18n} = useTranslation();
-	const changeLanguage = (language) => {
-		i18n.changeLanguage(language);
-	};
+	const {t} = useTranslation();
 
 	return (
 		<Container>
@@ -143,7 +140,7 @@ export default function Block() {
 								<input hidden name='date' value={date} type="text" />
 								<input hidden name='session' value={session} type="text" />
 								<MyButton type='submit' fullWidth>
-									<CardTitle>{t("book_block2_booking")}</CardTitle>
+									{t("book_block2_booking")}
 								</MyButton>
 							</form>
 						</CardContent>

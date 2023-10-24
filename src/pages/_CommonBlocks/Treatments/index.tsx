@@ -21,10 +21,7 @@ interface props
 
 export default function Block(props: props) {
     const data = useSelector((state: RootState) => state.data.treatments)
-    const {t, i18n} = useTranslation();
-    const changeLanguage = (language) => {
-        i18n.changeLanguage(language);
-    };
+    const {t} = useTranslation();
 
     return <Container>
         <div className={css.heading}>

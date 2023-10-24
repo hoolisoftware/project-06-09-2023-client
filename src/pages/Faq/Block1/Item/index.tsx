@@ -1,8 +1,8 @@
 import css from './index.module.scss'
 
-import iconClose from '../../../../assets/components/faq-block1-icon-close.png'
+import iconClose from '@/assets/components/faq-block1-icon-close.png'
 
-import Card, {CardTitle, CardContent} from '../../../../components/Card'
+import Card, {CardTitle, CardContent} from '@/components/Card'
 
 
 interface props {
