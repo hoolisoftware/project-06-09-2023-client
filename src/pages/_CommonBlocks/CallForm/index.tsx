@@ -24,10 +24,8 @@ export default function Block(){
         }
     })
 
-    const {t, i18n} = useTranslation();
-    const changeLanguage = (language) => {
-        i18n.changeLanguage(language);
-    };
+    const {t} = useTranslation();
+    
 
     return <div className={css.block}>
         <img className={css.bgLayer3} src={bgLayer3} alt="bgLayer3" />

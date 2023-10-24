@@ -18,10 +18,8 @@ import {useTranslation} from "react-i18next";
 
 
 export default function Block() {
-    const {t, i18n} = useTranslation();
-    const changeLanguage = (language) => {
-        i18n.changeLanguage(language);
-    };
+    const {t} = useTranslation();
+    
     
     const {data} = useQuery({
         queryFn: async () => {

@@ -4,10 +4,8 @@ import Card, {CardContent, CardTitle} from '../../../components/Card'
 import {useTranslation} from "react-i18next";
 
 export default function Block() {
-    const {t, i18n} = useTranslation();
-    const changeLanguage = (language) => {
-        i18n.changeLanguage(language);
-    };
+    const {t} = useTranslation();
+    
 
     return <div className={css.container}>
         <div className={css.section}>

@@ -5,10 +5,8 @@ import {useTranslation} from "react-i18next";
 
 
 export default function Block() {
-    const {t, i18n} = useTranslation();
-    const changeLanguage = (language) => {
-        i18n.changeLanguage(language);
-    };
+    const {t} = useTranslation();
+    
     return <div className={css.container}>
         <div className={css.heading}>
             <Heading center>{t("Contacts_block1_title")}</Heading>

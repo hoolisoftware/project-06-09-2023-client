@@ -10,10 +10,8 @@ import {useTranslation} from "react-i18next";
 
 export default function Page()
 {
-    const {t, i18n} = useTranslation();
-    const changeLanguage = (language) => {
-        i18n.changeLanguage(language);
-    };
+    const {t} = useTranslation();
+    
     return <PageLayout
         title={t("BeforeAndAfter_block1_title")}
     >

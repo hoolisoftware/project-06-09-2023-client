@@ -29,10 +29,8 @@ export default function Modal() {
     const modalMessage = useSelector((state: RootState) => state.modal.modalMessage)
     const dispatch = useDispatch()
 
-    const {t, i18n} = useTranslation();
-    const changeLanguage = (language) => {
-        i18n.changeLanguage(language);
-    };
+    const {t} = useTranslation();
+    
 
     return <div className={
         [

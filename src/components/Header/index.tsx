@@ -36,7 +36,7 @@ export default function Component(){
     const location = useLocation()
 
     const {t, i18n} = useTranslation();
-    const changeLanguage = (language) => {
+    const changeLanguage = (language: string) => {
         i18n.changeLanguage(language);
         localStorage.setItem("selectedLanguage", language); // Сохраняем выбранный язык в localStorage
     };
@@ -47,7 +47,7 @@ export default function Component(){
         if (savedLanguage) {
             i18n.changeLanguage(savedLanguage);
         }
-    }, []);
+    }, [i18n]);
 
     return <>
         <header className={css.header}>
@@ -129,20 +129,20 @@ export default function Component(){
                         <Link to='/contacts/'>{t("Header_Contacts")}</Link>
                     </li>
                     <li className={location.pathname === '/about/' ? css.active : ''}>
-                        <Link>{t("Header_language")}</Link>&nbsp;
+                        <Link to='#'>{t("Header_language")}</Link>&nbsp;
                         <img src={arrow} alt="" />
                         <div className={css.dropdown}>
-                            <Link>
+                            <Link to='#'>
                                 <div className={css.dropdownItem} onClick={() => changeLanguage("en")}>
                                     English
                                 </div>
                             </Link>
-                            <Link>
+                            <Link to='#'>
                                 <div className={css.dropdownItem} onClick={() => changeLanguage("ru")}>
                                     Русский
                                 </div>
                             </Link>
-                            <Link>
+                            <Link to='#'>
                                 <div className={css.dropdownItem} onClick={() => changeLanguage("fin")}>
                                     Suomalainen
                                 </div>

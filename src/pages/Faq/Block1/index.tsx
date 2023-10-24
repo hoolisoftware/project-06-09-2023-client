@@ -10,14 +10,6 @@ import Item from './Item'
 import getTranslatedField from '@/utils/getTranslatedField'
 
 
-
-interface FAQ
-{
-    id: number
-    question: string
-    answer: string
-}
-
 export default function Block() {
     const {data, isLoading, isError} = useFaq()
 
@@ -39,7 +31,7 @@ export default function Block() {
         </div>
         <div className={css.items}>
             {
-                Array.isArray(data) && data.map((item: FAQ) =>
+                Array.isArray(data) && data.map((item) =>
                     <Item
                         index={item.id}
                         active={item.id === activeQuestion}    

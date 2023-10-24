@@ -25,10 +25,8 @@ export default function Block() {
     const swiperRef = useRef<SwiperType>()
     const [currentIndex, setCurrentIndex] = useState<number|undefined>(0)
 
-    const {t, i18n} = useTranslation();
-    const changeLanguage = (language) => {
-        i18n.changeLanguage(language);
-    };
+    const {t} = useTranslation();
+    
     return <Container>
         <div className={css.heading}>
             <Heading center>{t("professionals_block2_title")}</Heading>

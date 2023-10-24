@@ -14,10 +14,8 @@ interface props
 
 export default function Intro(props: props) {
 
-    const {t, i18n} = useTranslation();
-    const changeLanguage = (language) => {
-        i18n.changeLanguage(language);
-    };
+    const {t} = useTranslation();
+    
     return <div className={css.block}>
         <div className={css.container}>
             <div className={css.circle}>

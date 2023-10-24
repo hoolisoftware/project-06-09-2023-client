@@ -4,10 +4,8 @@ import Illustration from '../../_CommonBlocks/Illustration'
 import {useTranslation} from "react-i18next";
 
 export default function Block(){
-    const {t, i18n} = useTranslation();
-    const changeLanguage = (language) => {
-        i18n.changeLanguage(language);
-    };
+    const {t} = useTranslation();
+    
     return <Illustration
         title={<>{t("Home_block4_title")}</>}
         subTitle={<>{t("Home_block4_subTitle")}</>}

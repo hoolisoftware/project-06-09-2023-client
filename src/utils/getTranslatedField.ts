@@ -1,4 +1,4 @@
-import type { Model } from "@/hook/use-query"
+import type { Model } from "@/hooks/use-query"
 
 
 const camelToSnakeCase = (str: string) => str.replace('-', '_');

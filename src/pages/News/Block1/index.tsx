@@ -31,7 +31,7 @@ export default function Block() {
         }
     })
 
-    const {t, i18n} = useTranslation();
+    const {t} = useTranslation();
 
     return <Container>
         <div className={css.heading}>

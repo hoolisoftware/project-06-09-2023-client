@@ -20,10 +20,8 @@ export default function Component(){
             return data
         }
     })
-    const {t, i18n} = useTranslation();
-    const changeLanguage = (language) => {
-        i18n.changeLanguage(language);
-    };
+    const {t} = useTranslation();
+    
 
     return <div className={css.footer}>
         <div className={css.footerContainer}>
