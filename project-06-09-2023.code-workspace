@@ -26,6 +26,9 @@
 		},
 		{
 			"path": "./src/pages"
+		},
+		{
+			"path": "./public"
 		}
 	],
 	"settings": {

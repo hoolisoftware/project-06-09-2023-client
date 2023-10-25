@@ -1,11 +1,7 @@
 import css from './index.module.scss'
 
-import { API_URL } from '@/config'
-import axios from 'axios'
 import {useEffect, useState} from 'react'
-import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux/es/hooks/useSelector'
-import { useQuery } from 'react-query'
 import { Link, useLocation } from "react-router-dom";  
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { AiOutlineClose } from 'react-icons/ai'
@@ -14,24 +10,15 @@ import { RootState } from '@/app/store'
 import arrow from '../../assets/icons/arrow-down.svg'
 import logo from '../../assets/logo.png'
 import phone from '../../assets/icons/phone.svg'
-import { setTreatments } from '@/features/data/dataReducer'
 import {useTranslation} from "react-i18next";
+import { useServices } from '@/hooks/use-query/services';
+import getTranslatedField from '@/utils/getTranslatedField';
 
 
 export default function Component(){
-    const dispatch = useDispatch()
     const config = useSelector((state: RootState) => state.data.config)
-    const {data} = useQuery('services', {
-        queryFn: async () => {
-            const {data} = await axios.get(`${API_URL}services/services/`)
-            dispatch(setTreatments(data))
-            return data
-        },
-        onError: (error) => {
-            window.alert(error)
-        }
-    })
 
+    const {data} = useServices()
     const [mobileMenu, setMobileMenu] = useState<boolean>(false)
     const location = useLocation()
 
@@ -100,7 +87,7 @@ export default function Component(){
                                 Array.isArray(data) && data.map(item=>
                                     <a href={`/treatments/${item.id}/`} key={item.id}>
                                         <div className={css.dropdownItem}>
-                                            {item.title}
+                                            {getTranslatedField(item, 'title', i18n.language)}
                                         </div>
                                     </a>
                                 )

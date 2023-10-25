@@ -1,6 +1,6 @@
 {
   "Header_AboutClinik": "About the Clinic",
-  "Header_AboutClinik_question": "question-answer",
+  "Header_AboutClinik_question": "FAQ",
   "Header_AboutClinik_news": "News",
   "Header_AboutClinik_learning": "Training",
   "Header_AboutClinik_price": "Price List",
@@ -202,5 +202,10 @@
   "TreatmentPrice_block6_text12": "Facial oval harmonization. Compensating for 'flaws': myth or reality?",
   "TreatmentPrice_block6_text13": "Techniques for working with the chin area (the importance of proportions)",
   "TreatmentPrice_block6_text14": "The angle of the lower jaw (techniques with a cannula or needle, indications, anatomical landmarks)",
-  "TreatmentPrice_block6_text15": "Possible complications and their correction"
+  "TreatmentPrice_block6_text15": "Possible complications and their correction",
+  
+  "back": "Go back",
+  "consultation_busy": "BUSY NOW",
+  "consultation_form_full_name": "Full name",
+  "consultation_form_phone": "Phone number"
 }

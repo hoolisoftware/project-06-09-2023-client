@@ -3,7 +3,8 @@ import { useQuery } from "react-query"
 import { API_URL } from "@/config";
 
 
-export interface Model {
+export type Model = {
+    id: number
     [key: string]: unknown
 }
 
@@ -14,11 +15,11 @@ export const apiInstance = axios.create({
 
 
 
-export default function useBaseQuery(keys: string[], url: string) {
+export default function useBaseQuery<T>(keys: (string | undefined)[], url: string) {
     return useQuery(keys, {
         queryFn: async () => {
             const { data } = await apiInstance.get(url)
-            return data as Model
+            return data as T
         },
         onError: (e) => alert(e)
     })

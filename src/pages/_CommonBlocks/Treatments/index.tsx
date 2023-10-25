@@ -1,9 +1,7 @@
 import css from './index.module.scss'
 
-import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import { RootState } from '@/app/store'
 import buttonArrow from '@/assets/components/button-arrow.svg'
 import Heading from '@/components/Heading'
 import Container from '@/components/Container'
@@ -11,6 +9,8 @@ import Container from '@/components/Container'
 import TrainingImage from '@/assets/components/treatments-treatment7.png'
 import BookImage from '@/assets/components/treatments-treatment8.png'
 import {useTranslation} from "react-i18next";
+import { useServices } from '@/hooks/use-query/services'
+import getTranslatedField from '@/utils/getTranslatedField'
 
 
 interface props
@@ -20,8 +20,8 @@ interface props
 
 
 export default function Block(props: props) {
-    const data = useSelector((state: RootState) => state.data.treatments)
-    const {t} = useTranslation();
+    const {t, i18n} = useTranslation();
+    const {data} = useServices()
 
     return <Container>
         <div className={css.heading}>
@@ -41,10 +41,10 @@ export default function Block(props: props) {
                                 </Link>
                             </div>
                             <div className={css.treatmentContent}>
-                                <div className={css.treatmentName}>{item.title}</div>
+                                <div className={css.treatmentName}>{getTranslatedField(item, 'title', i18n.language)}</div>
                                 {
                                     props.showPoints && item.prices?.slice(0, 10)?.map((price, index) =>
-                                        <div className={css.treatmentPoint} key={index}>{price.title}</div>
+                                        <div className={css.treatmentPoint} key={index}>{getTranslatedField(price, 'title', i18n.language) }</div>
                                     )
                                 }
                             </div>

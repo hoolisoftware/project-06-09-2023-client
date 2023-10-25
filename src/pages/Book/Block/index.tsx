@@ -66,7 +66,6 @@ export default function Block() {
 									return data;
 								},
 							});
-							console.log(data)
 							setBookingIds(data?.map((item: Booking) => item.session));
 						}}
 						sx={{ background: "#f4ebf3", width: "100%" }}
@@ -83,7 +82,7 @@ export default function Block() {
 						variant="outlined"
 						sx={{ mb: 2 }}
 					>
-						{"<"} Назад
+						{"<"} {t('back')}
 					</Button>
 					<Card>
 						<CardContent>
@@ -107,7 +106,7 @@ export default function Block() {
 										disabled={bookingIds.includes(item.id)}
 									>
 										{item.time_start} - {item.time_end}{" "}
-										{bookingIds.includes(item.id) && "(ЗАНЯТО)"}
+										{bookingIds.includes(item.id) && `(${t('consultation_busy')})`}
 									</Button>
 								))}
 						</CardContent>
@@ -121,7 +120,7 @@ export default function Block() {
 						variant="outlined"
 						sx={{ mb: 2 }}
 					>
-						{"<"} Назад
+						{"<"} {t('back')}
 					</Button>
 					<Card>
 						<CardContent>
@@ -135,8 +134,8 @@ export default function Block() {
 								<div className={css.containerHeading}>
 									<CardTitle>{t("book_block1_cardTitle")}</CardTitle>
 								</div>
-								<Input name='full_name' placeholder="ФИО" fullWidth type='string'/>
-								<Input name='phone_number' placeholder="Номер телефона" fullWidth type='string'/>
+								<Input name='full_name' placeholder={t('consultation_form_full_name')} fullWidth type='string'/>
+								<Input name='phone_number' placeholder={t('consultation_form_phone')} fullWidth type='string'/>
 								<input hidden name='date' value={date} type="text" />
 								<input hidden name='session' value={session} type="text" />
 								<MyButton type='submit' fullWidth>
@@ -153,7 +152,7 @@ export default function Block() {
 						<CardContent>
 							<p><CardTitle>{t("book_block3_cardTitle1")}</CardTitle></p>
 							<Button component={RouterLink} to='/'>
-								<CardTitle>{t("book_block4_cardTitle2")}</CardTitle>
+								{t("book_block4_cardTitle2")}
 							</Button>
 						</CardContent>
 					</Card>

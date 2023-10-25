@@ -1,17 +1,15 @@
 import PageLayout from '../../components/PageLayout'
 import WrapperFirstBlock from '../../components/WrapperFirstBlock'
 
-import { API_URL } from '@/config'
-import axios from 'axios'
 import {useParams} from "react-router-dom"
-import { useQuery } from 'react-query'
-
-import type { Treatment } from '@/types'
 
 import Intro from '../_CommonBlocks/Intro'
 import HappyClients from '../_CommonBlocks/HappyClients'
 import CallForm from '../_CommonBlocks/CallForm'
 import ContactForm from '../_CommonBlocks/ContactForm'
+import { useService } from '@/hooks/use-query/services'
+import getTranslatedField from '@/utils/getTranslatedField'
+import { useTranslation } from 'react-i18next'
 
 import Block2 from './Block2'
 import Block3 from './Block3'
@@ -21,12 +19,9 @@ import Block6 from './Block6'
 
 export default function Page() {
     const {treatmentId} = useParams()
-    const {data} = useQuery<Treatment>({
-        queryFn: async () => {
-            const {data} = await axios.get(`${API_URL}services/services/${treatmentId}/`) 
-            return data
-        }
-    })
+    const {data} = useService(treatmentId)
+
+    const {i18n} = useTranslation()
 
     return <PageLayout
         title={data?.title}
@@ -34,7 +29,7 @@ export default function Page() {
         <WrapperFirstBlock>
             {treatmentId}
             <Intro
-                title={data?.title}
+                title={data && getTranslatedField(data, 'title', i18n.language)}
                 illustration={data?.image}
             />
         </WrapperFirstBlock>

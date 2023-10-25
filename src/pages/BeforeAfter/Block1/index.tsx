@@ -20,7 +20,6 @@ export default function Block() {
     const {data} = useQuery('before-after-sections', {
         queryFn: async () => {
             const {data} = await axios.get(`${API_URL}clinic/before-after-sections/`)
-            console.log(data)
             return data
         }
     })

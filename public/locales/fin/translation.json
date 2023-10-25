@@ -188,5 +188,10 @@
   "TreatmentPrice_block6_text12": "Kasvojen ovaalin harmonisointi. 'Virheiden' korjaaminen: myytti vai totta?",
   "TreatmentPrice_block6_text13": "Tekniikat leuan alueella työskentelyyn (profiilin tärkeys)",
   "TreatmentPrice_block6_text14": "Alaleuan kulma (kanyylitekniikat tai neula, indikaatiot, anatomiset maamerkit)",
-  "TreatmentPrice_block6_text15": "Mahdolliset komplikaatiot ja niiden korjaus"
+  "TreatmentPrice_block6_text15": "Mahdolliset komplikaatiot ja niiden korjaus",
+
+  "back": "Takaisin",
+  "consultation_busy": "Kiireinen",
+  "consultation_form_full_name": "Koko nimi",
+  "consultation_form_phone": "Puhelinnumero"
 }

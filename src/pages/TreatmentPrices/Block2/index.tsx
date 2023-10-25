@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import arrow from '../../../assets/components/treatmentprices-arrow.png'
 
-import type { Treatment } from '@/types'
+import { Service } from '@/hooks/use-query/services'
 
 import Heading from '../../../components/Heading'
 import Card, {CardContent} from '../../../components/Card'
@@ -17,7 +17,7 @@ import {useTranslation} from "react-i18next";
 
 interface props
 {
-    treatment: Treatment 
+    treatment: Service 
 }
 
 

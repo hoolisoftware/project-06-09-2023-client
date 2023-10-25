@@ -4,24 +4,28 @@ import iconClose from '../../../../assets/components/faq-block1-icon-close.png'
 
 import {useState} from 'react'
 
-import { Treatment} from '@/types'
+import { Service } from '@/hooks/use-query/services'
+import getTranslatedField from '@/utils/getTranslatedField'
+import { useTranslation } from 'react-i18next'
 
 import Card from '../../../../components/Card'
 
 
 interface props
 {
-    treatment: Treatment
+    treatment: Service
 }
 
 
 export default function Item(props: props) {
     const [active, setActive] = useState<boolean>(true)
 
+    const {i18n} = useTranslation()
+
     return <Card className={css.item}>
         <div className={css.itemInner}>
             <div className={css.itemTop}>
-                <div className={css.itemTitle}>{props.treatment.title}</div>
+                <div className={css.itemTitle}>{getTranslatedField(props.treatment, 'title', i18n.language) }</div>
                 <div className={[css.itemButtonClose, !active && css.itemButtonCloseDisabled].join(' ')} onClick={ () => setActive(!active)}>
                     <img className={css.itemIconClose} src={iconClose}/>
                 </div>
@@ -35,13 +39,13 @@ export default function Item(props: props) {
                                 { item.prices.length ?
                                     <>
                                         <div className={css.contentHeading}>
-                                            {item.title}
+                                            {getTranslatedField(item, 'title', i18n.language)}
                                         </div>        
                                         {
                                             item?.prices?.map(
                                                 item => (
                                                     <div className={css.contentPriceBlock}>
-                                                        <span>{item.title}</span>
+                                                        <span>{getTranslatedField(item, 'title', i18n.language)}</span>
                                                         {
                                                             item.price === -1 ? '' :
                                                             item.price === 0 ? 'БЕСПЛАТНО' :

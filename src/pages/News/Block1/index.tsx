@@ -3,35 +3,21 @@ import css from './index.module.scss'
 
 import arrow from '../../../assets/components/treatmentprices-arrow.png'
 
-import { API_URL } from '@/config'
-import axios from 'axios'
-import { useQuery } from 'react-query'
-
+import { usePosts } from "@/hooks/use-query/news";
 import Heading from '../../../components/Heading'
 import Card, {CardContent, CardTitle} from '../../../components/Card'
 import Container from '../../../components/Container'
 import Input from '../../../components/Input'
 import Button from '../../../components/Button'
+import getTranslatedField from "@/utils/getTranslatedField";
 
 import Item from './Item'
 
 
-interface Post{
-    id: number
-    title: string
-    excerpt: string
-    categories: string[]
-}
-
 export default function Block() {
-    const {data} = useQuery<Post[]>('news', {
-        queryFn: async () => {
-            const {data} = await axios.get(`${API_URL}blog/posts/`)
-            return data
-        }
-    })
+    const {data} = usePosts()
 
-    const {t} = useTranslation();
+    const {t, i18n} = useTranslation();
 
     return <Container>
         <div className={css.heading}>
@@ -44,8 +30,8 @@ export default function Block() {
                         <Item
                             id={item.id}
                             key={item.id}
-                            title={item.title}
-                            excerpt={item.excerpt}
+                            title={getTranslatedField(item, 'title', i18n.language)}
+                            excerpt={getTranslatedField(item, 'excerpt', i18n.language)}
                         />
                     )
                 }
