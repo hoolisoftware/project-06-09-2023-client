@@ -134,8 +134,8 @@ export default function Block() {
 								<div className={css.containerHeading}>
 									<CardTitle>{t("book_block1_cardTitle")}</CardTitle>
 								</div>
-								<Input name='full_name' placeholder={t('consultation_form_full_name')} fullWidth type='string'/>
-								<Input name='phone_number' placeholder={t('consultation_form_phone')} fullWidth type='string'/>
+								<Input required name='full_name' placeholder={t('consultation_form_full_name')} fullWidth type='string'/>
+								<Input required name='phone_number' placeholder={t('consultation_form_phone')} fullWidth type='string'/>
 								<input hidden name='date' value={date} type="text" />
 								<input hidden name='session' value={session} type="text" />
 								<MyButton type='submit' fullWidth>
