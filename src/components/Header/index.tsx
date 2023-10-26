@@ -13,6 +13,7 @@ import phone from '../../assets/icons/phone.svg'
 import {useTranslation} from "react-i18next";
 import { useServices } from '@/hooks/use-query/services';
 import getTranslatedField from '@/utils/getTranslatedField';
+import { languages } from '@/config/languages';
 
 
 export default function Component(){
@@ -119,21 +120,15 @@ export default function Component(){
                         <Link to='#'>{t("Header_language")}</Link>&nbsp;
                         <img src={arrow} alt="" />
                         <div className={css.dropdown}>
-                            <Link to='#'>
-                                <div className={css.dropdownItem} onClick={() => changeLanguage("en")}>
-                                    English
-                                </div>
-                            </Link>
-                            <Link to='#'>
-                                <div className={css.dropdownItem} onClick={() => changeLanguage("ru")}>
-                                    Русский
-                                </div>
-                            </Link>
-                            <Link to='#'>
-                                <div className={css.dropdownItem} onClick={() => changeLanguage("fin")}>
-                                    Suomi
-                                </div>
-                            </Link>
+                            {
+                                languages.map(item =>
+                                    <Link to='#'>
+                                        <div className={css.dropdownItem} onClick={() => changeLanguage(item[0])}>
+                                            {item[1]}
+                                        </div>
+                                    </Link>
+                                )
+                            }
                         </div>
                     </li>
                 </ul>
@@ -200,6 +195,16 @@ export default function Component(){
                             {t("Header_Contacts")}
                         </Link>
                     </li>
+                    <hr />
+                    {
+                        languages.map(item=>
+                            <li>
+                                <Link to='#' onClick={() => changeLanguage(item[0])}>
+                                    {item[1]}
+                                </Link>
+                            </li>
+                        )
+                    }
                 </ul>
             </div>
         }
