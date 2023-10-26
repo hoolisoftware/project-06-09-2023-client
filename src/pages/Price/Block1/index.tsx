@@ -2,12 +2,10 @@ import css from './index.module.scss'
 
 import arrow from '../../../assets/components/treatmentprices-arrow.png'
 
-import { API_URL } from '@/config'
-import axios from 'axios'
 import { useState } from 'react'
-import { useQuery } from 'react-query'
 import { Link } from 'react-router-dom'
 
+import { useServices } from '@/hooks/use-query/services'
 import Heading from '../../../components/Heading'
 import Card, {CardContent, CardTitle} from '../../../components/Card'
 import Container from '../../../components/Container'
@@ -21,12 +19,7 @@ export default function Block() {
     const {t} = useTranslation();
     
     
-    const {data} = useQuery({
-        queryFn: async () => {
-            const {data} = await axios.get(`${API_URL}services/services/`)
-            return data
-        }
-    })
+    const {data} = useServices()
 
     const [activeItem, setActiveItem] = useState<number|null>(0)
 

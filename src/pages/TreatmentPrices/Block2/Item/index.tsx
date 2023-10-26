@@ -20,7 +20,7 @@ interface props
 export default function Item(props: props) {
     const [active, setActive] = useState<boolean>(true)
 
-    const {i18n} = useTranslation()
+    const {t, i18n} = useTranslation()
 
     return <Card className={css.item}>
         <div className={css.itemInner}>
@@ -48,7 +48,7 @@ export default function Item(props: props) {
                                                         <span>{getTranslatedField(item, 'title', i18n.language)}</span>
                                                         {
                                                             item.price === -1 ? '' :
-                                                            item.price === 0 ? 'БЕСПЛАТНО' :
+                                                            item.price === 0 ? t('free') :
                                                             <span>{item.starting_from && 'от'} € {item.price}</span>
                                                         }
                                                     </div>
@@ -58,11 +58,11 @@ export default function Item(props: props) {
                                     </>
                                 :
                                     <div className={css.contentPriceBlock}>
-                                        <span>{item.title}</span>
+                                        <span>{getTranslatedField(item, 'title', i18n.language)}</span>
                                         {
                                             item.price === -1 ? '' :
-                                            item.price === 0 ? 'БЕСПЛАТНО' :
-                                            <span>{item.starting_from && 'от'} € {item.price}</span>
+                                            item.price === 0 ? t('free') :
+                                            <span>{item.starting_from && t('from')} € {item.price}</span>
                                         }
                                     </div>
                                 }

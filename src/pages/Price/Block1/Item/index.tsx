@@ -1,20 +1,24 @@
+import { useTranslation } from 'react-i18next'
+
 import css from './index.module.scss'
 
 import iconClose from '../../../../assets/components/faq-block1-icon-close.png'
 
-import type { Treatment } from '@/types'
+import type { Service } from '@/hooks/use-query/services'
 
 import Card, {CardContent} from '../../../../components/Card'
+import getTranslatedField from '@/utils/getTranslatedField'
 
 interface props
 {
     index: number
-    treatment: Treatment
+    treatment: Service
     setActive: CallableFunction
     active: boolean
 }
 
 export default function Item(props: props) {
+    const {t, i18n} = useTranslation()
 
     return <div className={css.item}>
         <Card>
@@ -36,17 +40,17 @@ export default function Item(props: props) {
                                     { item.prices.length ?
                                         <>
                                             <div className={css.contentHeading}>
-                                                {item.title}
+                                                {getTranslatedField(item, 'title', i18n.language)}
                                             </div>        
                                             {
                                                 item.prices?.map(
                                                     (item, index) => (
                                                         <div key={index} className={css.contentPriceBlock}>
-                                                            <span>{item.title}</span>
+                                                            <span>{getTranslatedField(item, 'title', i18n.language)}</span>
                                                             {
                                                                 item.price === -1 ? '' :
-                                                                item.price === 0 ? 'БЕСПЛАТНО' :
-                                                                <span>{item.starting_from && 'от'} € {item.price}</span>
+                                                                item.price === 0 ? t('free') :
+                                                                <span>{item.starting_from && t('from')} € {item.price}</span>
                                                             }
                                                         </div>
                                                     )
@@ -55,11 +59,11 @@ export default function Item(props: props) {
                                         </>
                                     :
                                         <div className={css.contentPriceBlock}>
-                                            <span>{item.title}</span>
+                                            <span>{getTranslatedField(item, 'title', i18n.language)}</span>
                                             {
                                                 item.price === -1 ? '' :
-                                                item.price === 0 ? 'БЕСПЛАТНО' :
-                                                <span>{item.starting_from && 'от'} € {item.price}</span>
+                                                item.price === 0 ? t('free') :
+                                                <span>{item.starting_from && t('from') } € {item.price}</span>
                                             }
                                         </div>
                                     }

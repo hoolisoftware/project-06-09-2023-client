@@ -205,5 +205,8 @@
   "back": "Назад",
   "consultation_busy": "ЗАНЯТО",
   "consultation_form_full_name": "ФИО",
-  "consultation_form_phone": "Номер телефона"
+  "consultation_form_phone": "Номер телефона",
+
+  "free": "БЕСПЛАТНО",
+  "from": "начинается с"
 }

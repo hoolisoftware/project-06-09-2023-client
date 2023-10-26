@@ -193,5 +193,8 @@
   "back": "Takaisin",
   "consultation_busy": "Kiireinen",
   "consultation_form_full_name": "Koko nimi",
-  "consultation_form_phone": "Puhelinnumero"
+  "consultation_form_phone": "Puhelinnumero",
+
+  "free": "ILMAINEN",
+  "from": "alkaen"
 }

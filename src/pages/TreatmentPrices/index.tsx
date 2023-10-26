@@ -27,7 +27,6 @@ export default function Page() {
         title={data?.title}
     >
         <WrapperFirstBlock>
-            {treatmentId}
             <Intro
                 title={data && getTranslatedField(data, 'title', i18n.language)}
                 illustration={data?.image}

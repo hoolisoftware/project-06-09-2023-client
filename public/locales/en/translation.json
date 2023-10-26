@@ -207,5 +207,8 @@
   "back": "Go back",
   "consultation_busy": "BUSY NOW",
   "consultation_form_full_name": "Full name",
-  "consultation_form_phone": "Phone number"
+  "consultation_form_phone": "Phone number",
+
+  "free": "FREE",
+  "from": "from"
 }
