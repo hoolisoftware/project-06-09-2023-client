@@ -1,21 +1,29 @@
-import css from './index.module.scss'
+import {useTranslation} from "react-i18next";
 
-import { API_URL } from '@/config'
 import axios from 'axios'
+import { useDispatch, useSelector } from "react-redux";
 import { useMutation } from 'react-query'
 import { AiFillCheckCircle } from 'react-icons/ai'
 
-import arrow from '../../../assets/components/home-block8-arrow.png'
-import bg from '../../../assets/components/home-block8-bg.png'
-import Heading from '../../../components/Heading'
-import Card, {CardContent} from '../../../components/Card'
-import Container from '../../../components/Container'
-import Input from '../../../components/Input'
-import Button from '../../../components/Button'
-import {useTranslation} from "react-i18next";
+import css from './index.module.scss'
+import { API_URL } from '@/config'
+import { RootState } from "@/app/store";
+import { toggleModalRecaptcha } from "@/features/modal/modalReducer";
+
+import arrow from '@/assets/components/home-block8-arrow.png'
+import bg from '@/assets/components/home-block8-bg.png'
+import Heading from '@/components/Heading'
+import Card, {CardContent} from '@/components/Card'
+import Container from '@/components/Container'
+import Input from '@/components/Input'
+import Button from '@/components/Button'
+import FieldPhone from "@/components/FieldPhone";
 
 
 export default function Block(){
+    const dispatch = useDispatch()
+    const recaptcha = useSelector((state: RootState) => state.data.recaptcha)
+
     const mutation = useMutation({
         mutationFn: async (newFeedbackForm: FormData) => {
             return axios.post(`${API_URL}booking/form-feedback/`, newFeedbackForm)
@@ -43,16 +51,24 @@ export default function Block(){
                                 disabled={mutation.isSuccess}
                                 required
                             />
-                            <Input
+                            <FieldPhone
                                 type='text'
-                                placeholder={t("Home_block8_placeholder2")}
                                 name='phone_number'
                                 fullWidth
                                 disabled={mutation.isSuccess}
                                 required
                             />
+                            <input type="text" hidden value={recaptcha as string}/>
                             <textarea className={css.formTextarea} name='message' placeholder={t("Home_block8_placeholder3")} disabled={mutation.isSuccess} required></textarea>
-                            <Button fullWidth>
+                            <Button
+                                fullWidth
+                                onClick={ (e) => {
+                                    if (!recaptcha) {
+                                        e.preventDefault()
+                                        dispatch(toggleModalRecaptcha()) 
+                                    }
+                                }}
+                            >
                                 {t("Home_block8_button")}&nbsp;
                                 <img className={css.formButtonArrow} src={arrow} alt="arrow" />
                             </Button>

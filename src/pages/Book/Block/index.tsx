@@ -1,25 +1,32 @@
 import css from "./index.module.scss";
 
-import { API_URL } from "@/config";
 import axios from "axios";
-import { useState } from "react";
-import { useQuery, useQueryClient, useMutation } from "react-query";
-import { Button } from "@mui/material";
 import dayjs from "dayjs";
-import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
-import type { Booking } from "@/types";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useQuery, useQueryClient, useMutation } from "react-query";
 import { Link as RouterLink } from "react-router-dom";
+import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
+import { Button } from "@mui/material";
 
+import { RootState } from "@/app/store";
+import { toggleModalRecaptcha } from "@/features/modal/modalReducer";
+import type { Booking } from "@/types";
+import { API_URL } from "@/config";
 import Heading from "@/components/Heading";
 import Container from "@/components/Container";
 import Input from "@/components/Input";
 import MyButton from "@/components/Button";
 import Card, { CardContent, CardTitle } from "@/components/Card";
 import {useTranslation} from "react-i18next";
+import FieldPhone from "@/components/FieldPhone";
+
 
 type Step = 'date' | 'time' | 'contact' | 'success';
 
 export default function Block() {
+	const dispatch = useDispatch()
+	const recaptcha = useSelector((state: RootState) => state.data.recaptcha)
 	const queryClient = useQueryClient();
 	const mutation = useMutation({
         mutationFn: async (newBooking: FormData) => {
@@ -135,10 +142,24 @@ export default function Block() {
 									<CardTitle>{t("book_block1_cardTitle")}</CardTitle>
 								</div>
 								<Input required name='full_name' placeholder={t('consultation_form_full_name')} fullWidth type='string'/>
-								<Input required name='phone_number' placeholder={t('consultation_form_phone')} fullWidth type='string'/>
+								<FieldPhone
+									required
+									name='phone_number'
+									fullWidth
+								/>
 								<input hidden name='date' value={date} type="text" />
 								<input hidden name='session' value={session} type="text" />
-								<MyButton type='submit' fullWidth>
+								<input type="text" hidden value={recaptcha as string}/>
+								<MyButton
+									type='submit'
+									fullWidth
+									onClick={ (e) => {
+										if (!recaptcha) {
+											e.preventDefault()
+											dispatch(toggleModalRecaptcha()) 
+										}
+									}}
+								>
 									{t("book_block2_booking")}
 								</MyButton>
 							</form>

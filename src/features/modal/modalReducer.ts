@@ -2,10 +2,12 @@ import { createSlice } from '@reduxjs/toolkit'
 
 interface ModalState {
     modalMessage: boolean
+    modalRecaptcha: boolean
 }
 
 const initialState: ModalState = {
     modalMessage: false,
+    modalRecaptcha: false
 }
 
 export const modalSlice = createSlice({
@@ -15,9 +17,12 @@ export const modalSlice = createSlice({
         toggleModalMessage: (state) => {
             state.modalMessage = !state.modalMessage
         },
+        toggleModalRecaptcha: (state) => {
+            state.modalRecaptcha = !state.modalRecaptcha
+        },
     },
 })
 
-export const { toggleModalMessage } = modalSlice.actions
+export const { toggleModalMessage, toggleModalRecaptcha } = modalSlice.actions
 
 export default modalSlice.reducer

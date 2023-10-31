@@ -1,8 +1,9 @@
 import css from './index.module.scss'
 
-import Header from '../Header'
-import Footer from '../Footer'
-import ModalMessage from '../ModalMessage'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import ModalMessage from '@/components/ModalMessage'
+import ModalRecaptcha from '@/components/ModalRecaptcha'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement>
 {
@@ -19,5 +20,6 @@ export default function PageLayout(props: Props) {
         </div>
         <Footer/>
         <ModalMessage/>
+        <ModalRecaptcha/>
     </div>
 }

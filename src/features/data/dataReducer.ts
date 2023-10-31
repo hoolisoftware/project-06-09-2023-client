@@ -6,11 +6,13 @@ import type { ClinicConfig, Treatment } from '@/types'
 interface dataState {
     config: ClinicConfig | undefined
     treatments: Treatment[]
+    recaptcha: string|null
 }
 
 const initialState: dataState = {
     treatments: [],
-    config: undefined
+    config: undefined,
+    recaptcha: ''
 }
 
 export const dataSlice = createSlice({
@@ -22,10 +24,13 @@ export const dataSlice = createSlice({
         },
         setConfig: (state, action) => {
             state.config = action.payload
+        },
+        setRecaptcha: (state, action) => {
+            state.recaptcha = action.payload
         }
     },
 })
 
-export const { setConfig, setTreatments } = dataSlice.actions
+export const { setConfig, setTreatments, setRecaptcha } = dataSlice.actions
 
 export default dataSlice.reducer

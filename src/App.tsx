@@ -21,6 +21,7 @@ import BeforeAfter from './pages/BeforeAfter'
 import News from './pages/News'
 import NewsDetail from './pages/NewsDetail'
 import Book from './pages/Book'
+import Test from '@/pages/Test'
 
 
 const router = createBrowserRouter([
@@ -84,6 +85,10 @@ const router = createBrowserRouter([
   {
     path: '/book/',
     element: <Book/>
+  },
+  {
+    path: '/test/',
+    element: <Test/>
   }
 ])
 

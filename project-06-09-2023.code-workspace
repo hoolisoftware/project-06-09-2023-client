@@ -1,34 +1,44 @@
 {
 	"folders": [
 		{
+			"name": "src",
+			"path": "src"
+		},
+		{
+			"name": "project-06-09-2023-client",
 			"path": "."
 		},
 		{
-			"path": "./src"
+			"name": "config",
+			"path": "src/config"
 		},
 		{
-			"path": "./src/config/"
+			"name": "types",
+			"path": "src/types"
 		},
 		{
-			"path": "./src/types/"
+			"name": "utils",
+			"path": "src/utils"
 		},
 		{
-			"path": "./src/utils/"
+			"name": "hooks",
+			"path": "src/hooks"
 		},
 		{
-			"path": "./src/hooks/"
+			"name": "features",
+			"path": "src/features"
 		},
 		{
-			"path": "./src/features/"
+			"name": "components",
+			"path": "src/components"
 		},
 		{
-			"path": "./src/components/"
+			"name": "pages",
+			"path": "src/pages"
 		},
 		{
-			"path": "./src/pages"
-		},
-		{
-			"path": "./public"
+			"name": "public",
+			"path": "public"
 		}
 	],
 	"settings": {
